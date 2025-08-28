@@ -136,7 +136,7 @@
 
 
  画面遷移
-[![Image from Gyazo](https://i.gyazo.com/1af97a1a58ac07e612b17611f487b5aa.png)](https://gyazo.com/1af97a1a58ac07e612b17611f487b5aa)
+[![Image from Gyazo](https://i.gyazo.com/b113d46c6696f88fac6dfbabde7c46d7.png)](https://gyazo.com/b113d46c6696f88fac6dfbabde7c46d7)
 
 - 使用したツール
  https://rp.mockplus.com/
