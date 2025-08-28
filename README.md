@@ -136,7 +136,7 @@
 
 
  画面遷移
-https://drive.google.com/file/d/1brv-Jezs-_k4Xb86cW1daH97DM1nYe_x/view?usp=sharing
+[![Image from Gyazo](https://i.gyazo.com/1af97a1a58ac07e612b17611f487b5aa.png)](https://gyazo.com/1af97a1a58ac07e612b17611f487b5aa)
 
 - 使用したツール
  https://rp.mockplus.com/
@@ -156,3 +156,5 @@ https://drive.google.com/file/d/1brv-Jezs-_k4Xb86cW1daH97DM1nYe_x/view?usp=shari
 - [ ] 変換ボタン／送信トリガー
 - [ ] クリアボタン機能
 - [ ] エラーハンドリング
+
+
