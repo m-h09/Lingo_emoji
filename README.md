@@ -136,7 +136,7 @@
 
 
  画面遷移
- https://app.diagrams.net/?libs=general;er#G1brv-Jezs-_k4Xb86cW1daH97DM1nYe_x#%7B%22pageId%22%3A%22d9trG2eRD1ISVf6iifdB%22%7D
+https://drive.google.com/file/d/1brv-Jezs-_k4Xb86cW1daH97DM1nYe_x/view?usp=sharing
 
 - 使用したツール
  https://rp.mockplus.com/
