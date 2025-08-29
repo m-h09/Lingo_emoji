@@ -136,7 +136,12 @@
 
 
  画面遷移
-[![Image from Gyazo](https://i.gyazo.com/b113d46c6696f88fac6dfbabde7c46d7.png)](https://gyazo.com/b113d46c6696f88fac6dfbabde7c46d7)
+ - スマホ
+  [![Image from Gyazo](https://i.gyazo.com/2c7c6fd72d1675094a5aff1f55b79a46.png)](https://gyazo.com/2c7c6fd72d1675094a5aff1f55b79a46)
+
+  - PC版
+  [![Image from Gyazo](https://i.gyazo.com/ae046dc1d918707fd889b1d4412b181d.png)](https://gyazo.com/ae046dc1d918707fd889b1d4412b181d)
+
 
 - 使用したツール
  https://rp.mockplus.com/
