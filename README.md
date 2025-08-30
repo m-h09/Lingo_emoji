@@ -136,11 +136,11 @@
 
 
  画面遷移
- - スマホ
+ - スマホ（修正未）
   [![Image from Gyazo](https://i.gyazo.com/2c7c6fd72d1675094a5aff1f55b79a46.png)](https://gyazo.com/2c7c6fd72d1675094a5aff1f55b79a46)
 
-  - PC版
-  [![Image from Gyazo](https://i.gyazo.com/ae046dc1d918707fd889b1d4412b181d.png)](https://gyazo.com/ae046dc1d918707fd889b1d4412b181d)
+  - PC版（修正済み、サービス利用ガイドあり）
+[![Image from Gyazo](https://i.gyazo.com/4de40a9b675dc9e7ec82789b61caeb97.png)](https://gyazo.com/4de40a9b675dc9e7ec82789b61caeb97)
 
 
 - 使用したツール
