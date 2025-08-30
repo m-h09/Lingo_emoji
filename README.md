@@ -136,8 +136,12 @@
 
 
  画面遷移
- - スマホ（修正未）
-[![Image from Gyazo](https://i.gyazo.com/275dc454c1977a9f8c20fa15451a0ec1.png)](https://gyazo.com/275dc454c1977a9f8c20fa15451a0ec1)
+ - スマホ（修正）みにくいようなので二画面に分けました
+[![Image from Gyazo](https://i.gyazo.com/72e42b4a6f970a5fc33d754dc94b7000.png)](https://gyazo.com/72e42b4a6f970a5fc33d754dc94b7000)
+[![Image from Gyazo](https://i.gyazo.com/4b36d770db34a7a0f17b363f6158ffd4.png)](https://gyazo.com/4b36d770db34a7a0f17b363f6158ffd4)
+
+
+
   - PC版（修正済み、サービス利用ガイドあり）
 [![Image from Gyazo](https://i.gyazo.com/4de40a9b675dc9e7ec82789b61caeb97.png)](https://gyazo.com/4de40a9b675dc9e7ec82789b61caeb97)
 
