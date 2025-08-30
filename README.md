@@ -137,8 +137,7 @@
 
  画面遷移
  - スマホ（修正未）
-  [![Image from Gyazo](https://i.gyazo.com/2c7c6fd72d1675094a5aff1f55b79a46.png)](https://gyazo.com/2c7c6fd72d1675094a5aff1f55b79a46)
-
+[![Image from Gyazo](https://i.gyazo.com/275dc454c1977a9f8c20fa15451a0ec1.png)](https://gyazo.com/275dc454c1977a9f8c20fa15451a0ec1)
   - PC版（修正済み、サービス利用ガイドあり）
 [![Image from Gyazo](https://i.gyazo.com/4de40a9b675dc9e7ec82789b61caeb97.png)](https://gyazo.com/4de40a9b675dc9e7ec82789b61caeb97)
 
