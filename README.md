@@ -162,7 +162,7 @@
 - [ ] クリアボタン機能
 - [ ] エラーハンドリング
 
-###ER図
+###　ER図
 [![Image from Gyazo](https://i.gyazo.com/cc72f146831b5934ba5f2adb6f3812cd.png)](https://gyazo.com/cc72f146831b5934ba5f2adb6f3812cd)
 ### 本サービスの概要（700文字以内）
 
