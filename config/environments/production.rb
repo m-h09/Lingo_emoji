@@ -95,6 +95,10 @@ Rails.application.configure do
   # ]
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
-  config.hosts << "lingo-emoji.onrender.com"
+ 
+  config.hosts = [
+    "lingo-emoji.onrender.com",
+    "localhost"
+  ]
   Rails.logger.info "Loaded production.rb with hosts: #{config.hosts.inspect}"
 end
