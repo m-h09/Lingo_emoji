@@ -1,0 +1,66 @@
+<div class="d-flex gap-3 mb-4 mx-auto" style="width:500px">
+  <select class="form-select">
+    <option>絵文字追加</option>
+  </select>
+  <select class="form-select">
+    <option>フォーマル</option>
+  </select>
+  <select class="form-select">
+    <option>強</option>
+  </select>
+</div>
+
+<!-- ラジオボタン-->
+<div class="mb-4 d-flex justify-content-center">
+  <label>
+    <%= radio_button_tag :option, "顔系絵文字なし" %>顔系絵文字なし
+  </label>
+  <label>
+    <%= radio_button_tag :option, "アイコン系なし" %> アイコン系なし
+  </label>
+  <label>
+    <%= radio_button_tag :option, "選択なし", true %> 選択なし
+  </label>
+</div>
+
+<div class="mb-3">
+  <textarea class="form-control border border-dark mt-3" rows="5" placeholder="入力してください"></textarea>
+  <!-- ボタン行：幅の範囲を決める -->
+  <div class="position-relative mx-auto my-3" style="max-width: 900px;">
+    <!-- 中央：変換＋再試行 -->
+    <div class="d-flex justify-content-center align-items-center gap-2">
+      <button type="button" class="btn btn-light border border-dark p-3 mt-2" style="width:300px;">変換</button>
+      <button type="button" class="btn btn-outline-secondary" aria-label="再試行">
+        <i class="bi bi-arrow-clockwise"></i>
+      </button>
+    </div>
+
+    <button
+      type="button"
+      class="btn btn-outline-secondary border border-dark position-absolute end-0 top-50 translate-middle-y me-2">
+      クリア
+    </button>
+  </div>
+</div>
+
+
+<div class="px-4 py-3 container rounded position-relative mt-4" style="background-color:#87cefa;">
+  <!-- 出力結果タイトル -->
+  <h4 class="mb-0">
+    <label class="mt-0 mb-0 form-label text-center d-block" style="font-weight: bold;">出力結果</label>
+  </h4>
+
+  <!-- コピーアイコン（右上配置） -->
+  <button id="copy-btn" type="button" class="btn btn-sm btn-light position-absolute top-0 end-0 me-3 mt-3">
+    <i class="bi bi-clipboard"></i>
+  </button>
+
+  <br>
+
+  <!-- 出力結果テキストエリア -->
+  <%= text_area_tag :output, @output,
+        class: "form-control pt-0",
+        rows: 5,
+        readonly: true,
+        id: "output-field" %>
+</div>
