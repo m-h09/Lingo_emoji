@@ -13,6 +13,7 @@ RUN gem install bundler -N && bundle install
 
 # アプリ本体
 COPY . .
-
+# アセットプリコンパイル（ダミーキーを指定）
+RUN SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile
 EXPOSE 3000
 CMD ["bash","-lc","bundle exec rails db:prepare && bundle exec rails server -b 0.0.0.0 -p 3000"]
