@@ -1,6 +1,7 @@
 FROM ruby:3.2.3
 ENV LANG C.UTF-8
 ENV TZ Asia/Tokyo
+ENV RAILS_ENV=production
 
 # pg のビルドに必要
 RUN apt-get update -qq && apt-get install -y -qq build-essential libpq-dev
