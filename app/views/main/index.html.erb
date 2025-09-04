@@ -1,0 +1,38 @@
+<!-- app/views/main/index.html.erb （全部置き換え）-->
+<body class="bg-center" style="background-color: #fffff0">
+  <div class="mt-5 text-center container rounded mx-auto w-50" style="background-color: #00bfff">
+    <h1 class="text-white">EMOJI関西弁変換</h1>
+  </div>
+  <div class="container py-4">
+    <div class="nav nav-pills justify-content-center gap-3 mb-5" id="pills-tab" role="tablist">
+      <button class="nav-link active"
+              id="pills-auto-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-auto"
+              type="button" role="tab"
+              aria-controls="pills-auto" aria-selected="true"
+              data-turbo="false">
+        自動生成
+      </button>
+
+      <button class="nav-link"
+              id="pills-templates-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-templates"
+              type="button" role="tab"
+              aria-controls="pills-templates" aria-selected="false"
+              data-turbo="false">
+        テンプレート
+      </button>
+    </div>
+
+    <div class="tab-content border border-top-0 rounded-bottom py-2 mx-auto" id="pills-tabContent" style="width:900px">
+      <div class="tab-pane fade show active" id="pills-auto" role="tabpanel" aria-labelledby="pills-auto-tab" tabindex="0">
+        <%= render "auto_generation" %>
+      </div>
+      <div class="tab-pane fade" id="pills-templates" role="tabpanel" aria-labelledby="pills-templates-tab" tabindex="0">
+        <%= render "templates" %>
+      </div>
+    </div>
+  </div>
+</body>
