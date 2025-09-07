@@ -13,5 +13,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   get "welcome", to: "rails/welcome#index"
   root "main#index"
-  post "/convert", to:"main#convert"
+  post "/convert", to: "main#convert"
 end
