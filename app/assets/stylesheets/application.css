@@ -13,3 +13,47 @@
  *= require_tree .
  *= require_self
  */
+
+#copy-btn {
+  position: absolute;
+  background-color:transparent;
+  border: none;
+  padding: 4px 8px;
+  top: 75px;
+  right: 35px;
+  cursor: pointer;
+  padding: 0;
+}
+#txt {
+  min-height: 8rem;
+  border: 1px solid black;
+  padding: 0.5rem;
+  border-radius:4px ;
+  background-color: #fff;
+}
+#copy-toast {
+  position: absolute;
+  top: 39px;
+  right: 12px;
+  background: rgba(0,0,0,.75);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  display: none;
+}
+.template-select {
+  text-align: center;
+}
+.bl_selectCont {
+  display: none;
+}
+.bl_selectCont.is_active {
+  display: revert;
+}
+
+.ly_cont{
+  display: grid;
+  place-content: center;
+  padding-block: 50px;
+}
