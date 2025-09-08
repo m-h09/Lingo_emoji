@@ -1,13 +1,7 @@
 <div class="d-flex gap-3 mb-4 mx-auto" style="width:500px">
-  <select class="form-select">
-    <option class="text-center">絵文字追加</option>
-  </select>
-  <select class="form-select">
-    <option class="text-center">フォーマル</option>
-  </select>
-  <select class="form-select">
-    <option class="text-center">強</option>
-  </select>
+  <%= select_tag :emoji, options_for_select(Translation.emojis.keys.map { |k| [t("enums.translation.emoji.#{k}"), k] }), class: "form-select" %>
+  <%= select_tag :tone, options_for_select(Translation.tones.keys.map { |k| [t("enums.translation.tone.#{k}"),k] }), class: "form-select" %>
+  <%= select_tag :strength, options_for_select(Translation.strengths.keys.map { |k| [t("enums.translation.strength.#{k}"),k] }), class: "form-select" %>
 </div>
 
 <!-- ラジオボタン-->

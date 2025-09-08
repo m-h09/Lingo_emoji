@@ -1,0 +1,15 @@
+ja:  
+  enums:
+    translation:
+      emoji:
+        add_emoji: "絵文字追加"
+        kansai: "関西弁変換"
+        emoji_kansai: "絵文字＋関西弁"
+      tone:
+        formal: "フォーマル"
+        casual: "カジュアル"
+        frank: "フランク"
+      strength:
+        weak: "弱"
+        medium: "中"
+        strong: "強"

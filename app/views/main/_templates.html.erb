@@ -1,10 +1,6 @@
 <div class="d-flex gap-3 mb-4 mx-auto" style="width:500px">
-  <select class="form-select">
-    <option class="text-center">絵文字追加</option>
-  </select>
-  <select class="form-select">
-    <option class="text-center">フォーマル</option>
-  </select>
+  <%= select_tag :emoji, options_for_select(Translation.emojis.keys.map { |k| [t("enums.translation.emoji.#{k}"), k] }), class: "form-select" %>
+  <%= select_tag :tone, options_for_select(Translation.tones.keys.map { |k| [t("enums.translation.tone.#{k}"),k] }), class: "form-select" %>
 </div>
 
 <!-- ラジオボタン-->
@@ -44,9 +40,9 @@
       <%= render "templates/ivent" %>
     </div>
   </div>
-  <div class="bl_selectCont" id="greeting">
+  <div class="bl_selectCont" id="invitation">
     <div class="bl_selectCont_body">
-      <%= render "templates/greeting" %>
+      <%= render "templates/invitation" %>
     </div>
   </div>
   <div class="bl_selectCont" id="SNS">
