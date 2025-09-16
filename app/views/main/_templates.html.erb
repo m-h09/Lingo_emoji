@@ -1,23 +1,16 @@
 <div class="d-flex gap-3 mb-4 mx-auto" style="width:500px">
-  <select class="form-select">
-    <option class="text-center">絵文字追加</option>
-  </select>
-  <select class="form-select">
-    <option class="text-center">フォーマル</option>
-  </select>
+  <%= select_tag :emoji, options_for_select(Translation.emojis.keys.map { |key| [t("enums.translation.emoji.#{key}"), key] }, params[:emoji]), class: "form-select" %>
+  <%= select_tag :tone, options_for_select(Translation.tones.keys.map { |key| [t("enums.translation.tone.#{key}"), key] }, params[:tone]), class: "form-select" %>
 </div>
 
 <!-- ラジオボタン-->
 <div class="mb-4 d-flex justify-content-center">
-  <label>
-    <%= radio_button_tag :option, "顔系絵文字なし" %>顔系絵文字なし
-  </label>
-  <label>
-    <%= radio_button_tag :option, "アイコン系なし" %> アイコン系なし
-  </label>
-  <label>
-    <%= radio_button_tag :option, "選択なし", true %> 選択なし
-  </label>
+  <% Translation.radio_emojis.keys.each do |key| %>
+    <label class="me-3">
+      <%= radio_button_tag :radio_emoji, key, params[:radio_emoji] == key %>
+      <%= t("enums.translation.radio_emoji.#{key}") %>
+    </label>
+  <% end %>
 </div>
 
 <div class="ly_cont">
@@ -26,7 +19,7 @@
       <option value="" disabled>選択してください</option>
       <option value="daily" class="text-center" >日常応答</option>
       <option value="ivent" class="text-center" >イベント</option>
-      <option value="greeting" class="text-center" >挨拶</option>
+      <option value="greeting" class="text-center" >お誘い・関心</option>
       <option value="SNS" class="text-center" >SNS</option>
       <option value="birthday" class="text-center" >誕生日</option>
     </select>
@@ -44,9 +37,9 @@
       <%= render "templates/ivent" %>
     </div>
   </div>
-  <div class="bl_selectCont" id="greeting">
+  <div class="bl_selectCont" id="invitation">
     <div class="bl_selectCont_body">
-      <%= render "templates/greeting" %>
+      <%= render "templates/invitation" %>
     </div>
   </div>
   <div class="bl_selectCont" id="SNS">
@@ -60,6 +53,3 @@
     </div>
   </div>
 </div>
-
-
-

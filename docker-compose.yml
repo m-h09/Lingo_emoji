@@ -19,7 +19,8 @@ services:
       - "3000:3000"
     environment:
       RAILS_ENV: development
-      DATABASE_URL: postgres://postgres:password@db:5432/lingo_emoji_development
+      DATABASE_URL: postgres://postgres:password@db:5432/Lingo_emoji_development
+      OPENAI_ACCESS_TOKEN: ${OPENAI_ACCESS_TOKEN}
     volumes:
       - .:/app
     depends_on:
