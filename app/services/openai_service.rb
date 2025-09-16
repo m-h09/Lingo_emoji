@@ -1,0 +1,2 @@
+class OpenaiService
+end
