@@ -49,3 +49,39 @@ function initSelectToggle() {
 }
 document.addEventListener("turbo:load", initSelectToggle);
 document.addEventListener("DOMContentLoaded", initSelectToggle);
+
+//クリアボタン処理
+document.addEventListener("DOMContentLoaded", () => {
+  const clearBtn   = document.getElementById("clear-btn");
+  const textArea   = document.querySelector("textarea[name='base_prompt']");
+  const outputDiv  = document.getElementById("txt-body");
+
+  if (clearBtn) {
+    clearBtn.addEventListener("click", () => {
+      if (textArea) textArea.value = "";        // 入力欄を空にする
+      if (outputDiv) outputDiv.textContent = ""; // 出力結果も空にする
+    });
+  }
+});
+
+// リロード時だけリセット
+// リロード時だけリセット（新しい書き方）
+window.addEventListener("load", () => {
+  const [navEntry] = performance.getEntriesByType("navigation");
+  if (navEntry && navEntry.type === "reload") {
+    const textArea = document.querySelector("textarea[name='base_prompt']");
+    const outputDiv = document.getElementById("txt-body");
+    if (textArea) textArea.value = ""; // 入力欄を空にする
+    if (outputDiv) outputDiv.textContent = ""; // 出力結果も空にする
+  }
+});
+
+// 戻る/進む など BFCache 復元時もリセット
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    const textArea = document.querySelector("textarea[name='base_prompt']");
+    const outputDiv = document.getElementById("txt-body");
+    if (textArea) textArea.value = "";
+    if (outputDiv) outputDiv.textContent = "";
+  }
+});

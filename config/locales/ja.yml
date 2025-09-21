@@ -11,7 +11,7 @@ ja:
         frank: "フランク"
       strength:
         weak: "弱"
-        normal: "普通"
+        medium: "中 "
         strong: "強"
       radio_emoji:
         no_kaomoji: "顔系絵文字なし"
