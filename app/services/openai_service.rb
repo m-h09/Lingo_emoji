@@ -4,7 +4,7 @@ class OpenaiService
     response = client.chat(
       parameters: {
         model: "gpt-4o-mini",
-        messages: [{ role: "user", content: prompt }],
+        messages: [ { role: "user", content: prompt } ],
         temperature: 1.2
       }
     )

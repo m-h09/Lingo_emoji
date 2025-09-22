@@ -136,8 +136,8 @@ class MainController < ApplicationController
         result = OpenaiService.generate_text(prompt)
         # 文頭と文末にある「」を削除
         # 文頭・文末にある「や」などの余計な括弧を削除
-        result = result.gsub(/\A[「]+|[」]+$/, '')
-        result = result.gsub(/[「」]/, '')
+        result = result.gsub(/\A[「]+|[」]+$/, "")
+        result = result.gsub(/[「」]/, "")
         @input_text = base_prompt
         @output = result
       rescue Timeout::Error
