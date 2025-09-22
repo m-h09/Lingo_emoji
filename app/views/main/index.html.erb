@@ -3,6 +3,12 @@
   <div class="mt-5 text-center container rounded mx-auto w-50" style="background-color: #00bfff ">
     <h1 class="text-white">EMOJI関西弁変換</h1>
   </div>
+  <% if @global_error.present? %>
+    <p style="color:red; font-weight:bold;">【全体エラー】<%= @global_error %></p>
+  <% end %>
+  <% if @api_error.present? %>
+    <p style="color:red; font-weight:bold;">【APIエラー】<%= @api_error %></p>
+  <% end %>
   <div class="container py-4">
     <div class="nav nav-pills justify-content-center gap-3 mb-5" id="pills-tab" role="tablist">
       <button class="nav-link active"

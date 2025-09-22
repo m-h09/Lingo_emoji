@@ -15,6 +15,9 @@
       </label>
     <% end %>
   </div>
+  <% if @input_error.present? %>
+    <p style="color:red; font-weight:bold;"><%= @input_error %></p>
+  <% end %>
 
 
 <div class="mb-3">
@@ -44,8 +47,8 @@
   <br>
 
   <div id="txt">
-    <% if @error_message.present? %>
-      <p style="color:red; font-weight:bold;"><%= @error_message %></p>
+    <% if @output_error.present? %>
+      <p style="color:red; font-weight:bold;"><%= @output_error %></p>
     <% else %>
       <div id="txt-body"><%= output_text %></div>
     <% end %>

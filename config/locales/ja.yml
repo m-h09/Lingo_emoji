@@ -2,7 +2,7 @@ ja:
   enums:
     translation:
       emoji:
-        add_emoji: "絵文字を追加"
+        add: "絵文字を追加"
         kansai: "関西弁変換"
         emoji_kansai: "絵文字＋関西弁変換"
       tone:
