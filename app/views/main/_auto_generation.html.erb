@@ -1,13 +1,13 @@
 <%= form_with url: main_index_path, method: :post, local: true, html: { autocomplete: "off" } do %>
   <div class="d-flex gap-3 mb-4 mx-auto" style="width:500px">
-    <%= select_tag :emoji, options_for_select(Translation.emojis.keys.map { |key| [t("enums.translation.emoji.#{key}"), key] }, params[:emoji]), class: "form-select" %>
+    <%= select_tag :emoji, options_for_select(Translation.emojis.keys.map {|key| [t("enums.translation.emoji.#{key}"), key] }, params[:emoji]), class: "form-select", id: "emoji-select" %>
     <%= select_tag :tone, options_for_select(Translation.tones.keys.map { |key| [t("enums.translation.tone.#{key}"), key] }, params[:tone]), class: "form-select" %>
     <%= select_tag :strength, options_for_select(Translation.strengths.keys.map { |key| [t("enums.translation.strength.#{key}"), key] }, params[:strength]), class: "form-select" %>
   </div>
 
 
   <!-- ラジオボタン-->
-  <div class="mb-4 d-flex justify-content-center">
+  <div id="emoji-radio-group" class="mb-4  justify-content-center">
     <% Translation.radio_emojis.keys.each do |key| %>
       <label class="me-3">
         <%= radio_button_tag :radio_emoji, key, params[:radio_emoji] == key %>
@@ -16,7 +16,9 @@
     <% end %>
   </div>
   <% if @input_error.present? %>
-    <p style="color:red; font-weight:bold;"><%= @input_error %></p>
+    <div class="text-start mb-1">
+      <p style="color:red; font-weight:bold;">【入力エラー】<%= @input_error %></p>
+    </div>
   <% end %>
 
 

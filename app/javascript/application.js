@@ -1,3 +1,4 @@
+console.log("✅ application.js loaded");
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import "bootstrap"
 (function () {
@@ -84,4 +85,26 @@ window.addEventListener("pageshow", (event) => {
     if (textArea) textArea.value = "";
     if (outputDiv) outputDiv.textContent = "";
   }
+});
+// セレクトメニューの値によってラジオボタンの表示/非表示を切り替え
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+  const emojiSelect = document.getElementById("emoji-select");
+  const radioGroup = document.getElementById("emoji-radio-group");
+
+  if (!emojiSelect || !radioGroup) return;
+
+  function toggleRadioGroup() {
+    console.log("切り替え実行, 現在の値:", emojiSelect.value);
+    if (emojiSelect.value === "kansai") {
+      radioGroup.style.display = "none";  // 非表示
+    } else {
+      radioGroup.style.display = "flex";  // 表示
+    }
+  }
+
+  toggleRadioGroup(); // 初期表示
+  emojiSelect.addEventListener("change", toggleRadioGroup); // 変更時
 });
