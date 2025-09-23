@@ -50,9 +50,5 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
-      - name: Check RuboCop version
-        run: bin/rubocop -v
-
-
       - name: Lint code for consistent style
-        run: bin/rubocop -f github --config .rubocop.yml
+        run: bundle exec rubocop -f github --config .rubocop.yml
