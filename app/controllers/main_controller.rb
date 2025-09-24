@@ -13,7 +13,7 @@ class MainController < ApplicationController
       format.html { render partial: "templates/list", locals: { templates: @templates } }
     end
   end
-  
+
   def create
     base_prompt = params[:base_prompt]
 

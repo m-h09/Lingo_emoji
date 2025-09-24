@@ -1,6 +1,6 @@
 class EmojiConverterService
-  FACE_EMOJIS = ["😥","😊","😂","🤣"].freeze
-  ICON_EMOJIS = ["📚","🎉","🚗","🍣"].freeze
+  FACE_EMOJIS = [ "😥", "😊", "😂", "🤣" ].freeze
+  ICON_EMOJIS = [ "📚", "🎉", "🚗", "🍣" ].freeze
 
   def initialize(base_prompt:, style:, tone:, emoji:, radio_emoji:, strength:)
     @base_prompt = base_prompt
@@ -61,7 +61,7 @@ class EmojiConverterService
     end
   end
 
-    # 絵文字だけ
+  # 絵文字だけ
   def strength_emoji_rule
     case @strength
     when "weak"

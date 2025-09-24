@@ -7,7 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-#　絵文字追加・フォーマル・日常
+# 　絵文字追加・フォーマル・日常
 MessageTemplate.create!([
   { category: :daily, emoji: :add, tone: :formal, content: "今日どうされてます？😊" },
   { category: :daily, emoji: :add, tone: :formal, content: "最近どうですか？🌱" },
@@ -20,7 +20,7 @@ MessageTemplate.create!([
   { category: :daily, emoji: :add, tone: :formal, content: "ちょっとお尋ねしてもいいですか？❓" },
   { category: :daily, emoji: :add, tone: :formal, content: "また話しましょうね✨" }
 ])
-  # 絵文字追加・カジュアル・日常
+# 絵文字追加・カジュアル・日常
 MessageTemplate.create!([
   { category: :daily, emoji: :add, tone: :casual, content: "了解！助かる〜✨" },
   { category: :daily, emoji: :add, tone: :casual, content: "ありがとう🎶また連絡するね📩" },
@@ -126,7 +126,7 @@ MessageTemplate.create!([
   { category: :invitation, emoji: :add, tone: :formal, content: "最近、何をされてますか？😊" },
   { category: :invitation, emoji: :add, tone: :formal, content: "お休みの日はどう過ごされてますか？🌞" },
   { category: :invitation, emoji: :add, tone: :formal, content: "今日はどのように過ごしていますか？🌼" },
-  { category: :invitation, emoji: :add, tone: :formal, content: "お仕事終わり、何されていますか？🌙" },
+  { category: :invitation, emoji: :add, tone: :formal, content: "お仕事終わり、何されていますか？🌙" }
 ])
 
 # 絵文字追加　カジュアル　お誘い・関心
