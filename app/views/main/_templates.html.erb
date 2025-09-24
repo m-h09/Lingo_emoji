@@ -1,55 +1,19 @@
-<div class="d-flex gap-3 mb-4 mx-auto" style="width:500px">
-  <%= select_tag :emoji, options_for_select(Translation.emojis.keys.map { |key| [t("enums.translation.emoji.#{key}"), key] }, params[:emoji]), class: "form-select" %>
-  <%= select_tag :tone, options_for_select(Translation.tones.keys.map { |key| [t("enums.translation.tone.#{key}"), key] }, params[:tone]), class: "form-select" %>
+<div class="d-flex gap-3 mb-4 justify-content-center flex-wrap">
+  <%= select_tag :emoji, options_for_select(MessageTemplate.emojis.keys.map { |key|
+      [t("enums.message_template.emoji.#{key}"), key]
+    }, params[:emoji]), class: "form-select w-auto", id: "js-emoji" %>
+
+  <%= select_tag :tone, options_for_select(MessageTemplate.tones.keys.map { |key|
+      [t("enums.message_template.tone.#{key}"), key]
+    }, params[:tone]), class: "form-select w-auto", id: "js-tone" %>
 </div>
 
-<!-- ラジオボタン-->
-<div class="mb-4 d-flex justify-content-center">
-  <% Translation.radio_emojis.keys.each do |key| %>
-    <label class="me-3">
-      <%= radio_button_tag :radio_emoji, key, params[:radio_emoji] == key %>
-      <%= t("enums.translation.radio_emoji.#{key}") %>
-    </label>
-  <% end %>
+<div class="d-flex mb-3 justify-content-center">
+  <%= select_tag :category, options_for_select(MessageTemplate.categories.keys.map { |key|
+      [t("enums.list.#{key}"), key]
+    }, params[:category]), prompt: "選択してください", class: "form-select w-auto", id: "js-category" %>
 </div>
 
-<div class="ly_cont">
-  <div class="bl_selectToggle_wrapper">
-    <select class="bl_selectToggle" id="js_select-Toggle">
-      <option value="" disabled>選択してください</option>
-      <option value="daily" class="text-center" >日常応答</option>
-      <option value="ivent" class="text-center" >イベント</option>
-      <option value="greeting" class="text-center" >お誘い・関心</option>
-      <option value="SNS" class="text-center" >SNS</option>
-      <option value="birthday" class="text-center" >誕生日</option>
-    </select>
-  </div>
-</div>
-<div class="template-select">
-  <div class="bl_selectCont" id="daily">
-    <div class="bl_selectCont_body">
-      <p><%= render "templates/daily" %></p>
-    </div>
-  </div>
-
-  <div class="bl_selectCont" id="ivent">
-    <div class="bl_selectCont_body">
-      <%= render "templates/ivent" %>
-    </div>
-  </div>
-  <div class="bl_selectCont" id="invitation">
-    <div class="bl_selectCont_body">
-      <%= render "templates/invitation" %>
-    </div>
-  </div>
-  <div class="bl_selectCont" id="SNS">
-    <div class="bl_selectCont_body">
-      <%= render "templates/sns" %>
-    </div>
-  </div>
-  <div class="bl_selectCont" id="birthday">
-    <div class="bl_selectCont_body">
-      <%= render "templates/birthday" %>
-    </div>
-  </div>
+<div id="templates-list">
+  <%= render partial: "templates/list", locals: { templates: @templates || [] } %>
 </div>

@@ -1,13 +1,13 @@
 <%= form_with url: main_index_path, method: :post, local: true, html: { autocomplete: "off" } do %>
   <div class="d-flex gap-3 mb-4 mx-auto" style="width:500px">
-    <%= select_tag :emoji, options_for_select(Translation.emojis.keys.map { |key| [t("enums.translation.emoji.#{key}"), key] }, params[:emoji]), class: "form-select" %>
+    <%= select_tag :emoji, options_for_select(Translation.emojis.keys.map {|key| [t("enums.translation.emoji.#{key}"), key] }, params[:emoji]), class: "form-select", id: "emoji-select" %>
     <%= select_tag :tone, options_for_select(Translation.tones.keys.map { |key| [t("enums.translation.tone.#{key}"), key] }, params[:tone]), class: "form-select" %>
     <%= select_tag :strength, options_for_select(Translation.strengths.keys.map { |key| [t("enums.translation.strength.#{key}"), key] }, params[:strength]), class: "form-select" %>
   </div>
 
 
   <!-- ラジオボタン-->
-  <div class="mb-4 d-flex justify-content-center">
+  <div id="emoji-radio-group" class="mb-4  justify-content-center">
     <% Translation.radio_emojis.keys.each do |key| %>
       <label class="me-3">
         <%= radio_button_tag :radio_emoji, key, params[:radio_emoji] == key %>
@@ -16,7 +16,9 @@
     <% end %>
   </div>
   <% if @input_error.present? %>
-    <p style="color:red; font-weight:bold;"><%= @input_error %></p>
+    <div class="text-start mb-1">
+      <p style="color:red; font-weight:bold;">【入力エラー】<%= @input_error %></p>
+    </div>
   <% end %>
 
 
@@ -46,17 +48,22 @@
 
   <br>
 
-  <div id="txt">
+  <div id="txt" class="copy-wrapper position-relative bg-white p-3 rounded">
     <% if @output_error.present? %>
       <p style="color:red; font-weight:bold;"><%= @output_error %></p>
     <% else %>
-      <div id="txt-body"><%= output_text %></div>
+      <div id="txt-body" class="mb-0"><%= output_text %></div>
     <% end %>
 
-    <button id="copy-btn" type="button" aria-label="コピー">
-      <%= image_tag "copy_icon_128895.svg", alt: "コピーする" %>
+    <!-- 右上に固定されたコピーアイコン -->
+    <button
+      class="copy-btn btn btn-link p-0 position-absolute copy-btn-abs"
+      type="button" aria-label="コピー"
+      data-content="<%= output_text %>">
+      <%= image_tag "copy_icon_128895.svg", alt: "コピーする", style: "width:20px; height:20px;" %>
     </button>
 
-    <div id="copy-toast">コピーしました</div>
+    <!-- アイコンの左横に小さく出るトースト -->
+    <div class="copy-toast">コピーしました</div>
   </div>
 </div>

@@ -57,3 +57,49 @@
   place-content: center;
   padding-block: 50px;
 }
+
+/*　自動生成用　*/
+/* 出力エリア用 */
+.copy-wrapper { position: relative; }
+
+/* アイコンを右上に固定 */
+.copy-btn-abs {
+  top: .5rem;
+  right: .5rem;
+}
+
+/* トーストをアイコンの左横に表示（初期は非表示） */
+.copy-toast {
+  position: absolute;
+  right: .5rem;
+  top: -1.8rem;
+  background: #fff;          /* 白背景 */
+  color: #333;               /* 文字色は濃いグレー */
+  padding: .2rem .5rem;
+  border-radius: .25rem;
+  font-size: .75rem;
+  line-height: 1.2;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15); /* 少し影をつけて見やすく */
+  display: none;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+/* ✅ コピーボタンを枠なしにして馴染ませる */
+.copy-btn {
+  border: none;
+  background: transparent;   /* 背景透明 */
+  padding: 0;
+  cursor: pointer;
+}
+
+.copy-btn img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;              /* 少し馴染むように薄める */
+  transition: opacity 0.2s;
+}
+
+.copy-btn img:hover {
+  opacity: 1;                /* ホバー時ははっきり */
+}
