@@ -1,35 +1,13 @@
 console.log("✅ application.js loaded");
-// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "bootstrap"
-(function () {
-  function showToast() {
-    const t = document.getElementById("copy-toast");
-    if (!t) return;
-    t.style.display = "block";
-    setTimeout(() => (t.style.display = "none"), 1500);
-  }
+import "bootstrap";
 
-  function init() {
-    const txt = document.getElementById("txt-body");
-    const btn = document.getElementById("copy-btn");
-    if (!txt || !btn) return;
+document.addEventListener("turbo:load", () => {
+  console.log("🎯 turbo:load fired");
+});
 
-    btn.addEventListener("click", async () => {
-      try {
-        // https or localhost なら isSecureContext は true
-        if (!window.isSecureContext) throw new Error("insecure");
-        await navigator.clipboard.writeText((txt.textContent || "").trim());
-        showToast();
-      } catch (e) {
-        // 予期せぬ失敗だけ拾う（権限拒否など）
-        console.error("copy failed:", e);
-      }
-    });
-  }
-
-  document.addEventListener("turbo:load", init);
-  document.addEventListener("DOMContentLoaded", init);
-})();
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("🎯 DOMContentLoaded fired");
+});
 
 function initSelectToggle() {
   const selectToggle = document.getElementById("js_select-Toggle");
@@ -66,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // リロード時だけリセット
-// リロード時だけリセット（新しい書き方）
 window.addEventListener("load", () => {
   const [navEntry] = performance.getEntriesByType("navigation");
   if (navEntry && navEntry.type === "reload") {
@@ -107,4 +84,94 @@ document.addEventListener("DOMContentLoaded", () => {
 
   toggleRadioGroup(); // 初期表示
   emojiSelect.addEventListener("change", toggleRadioGroup); // 変更時
+});
+
+function initTemplates() {
+  const emoji = document.getElementById("js-emoji");
+  const tone = document.getElementById("js-tone");
+  const category = document.getElementById("js-category");
+  const list = document.getElementById("templates-list");
+
+  if (!emoji || !tone || !category || !list) return;
+
+  function fetchTemplates() {
+    console.log("🎯 fetchTemplates called");
+    console.log("emoji:", emoji.value, "tone:", tone.value, "category:", category.value);
+
+    const params = new URLSearchParams({
+      emoji: emoji.value,
+      tone: tone.value,
+      category: category.value
+    });
+
+    fetch(`/templates?${params.toString()}`, {
+      headers: { "Accept": "text/html" }
+    })
+      .then(res => res.text())
+      .then(html => {
+        console.log("🎯 fetch success, updating templates-list");
+        list.innerHTML = html;
+        attachCopyHandlers();
+      })
+      .catch(err => console.error("fetch failed:", err));
+  }
+
+  // change イベントにバインド
+  [emoji, tone, category].forEach(sel => {
+    sel.addEventListener("change", fetchTemplates);
+  });
+}
+
+// Turboと通常ロード両方で呼ぶ
+document.addEventListener("turbo:load", initTemplates);
+document.addEventListener("DOMContentLoaded", initTemplates);
+
+//コピー処理　テンプレートよう
+function attachCopyHandlers() {
+  const buttons = document.querySelectorAll(".copy-btn");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      try {
+        const content = btn.getAttribute("data-content") || "";
+        const toast = btn.closest(".copy-wrapper")?.querySelector(".copy-toast");
+
+        if (!window.isSecureContext) throw new Error("insecure");
+        await navigator.clipboard.writeText(content.trim());
+
+        if (toast) {
+          toast.style.display = "block";
+          setTimeout(() => {
+            toast.style.display = "none";
+          }, 1500);
+        }
+      } catch (e) {
+        console.error("copy failed:", e);
+      }
+    });
+  });
+}
+
+document.addEventListener("turbo:load", attachCopyHandlers);
+document.addEventListener("DOMContentLoaded", attachCopyHandlers);
+
+// 自動生成エリアのコピー処理
+document.addEventListener("turbo:load", () => {
+  const btn = document.getElementById("copy-btn");
+  const txt = document.getElementById("txt-body");
+  const toast = document.getElementById("copy-toast");
+
+  if (btn && txt) {
+    btn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(txt.textContent.trim());
+        if (toast) {
+          toast.style.display = "block";
+          setTimeout(() => { toast.style.display = "none"; }, 1500);
+        }
+      } catch (err) {
+        console.error("copy failed:", err);
+      }
+    });
+  }
 });

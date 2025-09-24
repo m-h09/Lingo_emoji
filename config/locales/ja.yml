@@ -24,6 +24,9 @@ ja:
       tone:
         formal: "フォーマル"
         casual: "カジュアル"
-      radio_emoji:
-        no_kaomoji: "顔系絵文字なし"
-        nothing: "選択なし"
+    list:
+      daily: "日常"
+      reaction: "応答・リアクション"
+      invitation: "お誘い・関心"
+      sns: "SNS"
+      check_question: "確認・質問"

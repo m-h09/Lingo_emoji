@@ -1,6 +1,19 @@
 class MainController < ApplicationController
   def index; end
 
+  def templates
+    @templates = MessageTemplate.where(
+      emoji: params[:emoji],
+      tone: params[:tone],
+      category: params[:category]
+    ).limit(10)
+
+    # JSリクエストなら部分テンプレートだけ返す
+    respond_to do |format|
+      format.html { render partial: "templates/list", locals: { templates: @templates } }
+    end
+  end
+  
   def create
     base_prompt = params[:base_prompt]
 

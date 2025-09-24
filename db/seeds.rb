@@ -21,6 +21,7 @@ MessageTemplate.create!([
   { category: :daily, emoji: :add, tone: :formal, content: "また話しましょうね✨" }
 ])
   # 絵文字追加・カジュアル・日常
+MessageTemplate.create!([
   { category: :daily, emoji: :add, tone: :casual, content: "了解！助かる〜✨" },
   { category: :daily, emoji: :add, tone: :casual, content: "ありがとう🎶また連絡するね📩" },
   { category: :daily, emoji: :add, tone: :casual, content: "大丈夫👌気にしないで🍀" },
@@ -30,8 +31,8 @@ MessageTemplate.create!([
   { category: :daily, emoji: :add, tone: :casual, content: "助かった🙏ほんとありがとう💡" },
   { category: :daily, emoji: :add, tone: :casual, content: "また遊ぼう‼️楽しみにしてる🌈" },
   { category: :daily, emoji: :add, tone: :casual, content: "ちょうど良かった！助かる〜✨" },
-  { category: :daily, emoji: :add, tone: :casual, content: "了解🙆また連絡する〜！" },
-
+  { category: :daily, emoji: :add, tone: :casual, content: "了解🙆また連絡する〜！" }
+])
   # 関西弁変換・フォーマル・日常
   MessageTemplate.create!([
   { category: :daily, emoji: :kansai, tone: :formal, content: "今日どうしてるん？" },

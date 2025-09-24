@@ -1,0 +1,20 @@
+<table class="table table-striped">
+  <tbody>
+    <% (templates || []).each do |template| %>
+      <tr>
+        <td><%= template.content %></td>
+        <td class="text-end">
+          <div class="copy-wrapper d-inline-flex align-items-center">
+            <button class="copy-btn btn btn-outline-secondary btn-sm"
+                    type="button"
+                    aria-label="コピー"
+                    data-content="<%= template.content %>">
+              <%= image_tag "copy_icon_128895.svg", alt: "コピーする" %>
+            </button>
+            <div class=" ms-2 copy-toast text-success small" style="display:none;">コピーしました</div>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

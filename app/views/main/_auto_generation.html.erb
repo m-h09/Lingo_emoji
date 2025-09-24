@@ -48,17 +48,22 @@
 
   <br>
 
-  <div id="txt">
+  <div id="txt" class="copy-wrapper position-relative bg-white p-3 rounded">
     <% if @output_error.present? %>
       <p style="color:red; font-weight:bold;"><%= @output_error %></p>
     <% else %>
-      <div id="txt-body"><%= output_text %></div>
+      <div id="txt-body" class="mb-0"><%= output_text %></div>
     <% end %>
 
-    <button id="copy-btn" type="button" aria-label="コピー">
-      <%= image_tag "copy_icon_128895.svg", alt: "コピーする" %>
+    <!-- 右上に固定されたコピーアイコン -->
+    <button
+      class="copy-btn btn btn-link p-0 position-absolute copy-btn-abs"
+      type="button" aria-label="コピー"
+      data-content="<%= output_text %>">
+      <%= image_tag "copy_icon_128895.svg", alt: "コピーする", style: "width:20px; height:20px;" %>
     </button>
 
-    <div id="copy-toast">コピーしました</div>
+    <!-- アイコンの左横に小さく出るトースト -->
+    <div class="copy-toast">コピーしました</div>
   </div>
 </div>
