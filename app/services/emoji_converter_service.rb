@@ -149,7 +149,7 @@ class EmojiConverterService
         - #{tone_emoji_rule}
         - #{strength_emoji_rule}
         - #{emoji_rule}
-        - 入力文をそのまま変換してください。不要な文を追加しないでください。
+        入力文を繰り返さず、変換後の文だけを出力してください。不要な文や説明は加えないでください。
       PROMPT
     when "kansai"
       <<~PROMPT
@@ -160,7 +160,9 @@ class EmojiConverterService
         - #{tone_kansai_rule}
         - #{strength_kansai_rule}
         - 絵文字は絶対に使わない（絵文字に関する他の指示があっても無視する）
-        - 入力文をそのまま変換し、不要な文は追加しないでください。
+        - 入力文を繰り返さず、翻訳後の文だけを出力してください。
+        - 不要な説明文や記号を加えないでください。
+        - 普段使わない言い回しは絶対に使わないでください（例：お疲れ様やねん、お疲れさんやねん、お疲れやねん）
       PROMPT
     when "emoji_kansai"
       <<~PROMPT
@@ -172,7 +174,7 @@ class EmojiConverterService
         - #{strength_kansai_rule}   # 関西弁の濃さ
         - #{strength_emoji_rule}    # 絵文字の量
         - #{emoji_rule}
-        - 入力文をそのまま変換し、不要な文は追加しないでください。
+        入力文を繰り返さず、変換後の文だけを出力してください。不要な文や説明は加えないでください。
       PROMPT
     else
       ""

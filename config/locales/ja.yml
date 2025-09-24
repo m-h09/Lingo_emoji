@@ -17,3 +17,13 @@ ja:
         no_kaomoji: "顔系絵文字なし"
         no_icon: "アイコン系なし"
         nothing: "選択なし"
+    message_template:
+      emoji:
+        add: "絵文字追加"
+        kansai: "関西弁変換"
+      tone:
+        formal: "フォーマル"
+        casual: "カジュアル"
+      radio_emoji:
+        no_kaomoji: "顔系絵文字なし"
+        nothing: "選択なし"
