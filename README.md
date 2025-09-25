@@ -128,15 +128,21 @@ Things you may want to cover:
 
 
 
- 画面遷移
+ -画面遷移図
  - スマホ（修正）みにくいようなので二画面に分けました
-[![Image from Gyazo](https://i.gyazo.com/72e42b4a6f970a5fc33d754dc94b7000.png)](https://gyazo.com/72e42b4a6f970a5fc33d754dc94b7000)
-[![Image from Gyazo](https://i.gyazo.com/4b36d770db34a7a0f17b363f6158ffd4.png)](https://gyazo.com/4b36d770db34a7a0f17b363f6158ffd4)
-
+ 利用ガイド
+[![Image from Gyazo](https://i.gyazo.com/f51e030d59d5da45e20db1e96863a193.png)](https://gyazo.com/f51e030d59d5da45e20db1e96863a193)
+全体図
+[![Image from Gyazo](https://i.gyazo.com/6187f5d2ba47cf80359d95de02bdc5d7.png)](https://gyazo.com/6187f5d2ba47cf80359d95de02bdc5d7)
 
 
   - PC版（修正済み、サービス利用ガイドあり）
-[![Image from Gyazo](https://i.gyazo.com/4de40a9b675dc9e7ec82789b61caeb97.png)](https://gyazo.com/4de40a9b675dc9e7ec82789b61caeb97)
+
+利用ガイド
+[![Image from Gyazo](https://i.gyazo.com/cdb8ca1683301ccff69e2c264b93123d.png)](https://gyazo.com/cdb8ca1683301ccff69e2c264b93123d)
+全体図
+[![Image from Gyazo](https://i.gyazo.com/35fe8cc49c6d4cda2cdce34ce6a6afc9.png)](https://gyazo.com/35fe8cc49c6d4cda2cdce34ce6a6afc9)
+
 
 
 - 使用したツール
@@ -159,7 +165,7 @@ Things you may want to cover:
 - [ ] エラーハンドリング
 
 ###　ER図
-[![Image from Gyazo](https://i.gyazo.com/cc72f146831b5934ba5f2adb6f3812cd.png)](https://gyazo.com/cc72f146831b5934ba5f2adb6f3812cd)
+[![Image from Gyazo](https://i.gyazo.com/bff01c53046da691545ac72064efbcb8.png)](https://gyazo.com/bff01c53046da691545ac72064efbcb8)
 ### 本サービスの概要（700文字以内）
 
 「Emoji関西弁変換」は、入力した文章に気軽に絵文字をつけたり、関西弁に変換できるWebサービスです。
