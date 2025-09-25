@@ -14,6 +14,8 @@ class MainController < ApplicationController
     end
   end
 
+  def guide; end
+
   def create
     base_prompt = params[:base_prompt]
 
