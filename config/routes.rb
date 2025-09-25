@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   get "templates", to: "main#templates"
+  get "guide", to: "main#guide"
   get "welcome", to: "rails/welcome#index"
   root "main#index"
   post "/convert", to: "main#convert"
