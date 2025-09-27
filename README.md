@@ -1,25 +1,3 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-
 ## ◾️サービスの利用イメージ
 - SNSに投稿する前に文章を入力 → 「中」モードで変換 → 自然に絵文字が加わり、見栄えのする投稿に
 - 友達へのLINEメッセージ → 「弱」モードで変換 → 控えめに絵文字を付けて自然に気持ちを伝える
@@ -30,7 +8,6 @@ Things you may want to cover:
 
 # ◾️AIが落ちた時の代替え
   - テンプレートを採用
-
 
 ---
 
@@ -68,21 +45,21 @@ Things you may want to cover:
 - テンプレート機能
   - 選択肢
     - 絵文字追加/関西弁変換/絵文字＋関西弁の選択機能
-    - トーン選択（フォーマル/カジュアル/フランク）
-    - 顔系絵文字なし/アイコン系絵文字なし/なし
-    - シーン（日常、応答・リアクション、お誘い・関心、SNS、確認・）
-
+    - トーン選択（フォーマル/カジュアル）
+    - シーン（日常、応答・リアクション、お誘い・関心、SNS、確認・質問）
 
 
 ### 🗒️ 本リリース（機能追加）
-- 履歴保存・比較表示
+- テンプレート機能に自動生成でよく使う言葉を自動保存、または履歴管理、保存できるようにする
 - シェア機能（SNS投稿連携）
+- スマホ対応（レスポンシブ対応、アプリ対応にするかは考え中）
+-　ログイン機能の追加（基本的には無料で利用可能、使用制限あり、テンプレート履歴管理ができるようになる[詳細は考え中]）
+
 
 ### ⭐️ 拡張
 - 音声入力 → 変換 → 絵文字付きテキスト化
-- キーボード拡張版（iOS/Android）」を構想
 - 将来的にはトーンに応じた絵文字選定を目指す
-
+- ログイン・登録＋プラン加入で回数制限なしにできるようにする（本リリースで実装するかは相談したい）
 ---
 
 ## ◾️機能の実装方針予定
@@ -123,8 +100,6 @@ Things you may want to cover:
 
 ## ◾️既存アプリとの違い
  [![Image from Gyazo](https://i.gyazo.com/00afc089bec71657e16e600b91bfdd7b.png)](https://gyazo.com/00afc089bec71657e16e600b91bfdd7b)
-
-
 
 
 
