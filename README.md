@@ -1,25 +1,3 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-
 ## ◾️サービスの利用イメージ
 - SNSに投稿する前に文章を入力 → 「中」モードで変換 → 自然に絵文字が加わり、見栄えのする投稿に
 - 友達へのLINEメッセージ → 「弱」モードで変換 → 控えめに絵文字を付けて自然に気持ちを伝える
@@ -30,7 +8,6 @@ Things you may want to cover:
 
 # ◾️AIが落ちた時の代替え
   - テンプレートを採用
-
 
 ---
 
@@ -68,10 +45,8 @@ Things you may want to cover:
 - テンプレート機能
   - 選択肢
     - 絵文字追加/関西弁変換/絵文字＋関西弁の選択機能
-    - トーン選択（フォーマル/カジュアル/フランク）
-    - 顔系絵文字なし/アイコン系絵文字なし/なし
-    - シーン（日常、応答・リアクション、お誘い・関心、SNS、確認・）
-
+    - トーン選択（フォーマル/カジュアル）
+    - シーン（日常、応答・リアクション、お誘い・関心、SNS、確認・質問）
 
 
 ### 🗒️ 本リリース（機能追加）
@@ -123,8 +98,6 @@ Things you may want to cover:
 
 ## ◾️既存アプリとの違い
  [![Image from Gyazo](https://i.gyazo.com/00afc089bec71657e16e600b91bfdd7b.png)](https://gyazo.com/00afc089bec71657e16e600b91bfdd7b)
-
-
 
 
 
