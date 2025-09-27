@@ -173,56 +173,58 @@ MessageTemplate.create!([
 
 # 絵文字追加　フォーマル　SNS
 MessageTemplate.create!([
-  { category: :invitation, emoji: :add, tone: :formal, content: "みなさん、最近どうしてますか？😊✨" },
-  { category: :invitation, emoji: :add, tone: :formal, content: "お元気ですか？🌸" },
-  { category: :invitation, emoji: :add, tone: :formal, content: "今日はいいお天気ですね☀️🌿" },
-  { category: :invitation, emoji: :add, tone: :formal, content: "最近ハマってること教えてください📖" },
-  { category: :invitation, emoji: :add, tone: :formal, content: "時間があったら何をしますか？⌛" },
-  { category: :invitation, emoji: :add, tone: :formal, content: "ここで近況共有しませんか？📝" },
-  { category: :invitation, emoji: :add, tone: :formal, content: "みなさんの最近のこと、知りたいです👀" },
-  { category: :invitation, emoji: :add, tone: :formal, content: "明日のお天気、気になりますね☁️🌼" },
-  { category: :invitation, emoji: :add, tone: :formal, content: "良い一日になりますように✨🙏" },
-  { category: :invitation, emoji: :add, tone: :formal, content: "また結果を報告します📣" }
+  { category: :sns, emoji: :add, tone: :formal, content: "みなさん、最近どうしてますか？😊✨" },
+  { category: :sns, emoji: :add, tone: :formal, content: "お元気ですか？🌸" },
+  { category: :sns, emoji: :add, tone: :formal, content: "今日はいいお天気ですね☀️🌿" },
+  { category: :sns, emoji: :add, tone: :formal, content: "最近ハマってること教えてください📖" },
+  { category: :sns, emoji: :add, tone: :formal, content: "時間があったら何をしますか？⌛" },
+  { category: :sns, emoji: :add, tone: :formal, content: "ここで近況共有しませんか？📝" },
+  { category: :sns, emoji: :add, tone: :formal, content: "みなさんの最近のこと、知りたいです👀" },
+  { category: :sns, emoji: :add, tone: :formal, content: "明日のお天気、気になりますね☁️🌼" },
+  { category: :sns, emoji: :add, tone: :formal, content: "良い一日になりますように✨🙏" },
+  { category: :sns, emoji: :add, tone: :formal, content: "また結果を報告します📣" }
 ])
+
 # 絵文字追加　カジュアル　SNS
 MessageTemplate.create!([
-  { category: :invitation, emoji: :add, tone: :casual, content: "みなさん、最近どうしてる？😊✨" },
-  { category: :invitation, emoji: :add, tone: :casual, content: "元気？🌸" },
-  { category: :invitation, emoji: :add, tone: :casual, content: "今日はいい天気やね☀️🌿" },
-  { category: :invitation, emoji: :add, tone: :casual, content: "最近ハマってること何かある？📖" },
-  { category: :invitation, emoji: :add, tone: :casual, content: "時間あったら何する？⌛" },
-  { category: :invitation, emoji: :add, tone: :casual, content: "ここで近況共有しよ？📝" },
-  { category: :invitation, emoji: :add, tone: :casual, content: "みんなの最近のこと、聞きたい👀" },
-  { category: :invitation, emoji: :add, tone: :casual, content: "明日のお天気、気になるな☁️🌼" },
-  { category: :invitation, emoji: :add, tone: :casual, content: "良い1日になりますように✨🙏" },
-  { category: :invitation, emoji: :add, tone: :casual, content: "また結果報告するね📣" }
+  { category: :sns, emoji: :add, tone: :casual, content: "みなさん、最近どうしてる？😊✨" },
+  { category: :sns, emoji: :add, tone: :casual, content: "元気？🌸" },
+  { category: :sns, emoji: :add, tone: :casual, content: "今日はいい天気やね☀️🌿" },
+  { category: :sns, emoji: :add, tone: :casual, content: "最近ハマってること何かある？📖" },
+  { category: :sns, emoji: :add, tone: :casual, content: "時間あったら何する？⌛" },
+  { category: :sns, emoji: :add, tone: :casual, content: "ここで近況共有しよ？📝" },
+  { category: :sns, emoji: :add, tone: :casual, content: "みんなの最近のこと、聞きたい👀" },
+  { category: :sns, emoji: :add, tone: :casual, content: "明日のお天気、気になるな☁️🌼" },
+  { category: :sns, emoji: :add, tone: :casual, content: "良い1日になりますように✨🙏" },
+  { category: :sns, emoji: :add, tone: :casual, content: "また結果報告するね📣" }
 ])
+
 # 関西弁変換　フォーマル　SNS
 MessageTemplate.create!([
-  { category: :invitation, emoji: :kansai, tone: :casual, content: "みなさん、最近どうしてはる？" },
-  { category: :invitation, emoji: :kansai, tone: :casual, content: "元気してます？" },
-  { category: :invitation, emoji: :kansai, tone: :casual, content: "今日はええ天気してますね" },
-  { category: :invitation, emoji: :kansai, tone: :casual, content: "最近ハマってること何かあります？" },
-  { category: :invitation, emoji: :kansai, tone: :casual, content: "時間あったら何しはる？" },
-  { category: :invitation, emoji: :kansai, tone: :casual, content: "ここで近況共有しましょ？" },
-  { category: :invitation, emoji: :kansai, tone: :casual, content: "みんなの最近のこと聞きたいですねぇ" },
-  { category: :invitation, emoji: :kansai, tone: :casual, content: "明日のお天気どうなるか気になりますね" },
-  { category: :invitation, emoji: :kansai, tone: :casual, content: "ええ一日になりますように" },
-  { category: :invitation, emoji: :kansai, tone: :casual, content: "また結果報告しますね" }
+  { category: :sns, emoji: :kansai, tone: :formal, content: "みなさん、最近どうしてはる？" },
+  { category: :sns, emoji: :kansai, tone: :formal, content: "元気してます？" },
+  { category: :sns, emoji: :kansai, tone: :formal, content: "今日はええ天気してますね" },
+  { category: :sns, emoji: :kansai, tone: :formal, content: "最近ハマってること何かあります？" },
+  { category: :sns, emoji: :kansai, tone: :formal, content: "時間あったら何しはる？" },
+  { category: :sns, emoji: :kansai, tone: :formal, content: "ここで近況共有しましょ？" },
+  { category: :sns, emoji: :kansai, tone: :formal, content: "みんなの最近のこと聞きたいですねぇ" },
+  { category: :sns, emoji: :kansai, tone: :formal, content: "明日のお天気どうなるか気になりますね" },
+  { category: :sns, emoji: :kansai, tone: :formal, content: "ええ一日になりますように" },
+  { category: :sns, emoji: :kansai, tone: :formal, content: "また結果報告しますね" }
 ])
 
 # 関西弁変換　カジュアル　SNS
 MessageTemplate.create!([
-  { category: :invitation, emoji: :kansai, tone: :casual, content: "みんな、最近どうしてんの？" },
-  { category: :invitation, emoji: :kansai, tone: :casual, content: "元気しとる？" },
-  { category: :invitation, emoji: :kansai, tone: :casual, content: "今日はめっちゃええ天気やな" },
-  { category: :invitation, emoji: :kansai, tone: :casual, content: "最近ハマってるもん、何かある？" },
-  { category: :invitation, emoji: :kansai, tone: :casual, content: "時間あったら何してるん？" },
-  { category: :invitation, emoji: :kansai, tone: :casual, content: "ここで近況シェアしよか？" },
-  { category: :invitation, emoji: :kansai, tone: :casual, content: "みんなの最近のこと、めっちゃ聞きたいわぁ" },
-  { category: :invitation, emoji: :kansai, tone: :casual, content: "明日のお天気どうなるかな〜" },
-  { category: :invitation, emoji: :kansai, tone: :casual, content: "いい一日になるようにしよな" },
-  { category: :invitation, emoji: :kansai, tone: :casual, content: "また報告するわな" }
+  { category: :sns, emoji: :kansai, tone: :casual, content: "みんな、最近どうしてんの？" },
+  { category: :sns, emoji: :kansai, tone: :casual, content: "元気しとる？" },
+  { category: :sns, emoji: :kansai, tone: :casual, content: "今日はめっちゃええ天気やな" },
+  { category: :sns, emoji: :kansai, tone: :casual, content: "最近ハマってるもん、何かある？" },
+  { category: :sns, emoji: :kansai, tone: :casual, content: "時間あったら何してるん？" },
+  { category: :sns, emoji: :kansai, tone: :casual, content: "ここで近況シェアしよか？" },
+  { category: :sns, emoji: :kansai, tone: :casual, content: "みんなの最近のこと、めっちゃ聞きたいわぁ" },
+  { category: :sns, emoji: :kansai, tone: :casual, content: "明日のお天気どうなるかな〜" },
+  { category: :sns, emoji: :kansai, tone: :casual, content: "いい一日になるようにしよな" },
+  { category: :sns, emoji: :kansai, tone: :casual, content: "また報告するわな" }
 ])
 
 # 絵文字追加　フォーマル　確認・質問
