@@ -1,19 +1,27 @@
 <!-- app/views/main/index.html.erb （全部置き換え）-->
 <body class="bg-center" style="background-color: #fffff0">
-  <div class="mt-5 position-relative mx-auto text-center rounded w-50" style="background-color: #00bfff;">
-    <h1 class="text-white mb-0 py-2">EMOJI関西弁変換</h1>
+  <div class="mt-5 mx-auto rounded w-50 position-relative text-center bg-info">
+    <!-- 中央寄せ：タイトル -->
+    <div class="header-title text-center">
+      <h1 class="text-white mb-0 py-2">EMOJI関西弁変換</h1>
+    </div>
+    <div class="position-absolute d-flex flex-column align-items-end gap-1" style="top: -4px; right: -100px;">
+      <!-- 使い方ガイド -->
+      <div class="d-flex align-items-center">
+        <!-- ？マーク -->
+        <a href="/guide" class="text-decoration-none me-1" title="サービス利用ガイド">
+          <i class="bi bi-question-circle fs-3 text-secondary"></i>
+        </a>
 
-    <!-- 使い方ガイド -->
-    <div class="position-absolute d-flex align-items-center" style="top: 10px; right: -95px;">
-      <!-- ？マーク -->
-      <a href="/guide" class="text-decoration-none me-1" title="サービス利用ガイド">
-        <i class="bi bi-question-circle fs-3 text-secondary"></i>
-      </a>
-
-      <!-- 使い方テキスト -->
-      <a href="/guide" class="text-decoration-none" title="サービス利用ガイド">
-        <span class="fs-6 text-secondary">使い方</span>
-      </a>
+        <!-- 使い方テキスト -->
+        <a href="/guide" class="text-decoration-none" title="サービス利用ガイド">
+          <span class="fs-6 text-secondary">使い方</span>
+        </a>
+      </div>
+      <div>
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
     </div>
   </div>
   <div class="mt-2 container mx-auto w-50">
