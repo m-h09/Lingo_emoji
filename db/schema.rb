@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_23_150943) do
+ActiveRecord::Schema[8.0].define(version: 2025_10_04_140429) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -21,6 +21,19 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_23_150943) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "meta_tags_lists", force: :cascade do |t|
+    t.string "name"
+    t.string "identifier"
+    t.string "meta_taggable_type"
+    t.bigint "meta_taggable_id"
+    t.string "meta_title"
+    t.text "meta_description"
+    t.text "meta_keywords"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["meta_taggable_type", "meta_taggable_id"], name: "index_meta_tags_lists_on_meta_taggable"
   end
 
   create_table "translations", force: :cascade do |t|
