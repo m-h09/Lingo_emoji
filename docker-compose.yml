@@ -18,8 +18,8 @@ services:
     ports:
       - "3000:3000"
     environment:
-      RAILS_ENV: development
-      DATABASE_URL: postgres://postgres:password@db:5432/Lingo_emoji_development
+      RAILS_ENV: ${RAILS_ENV:-development}
+      DATABASE_URL: ${DATABASE_URL}
       OPENAI_ACCESS_TOKEN: ${OPENAI_ACCESS_TOKEN}
     volumes:
       - .:/app
