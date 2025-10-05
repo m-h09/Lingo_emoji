@@ -47,18 +47,18 @@ Rails.application.configure do
   ]
 
   # ⭐ アセット設定（重要！）
-  config.asset_host = 'https://lingo-emoji.onrender.com'
+  config.asset_host = "https://lingo-emoji.onrender.com"
 
   # ⭐ 静的ファイル配信設定
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present? || ENV['RENDER'].present?
+  config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present? || ENV["RENDER"].present?
   config.public_file_server.headers = {
-    'Cache-Control' => 'public, max-age=31536000, immutable'
+    "Cache-Control" => "public, max-age=31536000, immutable"
   }
 
   # ⭐ アセットプリコンパイル設定
   config.assets.compile = false
   config.assets.digest = true
-  config.assets.precompile += %w( application.css application.js )
+  config.assets.precompile += %w[ application.css application.js ]
 
   # ⭐ その他の本番環境設定
   config.i18n.fallbacks = true
