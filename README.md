@@ -144,7 +144,7 @@
 - MVP時点でのER図
 [![Image from Gyazo](https://i.gyazo.com/bff01c53046da691545ac72064efbcb8.png)](https://gyazo.com/bff01c53046da691545ac72064efbcb8)
 本リリース用
-[![Image from Gyazo](https://i.gyazo.com/3ac7fe1ad64a4d987933520e26497b76.png)](https://gyazo.com/3ac7fe1ad64a4d987933520e26497b76)
+[![Image from Gyazo](https://i.gyazo.com/1d7a464e4f376f12fa8d3eb49b555763.png)](https://gyazo.com/1d7a464e4f376f12fa8d3eb49b555763)
 ### 本サービスの概要（700文字以内）
 
 「Emoji関西弁変換」は、入力した文章に気軽に絵文字をつけたり、関西弁に変換できるWebサービスです。
