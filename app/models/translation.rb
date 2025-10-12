@@ -5,5 +5,5 @@ class Translation < ApplicationRecord
   enum :radio_emoji, { no_kaomoji: 0, no_icon: 1, nothing: 2 }
 
   belongs_to :user
-  belongs_to history
+  has_many :histories, dependent: :destroy
 end
