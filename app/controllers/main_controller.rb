@@ -1,5 +1,13 @@
 class MainController < ApplicationController
-  def index; end
+  skip_before_action :require_login
+  def index
+    if logged_in?
+      # ログイン後のメインページ表示
+      @user = current_user
+    else
+      # ログイン前のメインページ表示
+    end
+  end
 
   def templates
     @templates = MessageTemplate.where(

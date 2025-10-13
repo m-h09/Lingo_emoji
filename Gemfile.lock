@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/svenfuchs/rails-i18n.git
+  revision: baaff3a839ce455dfe1e4d3b31cc82abc0c94ac4
+  specs:
+    rails-i18n (8.0.2)
+      i18n (>= 0.7, < 2)
+      railties (>= 8.0.0, < 9)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -318,6 +326,7 @@ DEPENDENCIES
   pg (~> 1.6)
   puma (>= 5.0)
   rails (~> 8.0.2)
+  rails-i18n!
   rubocop (~> 1.80.1)
   rubocop-rails-omakase
   ruby-openai

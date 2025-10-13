@@ -40,8 +40,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
   </head>
 
-  <body>
+  <body style="background-color: #fffff0">
   <!-- LAYOUT: application -->
-    <%= yield %>
+  <% if logged_in? %>
+    <%= render 'shared/header' %>  <!-- ログイン後ヘッダー -->
+  <% else %>
+    <%= render 'shared/before_login_header' %>  <!-- ログイン前ヘッダー -->
+  <% end %>
+  <%= yield %>
+  <%= render 'shared/footer' %>
   </body>
 </html>
