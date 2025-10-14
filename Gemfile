@@ -36,7 +36,7 @@ group :development, :test do
   gem "brakeman", require: false
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
-  gem "rubocop", "~> 1.80.1", require: false
+  gem "rubocop", "~> 1.81.1", require: false
   gem "rubocop-rails-omakase", require: false
 end
 
