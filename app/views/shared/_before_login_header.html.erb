@@ -4,6 +4,11 @@
       <%= link_to root_path, class: 'navbar-brand', style: 'position: relative; z-index: 1050; cursor: pointer;' do %>
         <%= image_tag 'smallicon.png', size: '32x32', style:'margin-left: 15px; cursor: pointer;'%>
       <% end %>
+      <!--現状無効-->
+      <button class='navbar-toggler pb-0 ' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent'
+        aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+        <span class='navbar-toggler-icon py-0' style="z-index: 1;"></span>
+      </button>
 
       <!-- ログイン前のナビゲーション -->
       <div class="navbar-nav">

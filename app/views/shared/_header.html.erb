@@ -4,7 +4,6 @@
       <%= link_to root_path, class: 'navbar-brand', style: 'position: relative; z-index: 1050; cursor: pointer;' do %>
         <%= image_tag 'smallicon.png', size: '32x32', style:'margin-left: 15px; cursor: pointer;'%>
       <% end %>
-      <%= link_to "HOME", root_path, style: "color: red; font-size: 20px;" %>
 
     <button class='navbar-toggler pb-0 ' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent'
         aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
@@ -20,14 +19,13 @@
             <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
           </li>
           <li class="nav-item me-5">
-            <%= link_to 'ユーザー登録', '#', class: 'nav-link text-dark fw-bold' %>
-          </li>
-          <li class="nav-item me-5">
-            <%= link_to 'ログアウト', '#', class: 'nav-link text-dark fw-bold' %>
+            <%= button_to 'ログアウト', logout_path, method: :delete, class: 'nav-link text-dark fw-bold', form: { data: { turbo_confirm: "ログアウトしますか？" } } %>
           </li>
           <li class='nav-item dropdown dropdown-slide'>
           <%= link_to '#', class: 'nav-link', data: { bs_toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' }, id: 'header-profile' do %>
-            <%= image_tag 'sample.jpg', class: 'rounded-circle mr15', width: '40', height: '40' %>
+            <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center text-white" style="width: 40px; height: 40px;">
+              <i class="fas fa-user"></i>
+            </div>
           <% end %>
           <div class='dropdown-menu dropdown-menu-end'>
             <div class='dropdown-item'>らんてっく たろう</div>

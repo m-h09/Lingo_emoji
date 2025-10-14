@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_10_11_085212) do
+ActiveRecord::Schema[8.0].define(version: 2025_10_14_141254) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -51,6 +51,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_11_085212) do
     t.integer "tone"
     t.integer "strength"
     t.integer "radio_emoji"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_translations_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -65,4 +67,5 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_11_085212) do
 
   add_foreign_key "histories", "translations"
   add_foreign_key "histories", "users"
+  add_foreign_key "translations", "users"
 end
