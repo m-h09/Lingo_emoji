@@ -1,0 +1,69 @@
+<body class="bg-center" style="background-color: #fffff0">
+  <div class="mt-5 mx-auto rounded w-50 position-relative text-center bg-info">
+    <!-- 中央寄せ：タイトル -->
+    <div class="header-title text-center">
+      <h1 class="text-white mb-0 py-2">EMOJI関西弁変換</h1>
+    </div>
+    <div class="position-absolute d-flex flex-column align-items-end gap-1" style="top: -4px; right: -100px;">
+      <!-- 使い方ガイド -->
+      <div class="d-flex align-items-center">
+        <!-- ？マーク -->
+        <a href="/guide" class="text-decoration-none me-1" title="サービス利用ガイド">
+          <i class="bi bi-question-circle fs-3 text-secondary"></i>
+        </a>
+
+        <!-- 使い方テキスト -->
+        <a href="/guide" class="text-decoration-none" title="サービス利用ガイド">
+          <span class="fs-6 text-secondary">使い方</span>
+        </a>
+      </div>
+      <!-- Twitterシェアボタン -->
+      <div>
+        <a href="https://twitter.com/intent/tweet?url=https://lingo-emoji.onrender.com/" target="_blank" class="btn btn-dark">
+          <i class="bi bi-twitter-x"></i>
+        </a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+  </div>
+  <div class="mt-2 container mx-auto w-50">
+    <% if @global_error.present? %>
+      <p style="color:red; font-weight:bold; text-align:left;">【全体エラー】<%= @global_error %></p>
+      <% end %>
+    <% if @api_error.present? %>
+      <p style="color:red; font-weight:bold; text-align:left;">【APIエラー】<%= @api_error %></p>
+    <% end %>
+  </div>
+  <div class="container py-4">
+    <div class="nav nav-pills justify-content-center gap-3 mb-5" id="pills-tab" role="tablist">
+      <button class="nav-link active"
+              id="pills-auto-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-auto"
+              type="button" role="tab"
+              aria-controls="pills-auto" aria-selected="true"
+              data-turbo="false">
+        自動生成
+      </button>
+
+      <button class="nav-link"
+              id="pills-templates-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-templates"
+              type="button" role="tab"
+              aria-controls="pills-templates" aria-selected="false"
+              data-turbo="false">
+        テンプレート
+      </button>
+    </div>
+
+    <div class="tab-content border border-top-0 rounded-bottom py-2 mx-auto" id="pills-tabContent" style="width:750px">
+      <div class="tab-pane fade show active" id="pills-auto" role="tabpanel" aria-labelledby="pills-auto-tab" tabindex="0">
+        <%= render "auto_generation" %>
+      </div>
+      <div class="tab-pane fade" id="pills-templates" role="tabpanel" aria-labelledby="pills-templates-tab" tabindex="0">
+        <%= render "templates" %>
+      </div>
+    </div>
+  </div>
+</body>
