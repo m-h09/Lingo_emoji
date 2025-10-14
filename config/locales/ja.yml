@@ -45,3 +45,14 @@ ja:
         nothing: "選択なし"
     message_template:
       emoji:
+        add: "絵文字を追加"
+        kansai: "関西弁変換"
+      tone:
+        formal: "フォーマル"
+        frank: "フランク"
+    list:
+      daily: "日常"
+      reaction: "応答・リアクション"
+      invitation: "お誘い・関心"
+      sns: "SNS"
+      check_question: "確認・質問"
