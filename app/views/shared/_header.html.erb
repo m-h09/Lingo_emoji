@@ -10,7 +10,9 @@
         <span class='navbar-toggler-icon py-0'></span>
     </button>
     <!-- ヘッダーのボタン-->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <div class="d-flex flex-column align-items-center">
+      </div>
         <ul class="navbar-nav ms-auto align-items-center text-center">
           <li class="nav-time me-5">
             <a href="https://twitter.com/intent/tweet?url=https://lingo-emoji.onrender.com/" target="_blank" class="btn btn-dark">
@@ -22,19 +24,18 @@
             <%= button_to 'ログアウト', logout_path, method: :delete, class: 'nav-link text-dark fw-bold', form: { data: { turbo_confirm: "ログアウトしますか？" } } %>
           </li>
           <li class='nav-item dropdown dropdown-slide'>
-          <%= link_to '#', class: 'nav-link', data: { bs_toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' }, id: 'header-profile' do %>
-            <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center text-white" style="width: 40px; height: 40px;">
-              <i class="fas fa-user"></i>
+            <%= link_to '#', class: 'nav-link', data: { bs_toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' }, id: 'header-profile' do %>
+              <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center text-white" style="width: 40px; height: 40px;">
+                <i class="fas fa-user"></i>
+              </div>
+            <% end %>
+            <div class='dropdown-menu dropdown-menu-end'>
+              <div class='dropdown-item'>らんてっく たろう</div>
+              <div class='dropdown-divider'></div>
+              <%= link_to t('header.profile'), '#', class: 'dropdown-item' %>
+              <%= link_to t('header.logout'), logout_path, class: 'dropdown-item', data: { turbo_method: :delete } %>
             </div>
-          <% end %>
-          <div class='dropdown-menu dropdown-menu-end'>
-            <div class='dropdown-item'>らんてっく たろう</div>
-            <div class='dropdown-divider'></div>
-            <%= link_to t('header.profile'), '#', class: 'dropdown-item' %>
-            <%= link_to t('header.logout'), logout_path, class: 'dropdown-item', data: { turbo_method: :delete } %>
-          </div>
-        </li>
-
+          </li>
         </ul>
       </div>
     </div>
