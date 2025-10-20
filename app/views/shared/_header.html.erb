@@ -25,14 +25,12 @@
           </li>
           <li class='nav-item dropdown dropdown-slide'>
             <%= link_to '#', class: 'nav-link', data: { bs_toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' }, id: 'header-profile' do %>
-              <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center text-white" style="width: 40px; height: 40px;">
-                <i class="fas fa-user"></i>
-              </div>
+              <%= image_tag 'sample.svg', class: 'rounded-circle mr15', width: '40', height: '40' %>
             <% end %>
             <div class='dropdown-menu dropdown-menu-end'>
               <div class='dropdown-item'>らんてっく たろう</div>
               <div class='dropdown-divider'></div>
-              <%= link_to t('header.profile'), '#', class: 'dropdown-item' %>
+              <%= link_to t('header.profile'), profile_path, class: 'dropdown-item' %>
               <%= link_to t('header.logout'), logout_path, class: 'dropdown-item', data: { turbo_method: :delete } %>
             </div>
           </li>

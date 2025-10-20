@@ -45,6 +45,7 @@
     <%= render 'shared/before_login_header' %>  <!-- ログイン前ヘッダー -->
   <% end %>
   <%= yield %>
+  <%= render 'shared/flash_message' %>
   <%= render 'shared/footer' %>
   </body>
 </html>
