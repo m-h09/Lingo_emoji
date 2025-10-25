@@ -1,9 +1,3 @@
-<% content_for(:title, t('.title')) %>
-<% flash.each do |message_type, message| %>
-  <div class="alert alert-<%= message_type %>">
-    <%= message %>
-  </div>
-<% end %>
 <% if @user&.errors&.any? %>
   <div class="alert alert-danger">
     <h4><%= pluralize(@user.errors.count, "個のエラー") %>があります：</h4>

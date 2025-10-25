@@ -35,9 +35,6 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-
-
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
   <body style="background-color: #fffff0">
@@ -47,6 +44,7 @@
   <% else %>
     <%= render 'shared/before_login_header' %>  <!-- ログイン前ヘッダー -->
   <% end %>
+  <%= render 'shared/flash_message' %>
   <%= yield %>
   <%= render 'shared/footer' %>
   </body>

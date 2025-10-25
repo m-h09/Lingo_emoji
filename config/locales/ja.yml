@@ -1,4 +1,6 @@
 ja:
+  defaults:
+    edit: 編集
   helpers:
     submit:
       create: 登録
@@ -25,6 +27,11 @@ ja:
     create_board: 掲示板作成
     bookmark_index: ブックマーク一覧
     profile: プロフィール
+  profiles:
+    show:
+      title: プロフィール
+    edit:
+      title: プロフィール編集
   enums:
     translation:
       emoji:
@@ -49,7 +56,7 @@ ja:
         kansai: "関西弁変換"
       tone:
         formal: "フォーマル"
-        frank: "フランク"
+        casual: "カジュアル"
     list:
       daily: "日常"
       reaction: "応答・リアクション"
