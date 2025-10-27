@@ -1,4 +1,4 @@
-<%= form_with url: main_index_path, method: :post, local: true, html: { autocomplete: "off" } do %>
+<%= form_with url: main_index_path, method: :post, data: { turbo: false }, html: { autocomplete: "off" } do %>
   <div class="d-flex gap-3 mb-4 mx-auto" style="width:500px">
     <%= select_tag :emoji, options_for_select(Translation.emojis.keys.map {|key| [t("enums.translation.emoji.#{key}"), key] }, params[:emoji]), class: "form-select", id: "emoji-select" %>
     <%= select_tag :tone, options_for_select(Translation.tones.keys.map { |key| [t("enums.translation.tone.#{key}"), key] }, params[:tone]), class: "form-select" %>

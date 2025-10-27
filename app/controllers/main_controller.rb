@@ -19,6 +19,7 @@ class MainController < ApplicationController
     # JSリクエストなら部分テンプレートだけ返す
     respond_to do |format|
       format.html { render partial: "templates/list", locals: { templates: @templates } }
+      format.any {render plain: "unsupported format", status: 406}
     end
   end
 
@@ -43,12 +44,19 @@ class MainController < ApplicationController
 
     @input_text = base_prompt
     @output = service.call
-    render :index
+    respond_to do |format|
+      format.html { render :index }
+    end
+
   rescue Timeout::Error
     @api_error = "OpenAIの処理がタイムアウトしました。時間をおいて再度お試しください。"
-    render :index
+    respond_to do |format|
+      format.html { render :index }
+    end
   rescue StandardError => e
     @global_error = "予期しないエラーが発生しました。#{e.message}"
-    render :index
+    respond_to do |format|
+      format.html { render :index }
+    end
   end
 end
