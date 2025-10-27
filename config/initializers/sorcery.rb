@@ -4,11 +4,11 @@
 # Available submodules are: :user_activation, :http_basic_auth, :remember_me,
 # :reset_password, :session_timeout, :brute_force_protection, :activity_logging,
 # :magic_login, :external
-Rails.application.config.sorcery.submodules = [:reset_password]
+Rails.application.config.sorcery.submodules = [ :reset_password ]
 
 # Here you can configure each submodule's features.
 Rails.application.config.sorcery.configure do |config|
-# サブモジュールの設定
+  # サブモジュールの設定
 
 
 
@@ -572,5 +572,4 @@ Rails.application.config.sorcery.configure do |config|
   # This line must come after the 'user config' block.
   # Define which model authenticates with sorcery.
   config.user_class = "User"
-
 end

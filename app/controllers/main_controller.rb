@@ -19,7 +19,7 @@ class MainController < ApplicationController
     # JSリクエストなら部分テンプレートだけ返す
     respond_to do |format|
       format.html { render partial: "templates/list", locals: { templates: @templates } }
-      format.any {render plain: "unsupported format", status: 406}
+      format.any { render plain: "unsupported format", status: 406 }
     end
   end
 
