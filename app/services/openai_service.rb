@@ -1,10 +1,11 @@
 class OpenaiService
   def self.generate_text(prompt)
-    client = OpenAI::Client.new   # ENV['OPENAI_ACCESS_TOKEN'] を自動で読む
+    client = OpenAI::Client.new(access_token: ENV["OPENAI_ACCESS_TOKEN"])   # ENV['OPENAI_ACCESS_TOKEN'] を自動で読む
     response = client.chat(
       parameters: {
         model: "gpt-4o-mini",
-        messages: [ { role: "user", content: prompt } ],
+        messages: [
+          { role: "user", content: prompt } ],
         temperature: 1.2
       }
     )

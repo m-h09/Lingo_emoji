@@ -21,7 +21,7 @@ Bundler.require(*Rails.groups)
 module App
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 8.0
+    config.load_defaults 7.1
     config.assets.precompile += %w[ogp/EMOJI.png]
     config.assets.manifest = Rails.root.join("public", "assets", ".manifest.json")
 

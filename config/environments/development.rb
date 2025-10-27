@@ -40,6 +40,8 @@ Rails.application.configure do
   # Disable caching for Action Mailer templates even if Action Controller
   # caching is enabled.
   config.action_mailer.perform_caching = false
+  # 追加
+  config.action_mailer.delivery_method = :letter_opener_web
 
   config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
 

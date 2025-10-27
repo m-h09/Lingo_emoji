@@ -9,6 +9,7 @@ document.addEventListener("turbo:load", () => {
 document.addEventListener("DOMContentLoaded", () => {
   console.log("🎯 DOMContentLoaded fired");
 });
+//出力結果表示
 
 function initSelectToggle() {
   const selectToggle = document.getElementById("js_select-Toggle");
@@ -106,7 +107,8 @@ function initTemplates() {
     });
 
     fetch(`/templates?${params.toString()}`, {
-      headers: { "Accept": "text/html" }
+      method: "GET",
+      headers: { "Accept": "text/html", "X-Requested-With": "XMLHttpRequest"}
     })
       .then(res => res.text())
       .then(html => {
