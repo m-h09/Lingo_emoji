@@ -1,4 +1,4 @@
-class CreateMessageTemplates < ActiveRecord::Migration[8.0]
+class CreateMessageTemplates < ActiveRecord::Migration[7.2]
   def change
     create_table :message_templates do |t|
       t.integer :category
