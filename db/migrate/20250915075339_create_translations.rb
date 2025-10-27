@@ -1,4 +1,4 @@
-class CreateTranslations < ActiveRecord::Migration[8.0]
+class CreateTranslations < ActiveRecord::Migration[7.2]
   def change
     create_table :translations do |t|
       t.integer :emoji
