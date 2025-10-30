@@ -64,4 +64,16 @@ Rails.application.configure do
   config.i18n.fallbacks = true
   config.active_record.dump_schema_after_migration = false
   config.active_record.attributes_for_inspect = [ :id ]
+
+  # mailer settings（本番環境）
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.sendgrid.net',
+    port: 587,
+    domain: 'onrender.com',
+    user_name : 'api_key',
+    password: ENV['SENDGRID_API_KEY'],
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
 end

@@ -1,0 +1,8 @@
+mailer:
+  host: 'localhost:3000'
+  port: 3000
+  default_from: 'noreply@localhost.com'
+
+api:
+  base_url: 'http://localhost:3000/api'
+  timeout: 30
