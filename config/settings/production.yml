@@ -1,0 +1,6 @@
+mailer:
+  host: 'yourdomain.com'
+  default_from: 'noreply@yourdomain.com'
+
+api:
+  base_url: 'https://yourdomain.com/api'

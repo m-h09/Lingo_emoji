@@ -1,0 +1,3 @@
+mailer:
+  host: 'localhost:3000'
+  default_from: 'from@example.com'
