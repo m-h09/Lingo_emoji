@@ -76,5 +76,5 @@ Rails.application.configure do
     authentication: :plain,
     enable_starttls_auto: true
   }
-  config.action_mailer.default_options = { from: "music8.d0fss2@gmail.com" }
+  config.action_mailer.default_options = { from: ENV["MAIL_SENDER_ADDRESS"] }
 end
