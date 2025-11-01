@@ -7,10 +7,7 @@ class UserMailer < ApplicationMailer
   #
   def reset_password_email(user)
     @user = user
-    mail(
-      to: @user.email,
-      subject: "パスワードリセット"
-      # from は削除！
-    )
+    @url = edit_password_reset_url(@user.reset_password_token, host: "https://lingo-emoji.onrender.com")
+    mail(to: @user.email, subject: "パスワードリセット")
   end
 end
