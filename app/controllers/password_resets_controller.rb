@@ -16,7 +16,7 @@ class PasswordResetsController < ApplicationController
     @user = User.load_from_reset_password_token(@token)
 
     if @user.blank?
-      redirect_to root_path, alert: "無効なトークンです。"
+      redirect_to root_path, danger: "無効なトークンです。"
       save_return_to_url
     end
   end
@@ -32,7 +32,7 @@ class PasswordResetsController < ApplicationController
       flash[:success] = "パスワードを変更できました"
       redirect_to login_path, status: :see_other
     else
-      flash.now[:alert] = "パスワード変更出来ませんでした"
+      flash.now[:danger] = "パスワード変更出来ませんでした"
       render :edit, status: :unprocessable_entity
     end
   end
