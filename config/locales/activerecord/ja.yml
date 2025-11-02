@@ -9,3 +9,9 @@ ja:
         avatar: アバター
         password: パスワード
         password_confirmation: パスワード確認
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              too_short: "は%{count}文字以上で入力してください"
