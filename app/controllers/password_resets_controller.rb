@@ -8,7 +8,7 @@ class PasswordResetsController < ApplicationController
 
     @user&.deliver_reset_password_instructions!
 
-    redirect_to login_path, notice: "パスワードリセットの案内を送信しました。メールをご確認ください。"
+    redirect_to login_path, success: "パスワードリセットの案内を送信しました。メールをご確認ください。"
   end
 
   def edit
@@ -22,19 +22,14 @@ class PasswordResetsController < ApplicationController
   end
 
   def update
-    @token = params[:id]
-    @user = User.load_from_reset_password_token(@token)
+    @user = User.load_from_reset_password_token(params[:id])
 
-    if @user.blank?
-      redirect_to root_path, alert: "無効なトークンです。"
-      return
-    end
-    @user.password_confirmation = params[:user][:password_confirmation]
-
-    if @user.change_password(params[:user][:password])
-      redirect_to login_path, notice: "パスワードが正常に更新されました。ログインしてください。"
+    if @user && @user.change_password!(params[:user][:password)
+      flash[:success] = "パスワードを更新しました。ログインしてください。"
+      redirect_to login_path
     else
-      render :edit
+      flash.now[:alert] = "パスワードの更新に失敗しました。"
+      render :edit, status: :unprocessable_entity
     end
   end
 end
