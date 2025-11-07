@@ -25,6 +25,21 @@ class MainController < ApplicationController
 
   def guide; end
 
+  def history
+    if params[:q].present? # 検索ワードを発見
+      @histories = current_user.histories.where("record LIKE ?", "%#{params[:q]}%").order(created_at: :desc)
+    else
+      @histories = current_user.histories.order(created_at: :desc)
+    end
+  end
+
+  def save_history
+    current_user.histories.create!(record: params[:record])
+    render json: { message: "履歴を保存しました" } #jsonでレスポンスを返す
+  end
+
+  def edit_history; end
+
   def create
     base_prompt = params[:base_prompt]
 

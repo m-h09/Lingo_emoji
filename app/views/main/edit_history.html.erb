@@ -1,0 +1,45 @@
+<div class="container mt-3">
+  <div class=" mb-5 px-3 py-2 ">
+    <%= link_to "←1つ前に戻る",  main_index_path, class: "mb-3" %>
+  </div>
+  <div class="mt-5 mx-auto rounded w-50 position-relative text-center bg-info">
+    <div class="header-title text-center">
+        <h1 class="text-white mb-0 py-2">Myテンプレート編集画面</h1>
+    </div>
+  </div>
+  <p class="text-muted small text-center mt-2">
+  追加・削除したいテンプレートにチェックを入れてボタンを押してください
+  </p>
+  <div class="container py-4">
+    <div class="nav nav-pills justify-content-center gap-3 mb-5" id="pills-tab" role="tablist">
+      <button class="nav-link active"
+              id="pills-addition-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-addition"
+              type="button" role="tab"
+              aria-controls="pills-addition" aria-selected="true"
+              data-turbo="false">
+        登録追加
+      </button>
+
+      <button class="nav-link"
+              id="pills-delete-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-delete"
+              type="button" role="tab"
+              aria-controls="pills-delete" aria-selected="false"
+              data-turbo="false">
+        登録削除
+      </button>
+    </div>
+
+    <div class="tab-content border border-top-0 rounded-bottom py-2 mx-auto" id="pills-tabContent" style="width:750px">
+      <div class="tab-pane fade show active" id="pills-addition" role="tabpanel" aria-labelledby="pills-addition-tab" tabindex="0">
+        <%= render "regist_addition" %>
+      </div>
+      <div class="tab-pane fade" id="pills-delete" role="tabpanel" aria-labelledby="pills-delete-tab" tabindex="0">
+        <%= render "regist_delete" %>
+      </div>
+    </div>
+  </div>
+</div>

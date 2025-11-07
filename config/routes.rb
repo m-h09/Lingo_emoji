@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   resources :main, only: [ :index, :create ]
   post "main/index", to: "main#create"
-
+  get "main/history", to: "main#history"
+  get "main/edit_history", to: "main#edit_history"
   get "templates", to: "main#templates"
   get "guide", to: "main#guide"
   root "main#index"
