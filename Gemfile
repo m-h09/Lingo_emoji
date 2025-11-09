@@ -18,7 +18,7 @@ gem "kaminari"
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "brakeman", require: false
-  gem "rubocop", "~> 1.50.0", require: false
+  gem "rubocop", "~> 1.81.7", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-rails-omakase", require: false
   gem "dotenv-rails"
