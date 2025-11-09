@@ -55,6 +55,10 @@
               data-turbo="false">
         テンプレート
       </button>
+      <button class="nav-link" id="pills-histories-tab" data-bs-toggle="pill" data-bs-target="#pills-histories"
+      type="button" role="tab" aria-controls="pills-histories" aria-selected="false" data-turbo="false">
+        Myテンプレート
+    </button>
     </div>
 
     <div class="tab-content border border-top-0 rounded-bottom py-2 mx-auto" id="pills-tabContent" style="width:750px">
@@ -63,6 +67,9 @@
       </div>
       <div class="tab-pane fade" id="pills-templates" role="tabpanel" aria-labelledby="pills-templates-tab" tabindex="0">
         <%= render "templates" %>
+      </div>
+      <div class="tab-pane fade" id="pills-histories" role="tabpanel" aria-labelledby="pills-histories-tab" tabindex="0">
+        <%= render "main/history" %>
       </div>
     </div>
   </div>

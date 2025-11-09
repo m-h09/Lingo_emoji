@@ -1,0 +1,15 @@
+<% if @histories.present? %>
+  <table class="table table-striped mb-3 mt-5">
+    <tbody>
+      <% @histories.each do |history| %>
+        <tr>
+          <td style="width: 250px;"><%= history.record %></td>
+          <td style="width: 50px;"><%= check_box_tag "records[]", history.record %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p class="text-center mt-4">現在登録はありません。</p>
+<% end %>
+<%= paginate @histories %>
