@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_10_27_084709) do
+ActiveRecord::Schema[7.2].define(version: 2025_11_09_120728) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "pg_catalog.plpgsql"
+  enable_extension "plpgsql"
 
   create_table "histories", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "translation_id", null: false
+    t.bigint "translation_id"
     t.string "record"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -52,6 +52,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_10_27_084709) do
     t.integer "strength"
     t.integer "radio_emoji"
     t.bigint "user_id", null: false
+    t.text "output_text"
     t.index ["user_id"], name: "index_translations_on_user_id"
   end
 

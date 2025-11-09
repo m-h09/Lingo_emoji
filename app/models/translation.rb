@@ -3,6 +3,7 @@ class Translation < ApplicationRecord
   enum :tone, { formal: 0, casual: 1, frank: 2 }
   enum :strength, { weak: 0, medium: 1, strong: 2 }
   enum :radio_emoji, { no_kaomoji: 0, no_icon: 1, nothing: 2 }
+  validates :output_text, presence: true
 
   belongs_to :user
   has_many :histories, dependent: :destroy

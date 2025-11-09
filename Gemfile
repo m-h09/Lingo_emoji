@@ -13,6 +13,7 @@ gem "ruby-openai"
 gem "sorcery"
 gem "rails-i18n", "~> 7.0.0"
 gem "carrierwave"
+gem 'kaminari'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"

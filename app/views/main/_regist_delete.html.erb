@@ -1,1 +1,16 @@
-登録削除
+<%= form_with url: main_delete_history_path, method: :post do %>
+  <div class="position-relative mx-auto" style="top: 5px; bottom: 15px; max-width: 300px;">
+    <!-- 削除ボタン -->
+    <div class="position-absolute mt-4 end-0" style="top: -50px; right: 38px;">
+      <%= submit_tag "削除", class: "btn btn-danger btn-sm" %>
+    </div>
+
+    <!-- テーブルを中央寄せで配置 -->
+  </div>
+
+  <div class="mb-7 d-flex justify-content-center align-items-center">
+    <div class="d-flex align-items-center">
+      <%= render "regist/delete" %>
+    </div>
+  </div>
+<% end %>
