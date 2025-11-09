@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   # def default_meta_tags
   #   {
   #     site: "EMOJI関西弁変換",

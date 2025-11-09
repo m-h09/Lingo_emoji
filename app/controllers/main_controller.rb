@@ -48,7 +48,7 @@ class MainController < ApplicationController
       deleted_records.each do |text|
         unless current_user.translations.exists?(output_text: text)
         current_user.translations.create!(output_text: text)
-      end
+        end
     end
       # historyから削除
       current_user.histories.where(record: deleted_records).destroy_all
