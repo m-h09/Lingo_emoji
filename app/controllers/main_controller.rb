@@ -94,7 +94,7 @@ class MainController < ApplicationController
     @output = service.call
 
     if logged_in? && @output.present?
-      current_user.translations.create!(output_text: @output)
+      @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(20)
     end
     respond_to do |format|
       format.html { render :index }
