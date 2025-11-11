@@ -94,21 +94,26 @@ class MainController < ApplicationController
     @output = service.call
 
     if logged_in? && @output.present?
+      current_user.translations.create!(output_text: @output)
+    end
+
+
+    if logged_in?
       @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(20)
     end
+
     respond_to do |format|
       format.html { render :index }
     end
 
   rescue Timeout::Error
     @api_error = "OpenAIの処理がタイムアウトしました。時間をおいて再度お試しください。"
-    respond_to do |format|
-      format.html { render :index }
-    end
+    @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(20) if logged_in?
+    render :index
+
   rescue StandardError => e
     @global_error = "予期しないエラーが発生しました。#{e.message}"
-    respond_to do |format|
-      format.html { render :index }
-    end
+    @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(20) if logged_in?
+    render :index
   end
 end
