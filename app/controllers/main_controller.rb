@@ -97,7 +97,7 @@ class MainController < ApplicationController
       current_user.translations.create!(output_text: @output)
     end
 
-    
+
     if logged_in?
       @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(20)
     end
