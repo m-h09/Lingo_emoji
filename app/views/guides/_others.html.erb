@@ -1,0 +1,33 @@
+<div class="justify-content-center">
+  <div class="mt-5 position-relative mx-auto text-center rounded w-50" style="bottom:30px;">
+    <h3 class="guide-title mb-4">その他機能</h3>
+    <p>ユーザー登録をしてログインした後に使える機能を紹介します。</p>
+  </div>
+  <div class="d-flex algin-items-start">
+      <ul>
+        <li class="mb-3">「Myテンプレート」タブの追加
+          <p class="mt-2 small">こちらは自動生成で出力した履歴を元に自身のテンプレートを
+          作成し、表示することができます。</p>
+          <%= image_tag "other_display.png", class: "w-50 mx-auto d-block" %>
+        </li>
+        <li>「Myテンプレート編集画面」を表示
+          <p class="mt-2 small">「編集」ボタンを押すと表示されます</p>
+          <%= image_tag "other_add_tab.png", class: "mt-4 w-50 mx-auto d-block" %>
+        </li>
+        <li class="mt-5">
+        「Myテンプレート」に表示を追加
+          <%= image_tag "other_add_tab.png", class: "mt-5 w-10 mx-auto d-block" %>
+        </li>
+        <li class="mt-5">
+        「Myテンプレート」から登録を削除
+          <p class="mt-3  small">チェックボックスを選択し、「削除」を押すと
+          削除されます<br>※「Myテンプレート」からの削除のため履歴自体は
+          登録追加へ戻る</p>
+          <%= image_tag "other_delete_tab.png", class: "mt-3 w-50 mx-auto d-block" %>
+          <p class="text-center small ">「Myテンプレート」へ反映</p>
+          <%= image_tag "other_delete_display.png", class: "w-50 mx-auto d-block" %>
+          <p>「登録追加」は「登録削除」したとしても履歴を閲覧できる場所なので<br>今のところ「削除」ボタンはない</p>
+        </li>
+      <ul>
+  </div>
+</div>
