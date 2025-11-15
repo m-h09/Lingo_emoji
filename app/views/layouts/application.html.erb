@@ -35,6 +35,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
   </head>
 
   <body style="background-color: #fffff0">
@@ -47,5 +48,6 @@
   <%= render 'shared/flash_message' %>
   <%= yield %>
   <%= render 'shared/footer' %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
   </body>
 </html>
