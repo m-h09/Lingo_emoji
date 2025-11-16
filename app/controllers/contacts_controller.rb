@@ -1,6 +1,6 @@
 # app/controllers/contacts_controller.rb
 class ContactsController < ApplicationController
-  skip_before_action :require_login
+  skip_before_action :require_login, only: %i[new create]
 
   def new
     @contact = ContactForm.new

@@ -32,6 +32,7 @@ ja:
       title: プロフィール
     edit:
       title: プロフィール編集
+      to_login_page: ログインページへ
   password_resets:
     new:
       title: パスワードリセット申請
