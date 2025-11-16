@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class=" col-md-10  mt-5 col-lg-8 mx-auto">
+      <h1 class="text-center">お問い合わせ</h1>
+      <div class="d-flex justify-content-center mb-4">
+        <div class="card mt-4" style="width: 500px;">
+          <div class="card-body mb-2">
+          <%= form_with model: @contact, url: contact_path, local: true do |f| %>
+            <div class="mb-3">
+              <%= f.label :name, "お名前" %>
+              <%= f.text_field :name, class: "form-control", required: true %>
+            </div>
+            <div class="mb-3">
+              <%= f.label :email, "メールアドレス" %>
+              <%= f.email_field :email, class: "form-control", required: true %>
+            </div>
+            <div class="mb-3">
+              <%= f.label :message, "お問い合わせ内容" %>
+              <%= f.text_area :message, class: "form-control", rows: 5, required: true %>
+            </div>
+            <div class="text-center">
+              <%= f.submit "送信", class: "mt-2 btn btn-primary" %>
+            </div>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

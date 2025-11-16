@@ -12,6 +12,13 @@ Rails.application.routes.draw do
   get "templates", to: "main#templates"
   get "guide", to: "main#guide"
   root "main#index"
+  get "faq", to: "static_pages#faq"
+  get "terms", to: "static_pages#terms"
+  get "privacy", to: "static_pages#privacy"
+
+  resources :contacts, only: [:new, :create]
+  get "contact", to: "contacts#new"
+  post "contact", to: "contacts#create"
 
   resources :users, only: %i[new create]
   get "login", to: "user_sessions#new"
