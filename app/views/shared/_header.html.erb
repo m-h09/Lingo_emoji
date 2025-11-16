@@ -5,27 +5,31 @@
         <%= image_tag 'smallicon.png', size: '32x32', style:'margin-left: 15px; cursor: pointer;'%>
       <% end %>
 
-    <button class='navbar-toggler pb-0 ' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent'
-        aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
-        <span class='navbar-toggler-icon py-0'></span>
-    </button>
-    <!-- ヘッダーのボタン-->
-    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-      <div class="d-flex flex-column align-items-center">
-      </div>
+      <button class='navbar-toggler pb-0 ' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent'
+          aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
+          <span class='navbar-toggler-icon py-0'></span>
+      </button>
+      <!-- ヘッダーのボタン-->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto align-items-center text-center">
-          <li class="nav-time me-5">
-            <a href="https://twitter.com/intent/tweet?url=https://lingo-emoji.onrender.com/" target="_blank" class="btn btn-dark">
-            <i class="bi bi-twitter-x"></i>
+          <!-- 使い方ガイド -->
+          <li class="d-flex align-items-center me-5">
+            <!-- ？マーク -->
+            <a href="/guide" class="text-decoration-none me-1" title="サービス利用ガイド">
+              <i class="bi bi-question-circle fs-3 text-secondary"></i>
             </a>
-            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+            <!-- 使い方テキスト -->
+            <a href="/guide" class="text-decoration-none" title="サービス利用ガイド">
+              <span class="fs-6 text-secondary">使い方</span>
+            </a>
           </li>
           <li class="nav-item me-5">
             <%= button_to 'ログアウト', logout_path, method: :delete, class: 'nav-link text-dark fw-bold', form: { data: { turbo_confirm: "ログアウトしますか？" } } %>
           </li>
           <li class='nav-item dropdown dropdown-slide'>
             <%= link_to '#', class: 'nav-link', data: { bs_toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' }, id: 'header-profile' do %>
-              <%= image_tag current_user.avatar_url, class: 'rounded-circle mr15', width: '40', height: '40' %>
+              <%= image_tag (current_user.avatar_url.presence || "sample.png"), class: 'rounded-circle mr15', width: '40', height: '40' %>
             <% end %>
             <div class='dropdown-menu dropdown-menu-end'>
               <div class='dropdown-item'><%=current_user.name %></div>
