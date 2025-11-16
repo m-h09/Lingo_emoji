@@ -1,6 +1,4 @@
 console.log("✅ application.js loaded");
-import "@hotwired/turbo-rails"
-import "bootstrap";
 
 document.addEventListener("turbo:load", () => {
   console.log("🎯 turbo:load fired");
