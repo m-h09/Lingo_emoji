@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get "terms", to: "static_pages#terms"
   get "privacy", to: "static_pages#privacy"
 
-  resources :contacts, only: [:new, :create]
+  resources :contacts, only: [ :new, :create ]
   get "contact", to: "contacts#new"
   post "contact", to: "contacts#create"
 
