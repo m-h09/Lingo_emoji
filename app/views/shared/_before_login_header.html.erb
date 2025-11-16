@@ -11,26 +11,26 @@
       </button>
 
       <!-- ログイン前のナビゲーション -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto text-center">
-        <!-- 使い方ガイド -->
-          <li class="d-flex align-items-center me-3">
-            <!-- ？マーク -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto align-items-center text-center">
+
+          <li class="d-flex align-items-center me-7">
             <a href="/guide" class="text-decoration-none me-1" title="サービス利用ガイド">
               <i class="bi bi-question-circle fs-3 text-secondary"></i>
             </a>
-
-            <!-- 使い方テキスト -->
-            <a href="/guide" class="text-decoration-none" title="サービス利用ガイド">
+            <a href="/guide" class="text-decoration-none">
               <span class="fs-6 text-secondary">使い方</span>
             </a>
           </li>
+
           <li class="nav-time my-2">
             <%= link_to "ログイン", login_path, class: "nav-link" %>
           </li>
+
           <li class="nav-time my-2">
             <%= link_to "新規登録", new_user_path, class: "nav-link" %>
           </li>
+
         </ul>
       </div>
     </div>

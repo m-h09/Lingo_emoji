@@ -39,15 +39,15 @@
   </head>
 
   <body style="background-color: #fffff0">
-  <!-- LAYOUT: application -->
-  <% if logged_in? %>
-    <%= render 'shared/header' %>  <!-- ログイン後ヘッダー -->
-  <% else %>
-    <%= render 'shared/before_login_header' %>  <!-- ログイン前ヘッダー -->
-  <% end %>
-  <%= render 'shared/flash_message' %>
-  <%= yield %>
-  <%= render 'shared/footer' %>
-  <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
+    <!-- LAYOUT: application -->
+    <% if logged_in? %>
+      <%= render 'shared/header' %>  <!-- ログイン後ヘッダー -->
+    <% else %>
+      <%= render 'shared/before_login_header' %>  <!-- ログイン前ヘッダー -->
+    <% end %>
+    <%= render 'shared/flash_message' %>
+    <%= yield %>
+    <%= render 'shared/footer' %>
+    
   </body>
 </html>
