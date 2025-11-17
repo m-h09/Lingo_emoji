@@ -1,10 +1,21 @@
 <body class="bg-center p-3 m-0 border-0 bd-example" style="background-color: #fffff0">
-
-  <div class="mt-5 position-relative mx-auto text-center rounded w-50" style="bottom:30px;">
-    <h1 class="guide-title">利用ガイド</h1>
+<%= link_to "トップへ戻る", root_path, class: "back-link" %>
+  <div class="mt-5 mx-auto rounded w-50 position-relative text-center bg-info">
+    <!-- PC -->
+    <div class="mt-5 mb-2 mx-auto rounded w-50 position-relative text-center bg-info d-none d-md-block">
+      <div class="header-title text-center">
+        <h1 class="text-white mb-0 py-2 ">サイトの使い方</h1>
+      </div>
+    </div>
+    </div>
+    <!-- スマホ -->
+    <div class="mt-5 mx-auto rounded w-80 position-relative text-center bg-info">
+    <div class="mt-5 mb-2 mx-auto rounded w-100 position-relative text-center bg-info d-block d-md-none">
+      <div class="header-title text-center">
+        <h2 class="w-100 text-white mb-0 py-2">サイトの使い方</h2>
+      </div>
+    </div>
   </div>
-
-  <%= link_to "トップへ戻る", root_path, class: "back-link" %>
 
   <!-- ▼ タブメニュー -->
   <ul class="nav nav-tabs mt-4 justify-content-center" id="guideTab" role="tablist">
@@ -31,7 +42,10 @@
   <!-- ▲ タブメニュー -->
 
   <!-- ▼ タブの中身 -->
-  <div class="tab-content border-top border-bottom rounded-bottom py-2 mx-auto" id="guideTabContent" style="width:750px">
+  <div class="tab-content border-top border-bottom rounded-bottom py-2 mx-auto
+              w-100 w-md-75 w-lg-50"
+       id="guideTabContent"
+       style="max-width:750px;">
 
     <div class="tab-pane fade show active" id="auto_guide" role="tabpanel" aria-labelledby="auto_guide_tab">
       <%= render "guides/autoguide" %>

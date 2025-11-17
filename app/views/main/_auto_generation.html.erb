@@ -1,69 +1,166 @@
 <%= form_with url: main_index_path, method: :post, data: { turbo: false }, html: { autocomplete: "off" } do %>
-  <div class="d-flex gap-3 mb-4 mx-auto" style="width:500px">
-    <%= select_tag :emoji, options_for_select(Translation.emojis.keys.map {|key| [t("enums.translation.emoji.#{key}"), key] }, params[:emoji]), class: "form-select", id: "emoji-select" %>
-    <%= select_tag :tone, options_for_select(Translation.tones.keys.map { |key| [t("enums.translation.tone.#{key}"), key] }, params[:tone]), class: "form-select" %>
-    <%= select_tag :strength, options_for_select(Translation.strengths.keys.map { |key| [t("enums.translation.strength.#{key}"), key] }, params[:strength]), class: "form-select" %>
+  <div class="container px-0">
+    <div class="d-flex justify-content-center mb-3" style="max-width:500px; margin:0 auto; gap:8px;">
+
+      <div style="flex: 0 0 30%;">
+        <%= select_tag :emoji, options_for_select(
+              Translation.emojis.keys.map {|key| [t("enums.translation.emoji.#{key}"), key] }, params[:emoji]
+            ), class: "form-select" %>
+      </div>
+
+      <div style="flex: 0 0 30%;">
+        <%= select_tag :tone, options_for_select(
+              Translation.tones.keys.map {|key| [t("enums.translation.tone.#{key}"), key] }, params[:tone]
+            ), class: "form-select" %>
+      </div>
+
+      <div style="flex: 0 0 30%;">
+        <%= select_tag :strength, options_for_select(
+              Translation.strengths.keys.map {|key| [t("enums.translation.strength.#{key}"), key] }, params[:strength]
+            ), class: "form-select" %>
+      </div>
+
+    </div>
   </div>
 
 
   <!-- ラジオボタン-->
-  <div id="emoji-radio-group" class="mb-4  justify-content-center">
-    <% Translation.radio_emojis.keys.each do |key| %>
-      <label class="me-3">
-        <%= radio_button_tag :radio_emoji, key, params[:radio_emoji] == key %>
-        <%= t("enums.translation.radio_emoji.#{key}") %>
-      </label>
+  <!-- PC -->
+  <div class="d-none d-md-block mt-2 mb-4 mx-auto" style="max-width:500px;">
+    <div id="emoji-radio-group" class=" mb-4 fs-6 d-flex justify-content-between flex-wrap">
+      <% Translation.radio_emojis.keys.each do |key| %>
+
+        <label class="d-flex align-items-center me-2">
+          <%= radio_button_tag :radio_emoji, key, params[:radio_emoji] == key %>
+          <%= t("enums.translation.radio_emoji.#{key}") %>
+        </label>
+      <% end %>
+    </div>
+    <% if @input_error.present? %>
+      <div class="text-start mb-1 fs-6">
+        <p style="color:red; font-weight:bold;">【入力エラー】<%= @input_error %></p>
+      </div>
     <% end %>
   </div>
-  <% if @input_error.present? %>
-    <div class="text-start mb-1">
-      <p style="color:red; font-weight:bold;">【入力エラー】<%= @input_error %></p>
+
+  <!-- スマホ-->
+  <div class="d-block d-md-none mt-2 mb-4 mx-auto" style="max-width:500px;">
+    <div id="emoji-radio-group" class=" mb-4 fs-6 d-flex justify-content-between">
+      <% Translation.radio_emojis.keys.each do |key| %>
+
+        <label class="d-flex align-items-center">
+          <%= radio_button_tag :radio_emoji, key, params[:radio_emoji] == key %>
+          <%= t("enums.translation.radio_emoji.#{key}") %>
+        </label>
+      <% end %>
     </div>
-  <% end %>
+    <% if @input_error.present? %>
+      <div class="text-start mb-1 fs-6">
+        <p style="color:red; font-weight:bold;">【入力エラー】<%= @input_error %></p>
+      </div>
+    <% end %>
+  </div>
+
+
 
 
 <div class="mb-3">
   <textarea name="base_prompt" class="form-control border border-dark mt-3" rows="5" placeholder="入力してください"><%= @input_text %></textarea>
-  <div class="position-relative mx-auto my-3" style="max-width: 900px;">
-    <div class="d-flex justify-content-center align-items-center gap-2">
-      <%= submit_tag "変換", class: "btn btn-light border border-dark p-3 mt-2", style: "width:300px;" %>
-      <%= button_tag type: "submit", name: "retry", class: "btn btn-outline-secondary" do %>
-        <i class="bi bi-arrow-clockwise"></i> 再試行
-      <% end %>
+  <div class="button-area container mt-4">
+
+  <div class="row g-2 mt-3 justify-content-end">
+
+    <!-- 変換（常に中央） -->
+    <div class="col-12 col-md-6 text-center">
+      <%= submit_tag "変換",
+        class: "btn btn-light border border-dark w-100 py-3 fs-5" %>
     </div>
 
-    <button type="button" id="clear-btn" class="btn btn-outline-secondary border border-dark position-absolute end-0 top-50 translate-middle-y me-2">
-      クリア
-    </button>
+    <!-- PC：変換の右側に再試行 / クリア -->
+    <div class="col-md-3 d-none d-md-flex justify-content-center gap-2">
+      <%= button_tag type: "submit", name: "retry",
+        class: "btn btn-outline-secondary w-100 py-3 fs-6 text-nowrap" do %>
+        <i class="bi bi-arrow-clockwise"></i> 再試行
+      <% end %>
+
+      <button type="button" id="clear-btn"
+        class="btn btn-outline-secondary border border-dark w-100 py-3 fs-6 text-nowrap">
+        クリア
+      </button>
+    </div>
+
+    <!-- スマホ：変換の下に横並び -->
+    <div class="col-12 d-md-none">
+      <div class="row g-2 mt-1">
+        <div class="col-6">
+          <%= button_tag type: "submit", name: "retry",
+            class: "btn btn-outline-secondary w-100 py-2 fs-6" do %>
+            <i class="bi bi-arrow-clockwise"></i> 再試行
+          <% end %>
+        </div>
+        <div class="col-6">
+          <button type="button" id="clear-btn"
+            class="btn btn-outline-secondary border border-dark w-100 py-2 fs-6">
+            クリア
+          </button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
+
+</div>
+
 <% end %>
 <!-- 出力内容を決める-->
 <% output_text = @output.presence %>
+<!-- ▼ スマホ用 出力結果 -->
+<div class="d-block d-md-none px-4 py-3 container rounded position-relative mt-4"style="background-color:#87cefa;">
+  <h4 class="text-center fw-bold mb-3">出力結果</h4>
 
-<div class="px-4 py-3 container rounded position-relative mt-4" style="background-color:#87cefa;">
-  <h4 class="mb-0">
-    <label class="mt-0 mb-0 form-label text-center d-block" style="font-weight: bold;">出力結果</label>
-  </h4>
-
-  <br>
-
-  <div id="txt" class="copy-wrapper position-relative bg-white p-3 rounded">
+  <div id="txt" class="copy-wrapper position-relative bg-white p-3 rounded" style="min-height:120px;">
     <% if @output_error.present? %>
-      <p style="color:red; font-weight:bold;"><%= @output_error %></p>
+      <p class="text-danger fw-bold"><%= @output_error %></p>
     <% else %>
-      <div id="txt-body" class="mb-0"><%= output_text %></div>
+      <div id="txt-body"><%= output_text %></div>
     <% end %>
 
-    <!-- 右上に固定されたコピーアイコン -->
-    <button
-      class="copy-btn btn btn-link p-0 position-absolute copy-btn-abs"
-      type="button" aria-label="コピー"
-      data-content="<%= output_text %>">
-      <%= image_tag "copy_icon_128895.svg", alt: "コピーする", style: "width:20px; height:20px;" %>
+    <!-- コピーアイコン（右上） -->
+    <button class="copy-btn btn btn-link p-0 position-absolute top-0 end-0 mt-2 me-2"
+            type="button" aria-label="コピー"
+            data-content="<%= output_text %>">
+      <%= image_tag "copy_icon_128895.svg", style: "width:20px; height:20px;" %>
     </button>
 
-    <!-- アイコンの左横に小さく出るトースト -->
-    <div class="copy-toast">コピーしました</div>
+      <div class="copy-toast badge text-bg-dark position-absolute top-0 end-0 mt-2 me-5"
+          style="display:none;">
+        コピーしました
+      </div>
+    </div>
+  </div>
+  <!--pc用-->
+  <!-- ▼ PC用 出力結果 -->
+<div class="d-none d-md-block px-4 py-3 container rounded position-relative mt-4" style="background-color:#87cefa;">
+
+  <h4 class="text-center fw-bold mb-3">出力結果</h4>
+
+  <div id="txt" class="copy-wrapper bg-white p-4 border border-2 rounded shadow-sm position-relative" style="min-height:150px;">
+    <% if @output_error.present? %>
+      <p class="text-danger fw-bold"><%= @output_error %></p>
+    <% else %>
+      <div id="txt-body"><%= output_text %></div>
+    <% end %>
+
+    <!-- コピーアイコン（右上） -->
+    <button class="btn btn-link position-absolute top-0 end-0 mt-2 me-2 p-0"
+            type="button" aria-label="コピー"
+            data-content="<%= output_text %>">
+      <%= image_tag "copy_icon_128895.svg", style: "width:24px; height:24px;" %>
+    </button>
+
+    <div class="copy-toast badge text-bg-dark position-absolute top-0 end-0 mt-2 me-5" style="display:none;">
+      コピーしました
+    </div>
   </div>
 </div>

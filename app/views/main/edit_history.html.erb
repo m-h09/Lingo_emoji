@@ -2,12 +2,24 @@
   <div class=" mb-5 px-3 py-2 ">
     <%= link_to "←1つ前に戻る",  main_index_path, class: "mb-3" %>
   </div>
-  <div class="mt-5 mx-auto rounded w-50 position-relative text-center bg-info">
+  <!-- PC -->
+  <div class="mt-5 mb-2 mx-auto rounded w-50 position-relative text-center bg-info d-none d-md-block">
     <div class="header-title text-center">
-        <h1 class="text-white mb-0 py-2">Myテンプレート編集画面</h1>
+      <h1 class="text-white mb-0 py-2 ">Myテンプレート編集画面</h1>
     </div>
   </div>
-  <p class="text-muted small text-center mt-2">
+  <!-- スマホ -->
+  <div class="mt-5 mb-2 mx-auto rounded w-75 position-relative text-center bg-info d-block d-md-none">
+    <div class="header-title text-center">
+      <h5 class="w-100 text-white mb-0 py-2">Myテンプレート編集画面</h5>
+    </div>
+  </div>
+  <!-- pc -->
+  <p class="text-muted small text-center mt-3 d-none d-md-block">
+  追加・削除したいテンプレートにチェックを入れてボタンを押してください
+  </p>
+  <!-- スマホ -->
+  <p class="text-muted small text-center mt-3 d-block d-md-none" style="font-size: 0.6rem; line-height: 1.2;">
   追加・削除したいテンプレートにチェックを入れてボタンを押してください
   </p>
   <div class="container py-4">
@@ -33,7 +45,7 @@
       </button>
     </div>
 
-    <div class="tab-content border border-top-0 rounded-bottom py-2 mx-auto" id="pills-tabContent" style="width:750px">
+    <div class="tab-content border border-top-0 rounded-bottom py-2 mx-auto w-100 w-md-75 w-lg-50" id="pills-tabContent" style="max-width:750px;">
       <div class="tab-pane fade show active" id="pills-addition" role="tabpanel" aria-labelledby="pills-addition-tab" tabindex="0">
         <%= render "regist_addition" %>
       </div>
