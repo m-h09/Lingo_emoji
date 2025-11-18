@@ -85,7 +85,29 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
       <a href="https://gyazo.com/e55fb3ba83c88b11c9c4b5b51c20d1c7"><img src="https://i.gyazo.com/e55fb3ba83c88b11c9c4b5b51c20d1c7.png" alt="Image from Gyazo" width="954"/></a>
     </p>
     
-  
+
+
+###◾️使用技術
+## ■ 使用技術
+
+| カテゴリ | 技術内容 |
+|---------|----------|
+| 環境構築 | Docker（※使用していれば追記） |
+| サーバーサイド | Ruby 3.2.3 ／ Ruby on Rails 7.2.2 |
+| データベース | PostgreSQL（pg） |
+| アプリケーションサーバー | Puma |
+| 認証 | Sorcery |
+| 画像アップロード | CarrierWave ／ Cloudinary |
+| ページネーション | Kaminari |
+| メタタグ管理 | meta-tags |
+| AI API | ruby-openai |
+| フロントエンド | Hotwire（Turbo + Stimulus）・JavaScript（Importmap） |
+| 国際化 | rails-i18n |
+| 設定管理 | gem 'config' |
+| デバッグ | debug |
+| 静的解析 | Rubocop・Rubocop Rails・Brakeman |
+| 環境変数管理 | dotenv-rails |
+| 開発ツール | web-console・letter_opener_web |
 
 ### 🗒️ 本リリース（機能追加）
 - テンプレート機能に自動生成で出力された文章の履歴管理、保存できるようにする
