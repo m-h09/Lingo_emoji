@@ -1,4 +1,5 @@
 class AvatarUploader < CarrierWave::Uploader::Base
+  include Cloudinary::CarrierWave
   # Include RMagick, MiniMagick, or Vips support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -6,7 +7,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   # storage :file
-  storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -14,7 +14,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  def default_url
+  def default_url(*args)
     ActionController::Base.helpers.asset_path("sample.png")
   end
   # Provide a default URL as a default if there hasn't been a file uploaded:

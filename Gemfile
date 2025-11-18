@@ -12,7 +12,8 @@ gem "meta-tags", "2.22.1"
 gem "ruby-openai"
 gem "sorcery"
 gem "rails-i18n", "~> 7.0.0"
-gem "carrierwave"
+gem 'carrierwave'
+gem 'cloudinary'
 gem "kaminari"
 
 group :development, :test do
