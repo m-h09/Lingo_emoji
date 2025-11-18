@@ -62,7 +62,7 @@ class MainController < ApplicationController
     if params[:records].present?
       deleted_records = params[:records] # 画面上でチェックされたrecord
       current_user.translations.where(output_text: deleted_records).destroy_all
-      redirect_to main_edit_history_path, success: "選択した翻訳を削除しました"
+      redirect_to main_edit_history_path, success: "選択した項目を削除しました"
     else
       redirect_to main_edit_history_path, danger: "削除する項目を選択してください"
     end
