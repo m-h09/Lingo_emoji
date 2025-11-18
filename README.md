@@ -1,3 +1,6 @@
+[![Image from Gyazo](https://i.gyazo.com/9487b76167be2dff1506e38cf49218a8.png)](https://gyazo.com/9487b76167be2dff1506e38cf49218a8)
+アプリケーションURL:https://lingo-emoji.onrender.com/
+
 ## ◾️サービス概要
 - ユーザが考えた文章に絵文字追加や、関西弁に変換することができるアプリです
 - ユーザー登録をすると出力した履歴から自分自身のテンプレートを作成することができる
@@ -30,13 +33,10 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
    - UIで直感的に使えるため、ユーザーに優しい
  
 # ◾️サービスの利用イメージ
-[![Image from Gyazo](https://i.gyazo.com/9487b76167be2dff1506e38cf49218a8.png)](https://gyazo.com/9487b76167be2dff1506e38cf49218a8)
-アプリケーションURL:https://lingo-emoji.onrender.com/
--画面全体のイメージ（URLを開くとトップに表示される）
-- 基本的にはユーザー登録なしで利用できる
-
 - トップページ
 [![Image from Gyazo](https://i.gyazo.com/82c80571a978a33978c814ac5470ddb3.gif)](https://gyazo.com/82c80571a978a33978c814ac5470ddb3)
+  - 画面全体のイメージ（URLを開くとトップに表示される）
+  - 基本的にはユーザー登録なしで利用できる
 
 ### 自動生成
 [![Image from Gyazo](https://i.gyazo.com/80d26529425ff872c1bc1f36c11f8853.png)](https://gyazo.com/80d26529425ff872c1bc1f36c11f8853)
