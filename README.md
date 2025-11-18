@@ -50,8 +50,8 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 - 「選択なし」→ ランダムで考えてくれる
 
 ###テンプレート
-[![Image from Gyazo](https://i.gyazo.com/87fd611d031b64a8ec33d46826ea0c2f.gif)](https://gyazo.com/87fd611d031b64a8ec33d46826ea0c2f)
-こちらで作成したテンプレートも使っていただける
+[[![Image from Gyazo](https://i.gyazo.com/87fd611d031b64a8ec33d46826ea0c2f.gif)](https://gyazo.com/87fd611d031b64a8ec33d46826ea0c2f)](https://i.gyazo.com/74f1f9e48f0664d20f3ebaf0ca8777b7.gif)
+-こちらで作成したテンプレートも使っていただける
 
 ・変換の仕様
 - 変換モード（画面上部の左側タブ）は「絵文字追加・関西弁変換」
