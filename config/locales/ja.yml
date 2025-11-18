@@ -27,6 +27,11 @@ ja:
     create_board: 掲示板作成
     bookmark_index: ブックマーク一覧
     profile: プロフィール
+  footers:
+    about: よくある質問
+    terms: 利用規約
+    privacy: プライバシーポリシー
+    contact: お問い合わせ
   profiles:
     show:
       title: プロフィール
