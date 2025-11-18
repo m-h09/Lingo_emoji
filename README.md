@@ -64,14 +64,22 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 <a href="https://gyazo.com/f27ee00967216fd013c47e5f6fe587be"><img src="https://i.gyazo.com/f27ee00967216fd013c47e5f6fe587be.png" alt="Image from Gyazo" width="1049"/></a>
 
 # 編集画面
-- 3つのタブを使い編集が簡単にできる
-
+<h4> 3つのタブを使い編集が簡単にできる</h4>
     <h2>登録追加</h2>
     <p align="center">
       <a href="https://gyazo.com/d3f92685edbe86299e673bef68913b44"><img src="https://i.gyazo.com/d3f92685edbe86299e673bef68913b44.png" alt="Image from Gyazo" width="922"/></a><br>
-      自動生成で出力された結果の履歴から選択・追加するとMYテンプレート（トップ画面の３つ目のタブ）に表示される
     </p>
 
+    <h2>登録削除</h2>
+    <p align="center">
+      <a href="https://gyazo.com/6c1193dcff47b00106100ab48c0620c5"><img src="https://i.gyazo.com/6c1193dcff47b00106100ab48c0620c5.png" alt="Image from Gyazo" width="997"/></a>
+    </p>
+
+    <h2>履歴削除</h2>
+    <p align="center">
+      <a href="https://gyazo.com/e55fb3ba83c88b11c9c4b5b51c20d1c7"><img src="https://i.gyazo.com/e55fb3ba83c88b11c9c4b5b51c20d1c7.png" alt="Image from Gyazo" width="954"/></a>
+    </p>
+    
   
 
 ### 🗒️ 本リリース（機能追加）
