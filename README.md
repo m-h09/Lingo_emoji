@@ -95,15 +95,14 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 | 環境構築 | Docker（※使用していれば追記） |
 | サーバーサイド | Ruby 3.2.3 ／ Ruby on Rails 7.2.2 |
 | データベース | PostgreSQL（pg） |
+|cssフレームワーク|boostrap|
 | アプリケーションサーバー | Puma |
+|ホスティングサーバー| render |
 | 認証 | Sorcery |
 | 画像アップロード | CarrierWave ／ Cloudinary |
-| ページネーション | Kaminari |
-| メタタグ管理 | meta-tags |
 | AI API | ruby-openai |
 | フロントエンド | Hotwire（Turbo + Stimulus）・JavaScript（Importmap） |
-| 国際化 | rails-i18n |
-| 設定管理 | gem 'config' |
+| バージョン管理 | git ・ github |
 | デバッグ | debug |
 | 静的解析 | Rubocop・Rubocop Rails・Brakeman |
 | 環境変数管理 | dotenv-rails |
