@@ -7,6 +7,14 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def debug_avatar_url
+    if current_user
+      puts "============================"
+      puts "Avatar URL: #{current_user.avatar.url}"
+      puts "============================"
+    end
+  end
+
   def not_authenticated
     redirect_to login_path, danger: "ログインが必要です"
   end
