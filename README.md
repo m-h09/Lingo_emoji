@@ -71,12 +71,12 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
     <p align="center">
       <a href="https://gyazo.com/d3f92685edbe86299e673bef68913b44"><img src="https://i.gyazo.com/d3f92685edbe86299e673bef68913b44.png" alt="Image from Gyazo" width="922"/></a><br>
     </p>
-
+--
     <h2>登録削除</h2>
     <p align="center">
       <a href="https://gyazo.com/6c1193dcff47b00106100ab48c0620c5"><img src="https://i.gyazo.com/6c1193dcff47b00106100ab48c0620c5.png" alt="Image from Gyazo" width="997"/></a>
     </p>
-
+--
     <h2>履歴削除</h2>
     <p align="center">
       <a href="https://gyazo.com/e55fb3ba83c88b11c9c4b5b51c20d1c7"><img src="https://i.gyazo.com/e55fb3ba83c88b11c9c4b5b51c20d1c7.png" alt="Image from Gyazo" width="954"/></a>
