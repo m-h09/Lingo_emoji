@@ -63,11 +63,12 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 
 # 編集画面
 - 3つのタブを使い編集が簡単にできる
-  <h5 align="center">登録追加</h5>
-　<a href="https://gyazo.com/d3f92685edbe86299e673bef68913b44"><img src="https://i.gyazo.com/d3f92685edbe86299e673bef68913b44.png" alt="Image from Gyazo" width="922"/></a>
-  <p>自動生成で出力された結果の履歴から選択・追加するとMYテンプレート（トップ画面の３つ目のタブ）に表示される</p>
+<h2 align="center">登録追加</h2>
 
-
+<p align="center">
+  　<a href="https://gyazo.com/d3f92685edbe86299e673bef68913b44"><img src="https://i.gyazo.com/d3f92685edbe86299e673bef68913b44.png" alt="Image from Gyazo" width="922"/></a>
+  　自動生成で出力された結果の履歴から選択・追加するとMYテンプレート（トップ画面の３つ目のタブ）に表示される
+</p>
 
 ### 🗒️ 本リリース（機能追加）
 - テンプレート機能に自動生成で出力された文章の履歴管理、保存できるようにする
