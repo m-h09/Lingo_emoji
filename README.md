@@ -32,13 +32,13 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
  -------
 # ◾️サービスの利用イメージ
 - トップページ
-<a href="https://gyazo.com/82c80571a978a33978c814ac5470ddb3"><img src="https://i.gyazo.com/82c80571a978a33978c814ac5470ddb3.gif" alt="Image from Gyazo" width="800"/></a>
+<a align="center" href="https://gyazo.com/82c80571a978a33978c814ac5470ddb3"><img src="https://i.gyazo.com/82c80571a978a33978c814ac5470ddb3.gif" alt="Image from Gyazo" width="800"/></a>
   - 画面全体のイメージ（URLを開くとトップに表示される）
   - 基本的にはユーザー登録なしで利用できる
 
 ### 自動生成
 
-<a href="https://gyazo.com/80d26529425ff872c1bc1f36c11f8853"><img src="https://i.gyazo.com/80d26529425ff872c1bc1f36c11f8853.png" alt="Image from Gyazo" width="800"/></a>
+<a align="center" href="https://gyazo.com/80d26529425ff872c1bc1f36c11f8853"><img src="https://i.gyazo.com/80d26529425ff872c1bc1f36c11f8853.png" alt="Image from Gyazo" width="800"/></a>
 <p>以下のタブで変換の仕様を変更することがで切る</p>  
 - 変換モード（画面上部の左側タブ）は「絵文字追加・関西弁変換・絵文字＋関西弁変換」
 - スタイル（画面上部の中央タブ）は「フォーマル・カジュアル・フランク」
@@ -49,7 +49,9 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 - 「選択なし」→ ランダムで考えてくれる
 
 ### テンプレート
-<a href="https://gyazo.com/87fd611d031b64a8ec33d46826ea0c2f"><img src="https://i.gyazo.com/87fd611d031b64a8ec33d46826ea0c2f.gif" alt="Image from Gyazo" width="700"/></a>
+<p algin="center>
+  <a href="https://gyazo.com/87fd611d031b64a8ec33d46826ea0c2f"><img src="https://i.gyazo.com/87fd611d031b64a8ec33d46826ea0c2f.gif" alt="Image from Gyazo" width="700"/></a>
+</p>
 
 
 <p>こちらで作成したテンプレートも使っていただける</p>
@@ -61,7 +63,7 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 
 ### ログイン後の機能
 ## 履歴機能
-<a href="https://gyazo.com/f27ee00967216fd013c47e5f6fe587be"><img src="https://i.gyazo.com/f27ee00967216fd013c47e5f6fe587be.png" alt="Image from Gyazo" width="1049"/></a>
+<a algin="center" href="https://gyazo.com/f27ee00967216fd013c47e5f6fe587be"><img src="https://i.gyazo.com/f27ee00967216fd013c47e5f6fe587be.png" alt="Image from Gyazo" width="1049"/></a>
 
 # 編集画面
 <h4> 3つのタブを使い編集が簡単にできる</h4>
