@@ -60,6 +60,10 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 - 「アイコン系なし」→　表情を特に伝えたい時に顔系絵文字などの出現率がたかくなるため
 - 「選択なし」→ ランダムで考えてくれる
 
+# スマホ画面のみ出力結果が上部、入力フォームが下部に来るようにしています
+<a href="https://gyazo.com/ffbd5061a0c14f7e7f2156aafd6b2888"><img src="https://i.gyazo.com/ffbd5061a0c14f7e7f2156aafd6b2888.png" alt="Image from Gyazo" width="346"/></a>
+<p>理由として、スマホだと入力する際にしたからキーボードが出てくるため、出力結果の確認とコピーがしやすい配置にしたかったため</p>
+
 ### テンプレート
 <p algin="center>
   <a href="https://gyazo.com/87fd611d031b64a8ec33d46826ea0c2f"><img src="https://i.gyazo.com/87fd611d031b64a8ec33d46826ea0c2f.gif" alt="Image from Gyazo" width="700"/></a>
@@ -129,7 +133,7 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 | 開発ツール | web-console・letter_opener_web |
 
 
-
+## 画面遷移
 <a href="https://gyazo.com/313157e622aa073e389b0562ff0f015c"><img src="https://i.gyazo.com/313157e622aa073e389b0562ff0f015c.png" alt="Image from Gyazo" width="759"/></a>
 https://drive.google.com/file/d/1EYnTuQxBm88x_8zdlkcC64ZiETgOvLli/view?usp=drive_link
 
