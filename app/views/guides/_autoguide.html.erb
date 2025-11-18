@@ -15,8 +15,17 @@
         </li>
         <li class="mt-5">
         絵文字の種類を選択したい方は下記で少しの変更ができます
-          <%= image_tag "tab_guide_emoji.png", class: "mt-5 w-50 mx-auto d-block" %>
-          <p class="text-center text-danger small">二つとも選択しなければ両方使用した絵文字が出力されます</p>
+          <%= image_tag "tab_guide_emoji.png", class: "mt-3 w-75 mx-auto d-block" %>
+          <!-- PC・タブレット用-->
+          <p class="text-center text-danger small d-none d-md-block">
+            二つとも選択しなければ両方使用した絵文字が出力されます
+          </p>
+
+          <!-- スマホ用 -->
+          <p class="text-center text-danger d-block d-md-none"
+            style="font-size: 0.6rem; line-height: 1.2;">
+            二つとも選択しなければ両方使用した絵文字が出力されます
+          </p>
           <p class="text-center small">入力フォーム↓</p>
           <%= image_tag "tab_guide_input.png", class: "w-50 mx-auto d-block" %>
         </li>

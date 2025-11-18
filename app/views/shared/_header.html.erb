@@ -2,7 +2,7 @@
   <nav class='navbar navbar-expand-lg navigation navbar-light bg-lightr pb-2 pt-2 position-relative'>
     <div class="container-fluid d-flex align-items-center justify-content-between" style="position: relative;">
       <%= link_to root_path, class: 'navbar-brand', style: 'position: relative; z-index: 1050; cursor: pointer;' do %>
-        <%= image_tag 'smallicon.png', size: '32x32', style:'margin-left: 15px; cursor: pointer;'%>
+        <%= image_tag 'smallicon.png', size: '52x52', style:'margin-left: 15px; cursor: pointer;'%>
       <% end %>
 
       <button class='navbar-toggler pb-0 ' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent'
@@ -13,7 +13,7 @@
       <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto align-items-center text-center">
           <!-- 使い方ガイド -->
-          <li class="d-flex align-items-center me-5">
+          <li class="d-flex align-items-center me-3">
             <!-- ？マーク -->
             <a href="/guide" class="text-decoration-none me-1" title="サービス利用ガイド">
               <i class="bi bi-question-circle fs-3 text-secondary"></i>
@@ -26,7 +26,7 @@
           </li>
           <li class='nav-item dropdown dropdown-slide'>
             <%= link_to '#', class: 'nav-link', data: { bs_toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' }, id: 'header-profile' do %>
-              <%= image_tag (current_user.avatar_url.presence || "sample.png"), class: 'rounded-circle mr15', width: '40', height: '40', style: "margin-left: -53px;" %>
+              <%= image_tag (current_user.avatar_url.presence || "sample.png"), class: 'rounded-circle mr15', width: '40', height: '40' %>
             <% end %>
             <div class='dropdown-menu dropdown-menu-end'>
               <div class='dropdown-item'><%=current_user.name %></div>

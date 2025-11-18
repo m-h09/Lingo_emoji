@@ -4,7 +4,7 @@ class MainController < ApplicationController
     if logged_in?
       # ログイン後のメインページ表示
       @user = current_user
-      @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(20)
+      @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(10)
     else
       # ログイン前のメインページ表示
     end
@@ -27,7 +27,7 @@ class MainController < ApplicationController
   def guide; end
 
   def history
-    @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(20)
+    @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(10)
   end
 
   def add_history
@@ -37,7 +37,7 @@ class MainController < ApplicationController
       outputs.each do |text|
         current_user.histories.find_or_create_by!(record: text)
       end
-      redirect_to main_history_path, success: "登録しました"
+      redirect_to main_index_path, success: "Myテンプレートへ項目を追加しました"
     else
       redirect_to main_edit_history_path, danger: "チェックを入れてください"
     end
@@ -58,15 +58,24 @@ class MainController < ApplicationController
     end
   end
 
+  def translation_delete
+    if params[:records].present?
+      deleted_records = params[:records] # 画面上でチェックされたrecord
+      current_user.translations.where(output_text: deleted_records).destroy_all
+      redirect_to main_edit_history_path, success: "選択した翻訳を削除しました"
+    else
+      redirect_to main_edit_history_path, danger: "削除する項目を選択してください"
+    end
+  end
+
 
   def edit_history
     # すでに履歴に登録された output_text を除外
     used_outputs = current_user.histories.pluck(:record)
 
-    @translations = current_user.translations
-    @translations = @translations.where.not(output_text: used_outputs).order(id: :desc).page(params[:translation_page]).per(20)
+    @translations = current_user.translations.where.not(output_text: used_outputs).order(id: :desc).page(params[:page]).per(10)
     # 登録削除よう
-    @histories = current_user.histories.order(created_at: :desc).page(params[:history_page]).per(20)
+    @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(10)
 
     if params[:q].present?  # 検索履歴
       @translations = @translations.where("output_text LIKE ?", "%#{params[:q]}%")
@@ -99,7 +108,7 @@ class MainController < ApplicationController
 
 
     if logged_in?
-      @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(20)
+      @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(10)
     end
 
     respond_to do |format|
