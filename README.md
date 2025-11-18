@@ -32,14 +32,14 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
  -------
 # ◾️サービスの利用イメージ
 - トップページ
-<a href="https://gyazo.com/82c80571a978a33978c814ac5470ddb3"><img src="https://i.gyazo.com/82c80571a978a33978c814ac5470ddb3.gif" alt="Image from Gyazo" width="600"/></a>
+<a href="https://gyazo.com/82c80571a978a33978c814ac5470ddb3"><img src="https://i.gyazo.com/82c80571a978a33978c814ac5470ddb3.gif" alt="Image from Gyazo" width="800"/></a>
   - 画面全体のイメージ（URLを開くとトップに表示される）
   - 基本的にはユーザー登録なしで利用できる
 
 ### 自動生成
 
-<a href="https://gyazo.com/80d26529425ff872c1bc1f36c11f8853"><img src="https://i.gyazo.com/80d26529425ff872c1bc1f36c11f8853.png" alt="Image from Gyazo" width="894"/></a>
-以下のタブで変換の仕様を変更することがで切る
+<a href="https://gyazo.com/80d26529425ff872c1bc1f36c11f8853"><img src="https://i.gyazo.com/80d26529425ff872c1bc1f36c11f8853.png" alt="Image from Gyazo" width="800"/></a>
+<p>以下のタブで変換の仕様を変更することがで切る</p>  
 - 変換モード（画面上部の左側タブ）は「絵文字追加・関西弁変換・絵文字＋関西弁変換」
 - スタイル（画面上部の中央タブ）は「フォーマル・カジュアル・フランク」
 - トーン（画面上部の右側タブ)は「強・中・弱」
@@ -49,11 +49,10 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 - 「選択なし」→ ランダムで考えてくれる
 
 ### テンプレート
-<a href="https://gyazo.com/87fd611d031b64a8ec33d46826ea0c2f"><img src="https://i.gyazo.com/87fd611d031b64a8ec33d46826ea0c2f.gif" alt="Image from Gyazo" width="600"/></a>
+<a href="https://gyazo.com/87fd611d031b64a8ec33d46826ea0c2f"><img src="https://i.gyazo.com/87fd611d031b64a8ec33d46826ea0c2f.gif" alt="Image from Gyazo" width="700"/></a>
 
 
-- こちらで作成したテンプレートも使っていただける
-
+<p>こちらで作成したテンプレートも使っていただける</p>
 ・変換の仕様
 - 変換モード（画面上部の左側タブ）は「絵文字追加・関西弁変換」
 - スタイル（画面上部の右側タブ）は「フォーマル・カジュアル」
@@ -62,17 +61,17 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 
 ### ログイン後の機能
 ## 履歴機能
-- [![Image from Gyazo](https://i.gyazo.com/f27ee00967216fd013c47e5f6fe587be.png)](https://gyazo.com/f27ee00967216fd013c47e5f6fe587be)
+<a href="https://gyazo.com/f27ee00967216fd013c47e5f6fe587be"><img src="https://i.gyazo.com/f27ee00967216fd013c47e5f6fe587be.png" alt="Image from Gyazo" width="1049"/></a>
 
 # 編集画面
 - 3つのタブを使い編集が簡単にできる
-  <div style="border:1px solid #ddd; padding:20px; border-radius:6px;">
-    <h2 align="center">登録追加</h2>
+
+    <h2>登録追加</h2>
     <p align="center">
       <a href="https://gyazo.com/d3f92685edbe86299e673bef68913b44"><img src="https://i.gyazo.com/d3f92685edbe86299e673bef68913b44.png" alt="Image from Gyazo" width="922"/></a><br>
       自動生成で出力された結果の履歴から選択・追加するとMYテンプレート（トップ画面の３つ目のタブ）に表示される
     </p>
-  </div>
+
   
 
 ### 🗒️ 本リリース（機能追加）
