@@ -97,7 +97,7 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
       <a href="https://gyazo.com/e55fb3ba83c88b11c9c4b5b51c20d1c7"><img src="https://i.gyazo.com/e55fb3ba83c88b11c9c4b5b51c20d1c7.png" alt="Image from Gyazo" width="954"/></a>
     </p>
     
-##　◾️ChatGPTとの差別化
+## ◾️ChatGPTとの差別化
 - ChatGPTだと毎回プロンプトが必要、本アプリは入力したい文章を打ってボタンを押して即変換
 - LINE返事などの日常会話に特化
 - AIが落ちてもテンプレ機能があるため安定性がある
