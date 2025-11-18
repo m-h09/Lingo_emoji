@@ -130,23 +130,8 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 
 
 
-
- -画面遷移図
- - スマホ（修正）みにくいようなので二画面に分けました
- 利用ガイド
-[![Image from Gyazo](https://i.gyazo.com/f51e030d59d5da45e20db1e96863a193.png)](https://gyazo.com/f51e030d59d5da45e20db1e96863a193)
-全体図
-[![Image from Gyazo](https://i.gyazo.com/6187f5d2ba47cf80359d95de02bdc5d7.png)](https://gyazo.com/6187f5d2ba47cf80359d95de02bdc5d7)
-
-
-  - PC版（修正済み、サービス利用ガイドあり）
-
-利用ガイド
-[![Image from Gyazo](https://i.gyazo.com/cdb8ca1683301ccff69e2c264b93123d.png)](https://gyazo.com/cdb8ca1683301ccff69e2c264b93123d)
-全体図
-[![Image from Gyazo](https://i.gyazo.com/35fe8cc49c6d4cda2cdce34ce6a6afc9.png)](https://gyazo.com/35fe8cc49c6d4cda2cdce34ce6a6afc9)
-
-
+<a href="https://gyazo.com/313157e622aa073e389b0562ff0f015c"><img src="https://i.gyazo.com/313157e622aa073e389b0562ff0f015c.png" alt="Image from Gyazo" width="759"/></a>
+https://drive.google.com/file/d/1EYnTuQxBm88x_8zdlkcC64ZiETgOvLli/view?usp=drive_link
 
 - 使用したツール
  https://rp.mockplus.com/
