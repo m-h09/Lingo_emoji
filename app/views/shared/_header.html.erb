@@ -1,5 +1,5 @@
-<header  class="bg light border-bottom py-2 mb-2" style="background-color: #fffff0">
-  <nav class='navbar navbar-expand-lg navigation navbar-light bg-lightr pb-2 pt-2 position-relative'>
+<header class="border-bottom py-2 mb-2 " style="background-color: #fffff0;">
+  <nav class='navbar navbar-expand-lg  pb-2 pt-2 position-relative'>
     <div class="container-fluid d-flex align-items-center justify-content-between" style="position: relative;">
       <%= link_to root_path, class: 'navbar-brand', style: 'position: relative; z-index: 1050; cursor: pointer;' do %>
         <%= image_tag 'smallicon.png', size: '52x52', style:'margin-left: 15px; cursor: pointer;'%>
@@ -9,26 +9,26 @@
           aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
           <span class='navbar-toggler-icon py-0'></span>
       </button>
-      <!-- ヘッダーのボタン-->
+
       <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto align-items-center text-center">
+
           <!-- 使い方ガイド -->
           <li class="d-flex align-items-center me-3">
-            <!-- ？マーク -->
             <a href="/guide" class="text-decoration-none me-1" title="サービス利用ガイド">
               <i class="bi bi-question-circle fs-3 text-secondary"></i>
             </a>
-
-            <!-- 使い方テキスト -->
             <a href="/guide" class="text-decoration-none" title="サービス利用ガイド">
               <span class="fs-6 text-secondary">使い方</span>
             </a>
           </li>
+
+
           <li class='nav-item dropdown dropdown-slide'>
             <%= link_to '#', class: 'nav-link', data: { bs_toggle: 'dropdown' }, aria: { haspopup: 'true', expanded: 'false' }, id: 'header-profile' do %>
-              <% Rails.logger.info "Avatar URL: #{current_user.avatar&.url}" %>
               <%= image_tag (current_user.avatar_url.presence || asset_path("sample.png")), class: 'rounded-circle mr15', width: '40', height: '40' %>
             <% end %>
+
             <div class='dropdown-menu dropdown-menu-end'>
               <div class='dropdown-item'><%=current_user.name %></div>
               <div class='dropdown-divider'></div>
@@ -36,6 +36,7 @@
               <%= link_to t('header.logout'), logout_path, class: 'dropdown-item', data: { turbo_method: :delete } %>
             </div>
           </li>
+
         </ul>
       </div>
     </div>
