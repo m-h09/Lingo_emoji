@@ -1,6 +1,6 @@
 <div>
-  <p class="text-center mt-2 small">出力結果の全履歴です。追加したい文章を選択して「追加」ボタンを押してください。</p>
-  <p class="text-center mt-2 small text-danger">履歴の削除は、「履歴削除」タブから削除してください。</p>
+  <p class="text-center mt-2 small">出力結果の全履歴から削除したいものを削除できます。</p>
+  <p class="text-center mt-0 small text-danger">ただし一度削除すると戻せません</p>
 </div>
 <div class="mb-4 d-flex justify-content-center align-items-center">
   <% if logged_in? %>
@@ -15,7 +15,7 @@
 </div>
 <div class="mb-4 d-flex justify-content-center align-items-center">
   <div class= "d-flex align-items-center">
-    <%= render "regist/add" %>
+    <%= render "regist/h-delete" %>
   </div>
 </div>
 <%= paginate @translations %>

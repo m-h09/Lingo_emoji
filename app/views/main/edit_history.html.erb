@@ -1,4 +1,13 @@
 <div class="container mt-3">
+  <style>
+    /* PC（768px以上）の時だけタブを大きくする */
+    @media (min-width: 768px) {
+      #pills-tab .nav-link {
+        font-size: 1.0rem !important;
+        padding: 0.7rem 1.2rem !important;
+      }
+    }
+  </style>
   <div class=" mb-5 px-3 py-2 ">
     <%= link_to "←1つ前に戻る",  main_index_path, class: "mb-3" %>
   </div>
@@ -43,7 +52,18 @@
               data-turbo="false">
         登録削除
       </button>
+      <button class="nav-link"
+              id="pills-h-delete-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-history_delete"
+              type="button" role="tab"
+              aria-controls="pills-history_delete" aria-selected="false"
+              data-turbo="false">
+        履歴削除
+      </button>
     </div>
+
+
 
     <div class="tab-content border border-top-0 rounded-bottom py-2 mx-auto w-100 w-md-75 w-lg-50" id="pills-tabContent" style="max-width:750px;">
       <div class="tab-pane fade show active" id="pills-addition" role="tabpanel" aria-labelledby="pills-addition-tab" tabindex="0">
@@ -51,6 +71,9 @@
       </div>
       <div class="tab-pane fade" id="pills-delete" role="tabpanel" aria-labelledby="pills-delete-tab" tabindex="0">
         <%= render "regist_delete" %>
+      </div>
+      <div class="tab-pane fade" id="pills-history_delete" role="tabpanel" aria-labelledby="pills-history_delete-tab" tabindex="0">
+        <%= render "history_delete" %>
       </div>
     </div>
   </div>

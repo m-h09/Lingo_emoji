@@ -106,66 +106,6 @@
 
 /* ここまで自動生成用 */
 
-#pills-tab .nav-link {
-  font-size: 12px !important;  /* ← スマホ用 */
-}
 
 /* PCサイズだけ元に戻す */
 /* ▼▼ スマホだけに適用 (〜480px) ▼▼ */
-@media (max-width: 480px) {
-
-  /* タブ（自動生成 / テンプレート / Myテンプレート） */
-  #pills-tab .nav-link {
-    font-size: 13px !important;  /* 小さめの文字 */
-    padding: 6px 4px !important; /* 細いボタン */
-    min-width: 80px !important;  /* 幅が揃う */
-  }
-
-  #pills-tab .nav-item {
-    flex: 1 1 auto !important;   /* 均等割り */
-    text-align: center !important;
-  }
-
-  /* タブ全体の横並び維持 & スマホで縮小 */
-  #pills-tab ul {
-    display: flex !important;
-    justify-content: space-around !important;
-    gap: 0.3rem !important;
-  }
-
-  /* タイトル文字（EMOJI関西弁変換）を少し縮小 */
-  #emoji-title {
-    font-size: 22px !important;
-  }
-
-  /* 入力系のセレクトボックス */
-  select.form-select {
-    font-size: 14px !important;
-    padding: 4px !important;
-  }
-
-  /* 出力結果のタイトル */
-  .output-title {
-    font-size: 18px !important;
-  }
-
-  /* ボタン類 */
-  button, .btn {
-    font-size: 10px !important;
-    padding: 6px 10px !important;
-  }
-
-  /* select3つの親（幅500px → 100%に強制） */
-  .emoji-select-row {
-    width: 100% !important;
-    flex-direction: column !important;  /* スマホでは縦並びの方が綺麗 */
-    gap: 10px !important;
-  }
-
-  /* 各セレクトボックス */
-  .emoji-select-row .form-select {
-    width: 100% !important;
-    font-size: 14px !important;
-    padding: 6px !important;
-  }
-}
