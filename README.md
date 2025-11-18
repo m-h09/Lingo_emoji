@@ -32,12 +32,12 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
  -------
 # ◾️サービスの利用イメージ
 - トップページ
-- [![Image from Gyazo](https://i.gyazo.com/82c80571a978a33978c814ac5470ddb3.gif)](https://gyazo.com/82c80571a978a33978c814ac5470ddb3)
+<a href="https://gyazo.com/82c80571a978a33978c814ac5470ddb3"><img src="https://i.gyazo.com/82c80571a978a33978c814ac5470ddb3.gif" alt="Image from Gyazo" width="600"/></a>
   - 画面全体のイメージ（URLを開くとトップに表示される）
   - 基本的にはユーザー登録なしで利用できる
 
 ### 自動生成
--[![Image from Gyazo](https://i.gyazo.com/80d26529425ff872c1bc1f36c11f8853.png)](https://gyazo.com/80d26529425ff872c1bc1f36c11f8853)
+<a href="https://gyazo.com/80d26529425ff872c1bc1f36c11f8853"><img src="https://i.gyazo.com/80d26529425ff872c1bc1f36c11f8853.png" alt="Image from Gyazo" width="894"/></a>
 以下のタブで変換の仕様を変更することがで切る
 - 変換モード（画面上部の左側タブ）は「絵文字追加・関西弁変換・絵文字＋関西弁変換」
 - スタイル（画面上部の中央タブ）は「フォーマル・カジュアル・フランク」
@@ -48,7 +48,7 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 - 「選択なし」→ ランダムで考えてくれる
 
 ### テンプレート
-- [[![Image from Gyazo](https://i.gyazo.com/87fd611d031b64a8ec33d46826ea0c2f.gif)](https://gyazo.com/87fd611d031b64a8ec33d46826ea0c2f)](https://i.gyazo.com/74f1f9e48f0664d20f3ebaf0ca8777b7.gif)
+<a href="https://gyazo.com/87fd611d031b64a8ec33d46826ea0c2f"><img src="https://i.gyazo.com/87fd611d031b64a8ec33d46826ea0c2f.gif" alt="Image from Gyazo" width="600"/></a>
 -こちらで作成したテンプレートも使っていただける
 
 ・変換の仕様
