@@ -32,12 +32,12 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
  -------
 # ◾️サービスの利用イメージ
 - トップページ
-[![Image from Gyazo](https://i.gyazo.com/82c80571a978a33978c814ac5470ddb3.gif)](https://gyazo.com/82c80571a978a33978c814ac5470ddb3)
+- [![Image from Gyazo](https://i.gyazo.com/82c80571a978a33978c814ac5470ddb3.gif)](https://gyazo.com/82c80571a978a33978c814ac5470ddb3)
   - 画面全体のイメージ（URLを開くとトップに表示される）
   - 基本的にはユーザー登録なしで利用できる
 
 ###自動生成
-([![Image from Gyazo](https://i.gyazo.com/80d26529425ff872c1bc1f36c11f8853.png)](https://gyazo.com/80d26529425ff872c1bc1f36c11f8853))
+-[![Image from Gyazo](https://i.gyazo.com/80d26529425ff872c1bc1f36c11f8853.png)](https://gyazo.com/80d26529425ff872c1bc1f36c11f8853)
 以下のタブで変換の仕様を変更することがで切る
 - 変換モード（画面上部の左側タブ）は「絵文字追加・関西弁変換・絵文字＋関西弁変換」
 - スタイル（画面上部の中央タブ）は「フォーマル・カジュアル・フランク」
@@ -57,9 +57,14 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 ・シーン選択
 -「日常」「応答・リアクション」「お誘い・関心」「SNS」「確認・質問」
 
-##ログイン後の機能
-# 履歴機能
+###ログイン後の機能
+## 履歴機能
 - [![Image from Gyazo](https://i.gyazo.com/f27ee00967216fd013c47e5f6fe587be.png)](https://gyazo.com/f27ee00967216fd013c47e5f6fe587be)
+
+#編集画面
+- 3つのタブを使い編集が簡単にできる
+  - 登録追加→自動生成で出力された結果の履歴から選択・追加するとMYテンプレート（トップ画面の３つ目のタブ）に表示される
+　<a href="https://gyazo.com/d3f92685edbe86299e673bef68913b44"><img src="https://i.gyazo.com/d3f92685edbe86299e673bef68913b44.png" alt="Image from Gyazo" width="922"/></a>
 
 
 
