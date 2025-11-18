@@ -74,7 +74,7 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 -「日常」「応答・リアクション」「お誘い・関心」「SNS」「確認・質問」
 
 ### ログイン後の機能
-##ログインユーザー機能
+## ログインユーザー機能
 <a href="https://gyazo.com/0f2af52af4b4512ab6f2df991ccb4d21"><img src="https://i.gyazo.com/0f2af52af4b4512ab6f2df991ccb4d21.png" alt="Image from Gyazo" width="1406"/></a>
 <p>次回から自動でログイン処理が行われるようになっており、すぐにサービスを利用することができます</p>
 ## 履歴機能
@@ -86,8 +86,8 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
     <p align="center">
       <a href="https://gyazo.com/d3f92685edbe86299e673bef68913b44"><img src="https://i.gyazo.com/d3f92685edbe86299e673bef68913b44.png" alt="Image from Gyazo" width="922"/></a><br>
     </p>
--
-    <h2>登録削除</h2>
+    
+<h2>登録削除</h2>
     <p align="center">
       <a href="https://gyazo.com/6c1193dcff47b00106100ab48c0620c5"><img src="https://i.gyazo.com/6c1193dcff47b00106100ab48c0620c5.png" alt="Image from Gyazo" width="997"/></a>
     </p>
