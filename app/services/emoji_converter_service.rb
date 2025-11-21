@@ -1,6 +1,7 @@
 class EmojiConverterService
-  FACE_EMOJIS = [ "😥", "😊", "😂", "🤣" ].freeze
-  ICON_EMOJIS = [ "📚", "🎉", "🚗", "🍣" ].freeze
+  FACE_REGEX = /[\u{1F600}-\u{1F64F}]/
+  ICON_REGEX = /[\u{1F300}-\u{1F5FF}]/
+
 
   def initialize(base_prompt:, style:, tone:, emoji:, radio_emoji:, strength:)
     @base_prompt = base_prompt
@@ -157,25 +158,33 @@ class EmojiConverterService
         #{@base_prompt}
 
         条件:
+        - 不自然な関西弁は絶対に使わない（例：『こんにちは、やん』『こんにちは、やで』『〜さんやねん』『〜やねん』など）
+        - 一般的に関西弁に翻訳できない定型文（例：挨拶文、名詞のみの文）は無理に変換せず、そのまま返す
+        - 原文のニュアンスを壊さない
+        - 語尾の追加など不必要な加工はしない
         - #{tone_kansai_rule}
         - #{strength_kansai_rule}
-        - 絵文字は絶対に使わない（絵文字に関する他の指示があっても無視する）
-        - 入力文を繰り返さず、翻訳後の文だけを出力してください。
-        - 不要な説明文や記号を加えないでください。
-        - 普段使わない言い回しは絶対に使わないでください（例：お疲れ様やねん、お疲れさんやねん、お疲れやねん）
+        - 翻訳できるところだけ自然に置き換える
+        - 入力文を繰り返さず、翻訳結果のみ返す
+
+        ※関西弁に自然に変換できない部分は絶対に原文のまま返してください
       PROMPT
     when "emoji_kansai"
-      <<~PROMPT
-        以下のテキストを関西弁＋絵文字付きにしてください：
-        #{@base_prompt}
+        <<~PROMPT
+          以下のテキストを自然な関西弁＋絵文字付きにしてください：
+          #{@base_prompt}
 
-        条件:
-        - #{tone_kansai_rule}
-        - #{strength_kansai_rule}   # 関西弁の濃さ
-        - #{strength_emoji_rule}    # 絵文字の量
-        - #{emoji_rule}
-        入力文を繰り返さず、変換後の文だけを出力してください。不要な文や説明は加えないでください。
-      PROMPT
+          条件:
+          - ※関西弁に自然に変換できない部分は絶対に原文のまま返す
+          - 不自然な関西弁は禁止（例：『こんにちは、やん』『こんにちは、やで』『ありがとうやねん』など）
+          - 原文のニュアンスを崩さない
+          - 語尾を勝手に追加しない
+          - #{tone_kansai_rule}
+          - #{strength_kansai_rule}   # 関西弁の濃さ
+          - #{strength_emoji_rule}    # 絵文字の量
+          - #{emoji_rule}
+          - 入力文を繰り返さず、結果のみ返す
+        PROMPT
     else
       ""
     end
@@ -185,6 +194,7 @@ class EmojiConverterService
   # 出力後のフィルタ処理（ラジオボタンの内容に応じて絵文字を削除）
   # ---------------------------
   def clean_text(text)
+    return text if @emoji == "emoji_kansai" && @radio_emoji == "no_kaomoji"
     case @radio_emoji
     when "no_kaomoji"
       remove_face_emojis(text)
@@ -197,15 +207,27 @@ class EmojiConverterService
     end
   end
 
-  def remove_face_emojis(text)
-    text.gsub(Regexp.union(FACE_EMOJIS), "")
-  end
+  def clean_text(text)
+    # 絵文字＋関西（emoji_kansai）の特別ルール
+    if @emoji == "emoji_kansai"
+      case @radio_emoji
+      when "no_icon"
+        return remove_icon_emojis(text)  # アイコンだけ消す
+      else
+        return text  # 顔文字は絶対残す
+      end
+    end
 
-  def remove_icon_emojis(text)
-    text.gsub(Regexp.union(ICON_EMOJIS), "")
-  end
-
-  def remove_face_and_icon_emojis(text)
-    remove_icon_emojis(remove_face_emojis(text))
+    # 通常モード
+    case @radio_emoji
+    when "no_kaomoji"
+      remove_face_emojis(text)
+    when "no_icon"
+      remove_icon_emojis(text)
+    when "nothing"
+      remove_face_and_icon_emojis(text)
+    else
+      text
+    end
   end
 end

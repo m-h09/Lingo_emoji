@@ -1,38 +1,4 @@
 console.log("✅ application.js loaded");
-document.addEventListener("turbo:load", () => {
-  console.log("🎯 turbo:load fired");
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("🎯 DOMContentLoaded fired");
-});
-
-// セレクトメニューの値によってラジオボタンの表示/非表示を切り替え
-
-document.addEventListener("turbo:load", () => {
-  initRadioToggle();
-});
-
-function initRadioToggle() {
-  const emojiSelect = document.getElementById("emoji-select");
-  const pcRadioGroup = document.getElementById("emoji-radio-group-pc");
-  const spRadioGroup = document.getElementById("emoji-radio-group-sp");
-
-  if (!emojiSelect) return;
-
-  function toggleRadioGroup() {
-    console.log("切り替え実行, 現在の値:", emojiSelect.value);
-
-    const display = emojiSelect.value === "kansai" ? "none" : "flex";
-
-    if (pcRadioGroup) pcRadioGroup.style.display = display;
-    if (spRadioGroup) spRadioGroup.style.display = display;
-  }
-
-  toggleRadioGroup();
-  emojiSelect.addEventListener("change", toggleRadioGroup);
-}
 
 //出力結果表示
 
