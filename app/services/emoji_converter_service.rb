@@ -169,7 +169,7 @@ class EmojiConverterService
 
         ※関西弁に自然に変換できない部分は絶対に原文のまま返してください
       PROMPT
-      when "emoji_kansai"
+    when "emoji_kansai"
         <<~PROMPT
           以下のテキストを自然な関西弁＋絵文字付きにしてください：
           #{@base_prompt}
