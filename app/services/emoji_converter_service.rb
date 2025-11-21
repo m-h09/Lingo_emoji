@@ -1,6 +1,15 @@
 class EmojiConverterService
   FACE_REGEX = /[\u{1F600}-\u{1F64F}]/
-  ICON_REGEX = /[\u{1F300}-\u{1F5FF}]/
+  ICON_EMOJIS = [ "📚", "🎉", "🚗", "🍣" ].freeze
+
+  def remove_face_emojis(text)
+    text.gsub(FACE_REGEX, "")
+  end
+
+  # ← ここに置く
+  def remove_icon_emojis(text)
+    text.gsub(Regexp.union(ICON_EMOJIS), "")
+  end
 
 
   def initialize(base_prompt:, style:, tone:, emoji:, radio_emoji:, strength:)
