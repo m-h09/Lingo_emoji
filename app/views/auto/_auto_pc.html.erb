@@ -1,0 +1,97 @@
+<div class="auto-generation-pc container" style="max-width:800px; margin:0 auto;">
+
+  <% output_text = @output.presence %>
+
+  <!-- ① PC セレクト -->
+  <div class="d-flex justify-content-center mb-3"
+       style="max-width:500px; margin:0 auto; gap:8px;">
+
+    <div style="flex: 0 0 30%;">
+      <%= select_tag :emoji, options_for_select(
+            Translation.emojis.keys.map { |key| [t("enums.translation.emoji.#{key}"), key] }, params[:emoji]
+          ), class: "form-select" %>
+    </div>
+
+    <div style="flex: 0 0 30%;">
+      <%= select_tag :tone, options_for_select(
+            Translation.tones.keys.map { |key| [t("enums.translation.tone.#{key}"), key] }, params[:tone]
+          ), class: "form-select" %>
+    </div>
+
+    <div style="flex: 0 0 30%;">
+      <%= select_tag :strength, options_for_select(
+            Translation.strengths.keys.map { |key| [t("enums.translation.strength.#{key}"), key] }, params[:strength]
+          ), class: "form-select" %>
+    </div>
+
+  </div>
+
+  <!-- ② PC ラジオボタン -->
+  <div class="mt-2 mb-3" style="max-width:500px; margin:0 auto;">
+    <div id="emoji-radio-group-pc"
+         class="mb-3 fs-6 d-flex justify-content-between flex-wrap">
+
+      <% Translation.radio_emojis.keys.each do |key| %>
+        <label class="d-flex align-items-center me-2">
+          <%= radio_button_tag :radio_emoji, key, params[:radio_emoji] == key %>
+          <%= t("enums.translation.radio_emoji.#{key}") %>
+        </label>
+      <% end %>
+
+    </div>
+
+    <% if @input_error.present? %>
+      <p class="text-danger fw-bold">【入力エラー】<%= @input_error %></p>
+    <% end %>
+  </div>
+
+  <!-- ③ PC 入力欄（textarea） -->
+  <div class="pc-input-wrapper mb-4">
+    <%= render "shared/base_prompt_input" %>
+  </div>
+
+
+  <!-- ⑤ PC ボタン -->
+  <div class="row g-2 mb-4 justify-content-end">
+
+    <div class="col-md-6 text-center">
+      <%= submit_tag "変換",
+          class: "btn btn-light border border-dark w-100 py-3 fs-5" %>
+    </div>
+
+    <div class="col-md-3 d-flex gap-2">
+      <%= button_tag type: "submit", name: "retry",
+            class: "btn btn-outline-secondary w-100 py-3 fs-6 text-nowrap" do %>
+        <i class="bi bi-arrow-clockwise"></i> 再試行
+      <% end %>
+
+      <button type="button" id="clear-btn"
+        class="btn btn-outline-secondary border border-dark w-100 py-3 fs-6 text-nowrap">
+        クリア
+      </button>
+    </div>
+
+  </div>
+  <!-- ④ PC 出力結果 -->
+  <div class="px-4 py-3 rounded position-relative mb-4"
+       style="background-color:#87cefa;">
+    <h4 class="text-center fw-bold mb-3">出力結果</h4>
+
+    <div id="txt" class="copy-wrapper bg-white p-4 border border-2 rounded shadow-sm position-relative"
+         style="min-height:150px;">
+      <% if @output_error.present? %>
+        <p class="text-danger fw-bold"><%= @output_error %></p>
+      <% else %>
+        <div id="txt-body"><%= output_text %></div>
+      <% end %>
+
+      <button class="btn btn-link position-absolute top-0 end-0 mt-2 me-2 p-0"
+              type="button" aria-label="コピー"
+              data-content="<%= output_text %>">
+        <%= image_tag "copy_icon_128895.svg", style:"width:24px; height:24px;" %>
+      </button>
+    </div>
+  </div>
+
+
+</div>

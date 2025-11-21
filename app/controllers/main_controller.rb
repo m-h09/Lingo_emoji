@@ -1,6 +1,9 @@
 class MainController < ApplicationController
   skip_before_action :require_login
   def index
+    Rails.logger.info "============== UA START =============="
+    Rails.logger.info request.user_agent
+    Rails.logger.info "============== UA END ================"
     if logged_in?
       # ログイン後のメインページ表示
       @user = current_user
@@ -15,9 +18,9 @@ class MainController < ApplicationController
       emoji: params[:emoji],
       tone: params[:tone],
       category: params[:category]
-    ).limit(10)
+    )..order(id: :desc).page(params[:page]).per(10)
 
-    # JSリクエストなら部分テンプレートだけ返す
+    # JSから部分テンプレートだけ返す
     respond_to do |format|
       format.html { render partial: "templates/list", locals: { templates: @templates } }
       format.any { render plain: "unsupported format", status: 406 }
@@ -83,10 +86,15 @@ class MainController < ApplicationController
   end
 
   def create
+    Rails.logger.info "============== UA START =============="
+    Rails.logger.info request.user_agent
+    Rails.logger.info "============== UA END ================"
+    @input_text = nil
     base_prompt = params[:base_prompt]
 
     if base_prompt.blank?
       @input_error = "入力してから「変換」ボタンを押してください"
+      @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(10) if logged_in?
       render :index and return
     end
 
@@ -117,12 +125,12 @@ class MainController < ApplicationController
 
   rescue Timeout::Error
     @api_error = "OpenAIの処理がタイムアウトしました。時間をおいて再度お試しください。"
-    @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(20) if logged_in?
+    @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(10) if logged_in?
     render :index
 
   rescue StandardError => e
     @global_error = "予期しないエラーが発生しました。#{e.message}"
-    @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(20) if logged_in?
+    @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(10) if logged_in?
     render :index
   end
 end

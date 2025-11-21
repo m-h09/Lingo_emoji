@@ -67,7 +67,13 @@
 
     <div class="tab-content border border-top-0 rounded-bottom py-2 mx-auto" id="pills-tabContent" style="max-width:750px; width:100%;">
       <div class="tab-pane fade show active" id="pills-auto" role="tabpanel" aria-labelledby="pills-auto-tab" tabindex="0">
-        <%= render "auto_generation" %>
+        <%= form_with url: main_index_path, method: :post, data: { turbo: false }, html: { autocomplete: "off" } do %>
+          <% if request.user_agent.to_s.downcase =~ /(iphone|android)/ %>
+            <%= render "auto/auto_sp" %>
+          <% else %>
+            <%= render "auto/auto_pc" %>
+          <% end %>
+        <% end %>
       </div>
       <div class="tab-pane fade" id="pills-templates" role="tabpanel" aria-labelledby="pills-templates-tab" tabindex="0">
         <%= render "templates" %>
