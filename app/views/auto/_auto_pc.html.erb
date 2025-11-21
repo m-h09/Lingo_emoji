@@ -2,14 +2,13 @@
 
   <% output_text = @output.presence %>
 
-  <!-- ① PC セレクト -->
-  <div class="d-flex justify-content-center mb-3"
-       style="max-width:500px; margin:0 auto; gap:8px;">
+
+  <div class="d-flex justify-content-center mb-3" style="max-width:500px; margin:0 auto; gap:8px;">
 
     <div style="flex: 0 0 30%;">
       <%= select_tag :emoji, options_for_select(
             Translation.emojis.keys.map { |key| [t("enums.translation.emoji.#{key}"), key] }, params[:emoji]
-          ), class: "form-select" %>
+          ), class: "form-select", id: "emoji-select-pc" %>
     </div>
 
     <div style="flex: 0 0 30%;">
@@ -26,10 +25,9 @@
 
   </div>
 
-  <!-- ② PC ラジオボタン -->
+  <!--ラジオボタン -->
   <div class="mt-2 mb-3" style="max-width:500px; margin:0 auto;">
-    <div id="emoji-radio-group-pc"
-         class="mb-3 fs-6 d-flex justify-content-between flex-wrap">
+    <div id="emoji-radio-group-pc" class="mb-3 fs-6 d-flex justify-content-between flex-wrap">
 
       <% Translation.radio_emojis.keys.each do |key| %>
         <label class="d-flex align-items-center me-2">
@@ -45,13 +43,13 @@
     <% end %>
   </div>
 
-  <!-- ③ PC 入力欄（textarea） -->
+  <!--  入力欄（textarea） -->
   <div class="pc-input-wrapper mb-4">
     <%= render "shared/base_prompt_input" %>
   </div>
 
 
-  <!-- ⑤ PC ボタン -->
+  <!--  ボタン -->
   <div class="row g-2 mb-4 justify-content-end">
 
     <div class="col-md-6 text-center">
@@ -72,7 +70,7 @@
     </div>
 
   </div>
-  <!-- ④ PC 出力結果 -->
+  <!-- 出力結果 -->
   <div class="px-4 py-3 rounded position-relative mb-4"
        style="background-color:#87cefa;">
     <h4 class="text-center fw-bold mb-3">出力結果</h4>

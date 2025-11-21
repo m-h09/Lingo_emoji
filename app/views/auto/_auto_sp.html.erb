@@ -2,14 +2,13 @@
 
   <% output_text = @output.presence %>
 
-  <!-- ① スマホ セレクト -->
-  <div class="d-flex justify-content-center mb-3"
-       style="max-width:500px; margin:0 auto; gap:8px;">
+
+  <div class="d-flex justify-content-center mb-3" style="max-width:500px; margin:0 auto; gap:8px;">
 
     <div style="flex: 0 0 30%;">
       <%= select_tag :emoji, options_for_select(
             Translation.emojis.keys.map {|key| [t("enums.translation.emoji.#{key}"), key]}, params[:emoji]
-          ), class: "form-select" %>
+          ), class: "form-select", id: "emoji-select-sp" %>
     </div>
 
     <div style="flex: 0 0 30%;">
@@ -26,10 +25,9 @@
 
   </div>
 
-  <!-- ② スマホ ラジオボタン -->
+
   <div class="mt-2 mb-4 mx-auto" style="max-width:500px;">
-    <div id="emoji-radio-group-sp"
-         class="mb-4 fs-6 d-flex justify-content-between">
+    <div id="emoji-radio-group-sp" class="mb-4 fs-6 d-flex justify-content-between">
       <% Translation.radio_emojis.keys.each do |key| %>
         <label class="d-flex align-items-center">
           <%= radio_button_tag :radio_emoji, key, params[:radio_emoji] == key %>
@@ -43,13 +41,11 @@
     <% end %>
   </div>
 
-  <!-- ③ スマホ 出力結果 -->
-  <div class="px-4 py-3 container rounded position-relative"
-       style="background-color:#87cefa;">
+  <!--出力結果 -->
+  <div class="px-4 py-3 container rounded position-relative" style="background-color:#87cefa;">
     <h4 class="text-center fw-bold mb-3">出力結果</h4>
 
-    <div id="txt" class="copy-wrapper position-relative bg-white p-3 rounded"
-         style="min-height:120px;">
+    <div id="txt" class="copy-wrapper position-relative bg-white p-3 rounded" style="min-height:120px;">
 
       <% if @output_error.present? %>
         <p class="text-danger fw-bold"><%= @output_error %></p>
@@ -63,14 +59,12 @@
         <%= image_tag "copy_icon_128895.svg", style:"width:20px; height:20px;" %>
       </button>
 
-      <div class="copy-toast badge text-bg-dark position-absolute top-0 end-0 mt-2 me-5"
-           style="display:none;">
+      <div class="copy-toast badge text-bg-dark position-absolute top-0 end-0 mt-2 me-5" style="display:none;">
         コピーしました
       </div>
     </div>
   </div>
 
-  <!-- ④ スマホ ボタン -->
   <div class="button-area container">
     <div class="row g-2 mt-3 justify-content-end">
 
@@ -94,8 +88,6 @@
       </div>
     </div>
   </div>
-
-  <!-- ⑤ スマホ入力欄（最後） -->
   <div class="sp-input-wrapper mt-4">
     <%= render "shared/base_prompt_input" %>
   </div>

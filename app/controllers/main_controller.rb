@@ -1,9 +1,6 @@
 class MainController < ApplicationController
   skip_before_action :require_login
   def index
-    Rails.logger.info "============== UA START =============="
-    Rails.logger.info request.user_agent
-    Rails.logger.info "============== UA END ================"
     if logged_in?
       # ログイン後のメインページ表示
       @user = current_user
@@ -18,7 +15,7 @@ class MainController < ApplicationController
       emoji: params[:emoji],
       tone: params[:tone],
       category: params[:category]
-    )..order(id: :desc).page(params[:page]).per(10)
+    ).order(id: :desc).page(params[:page]).per(10)
 
     # JSから部分テンプレートだけ返す
     respond_to do |format|
@@ -86,9 +83,6 @@ class MainController < ApplicationController
   end
 
   def create
-    Rails.logger.info "============== UA START =============="
-    Rails.logger.info request.user_agent
-    Rails.logger.info "============== UA END ================"
     @input_text = nil
     base_prompt = params[:base_prompt]
 
