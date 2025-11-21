@@ -1,12 +1,39 @@
 console.log("✅ application.js loaded");
-
 document.addEventListener("turbo:load", () => {
   console.log("🎯 turbo:load fired");
 });
 
+
 document.addEventListener("DOMContentLoaded", () => {
   console.log("🎯 DOMContentLoaded fired");
 });
+
+// セレクトメニューの値によってラジオボタンの表示/非表示を切り替え
+
+document.addEventListener("turbo:load", () => {
+  initRadioToggle();
+});
+
+function initRadioToggle() {
+  const emojiSelect = document.getElementById("emoji-select");
+  const pcRadioGroup = document.getElementById("emoji-radio-group-pc");
+  const spRadioGroup = document.getElementById("emoji-radio-group-sp");
+
+  if (!emojiSelect) return;
+
+  function toggleRadioGroup() {
+    console.log("切り替え実行, 現在の値:", emojiSelect.value);
+
+    const display = emojiSelect.value === "kansai" ? "none" : "flex";
+
+    if (pcRadioGroup) pcRadioGroup.style.display = display;
+    if (spRadioGroup) spRadioGroup.style.display = display;
+  }
+
+  toggleRadioGroup();
+  emojiSelect.addEventListener("change", toggleRadioGroup);
+}
+
 //出力結果表示
 
 function initSelectToggle() {
@@ -63,29 +90,8 @@ window.addEventListener("pageshow", (event) => {
     if (outputDiv) outputDiv.textContent = "";
   }
 });
-// セレクトメニューの値によってラジオボタンの表示/非表示を切り替え
 
-document.addEventListener("DOMContentLoaded", () => {
-
-
-  const emojiSelect = document.getElementById("emoji-select");
-  const radioGroup = document.getElementById("emoji-radio-group");
-
-  if (!emojiSelect || !radioGroup) return;
-
-  function toggleRadioGroup() {
-    console.log("切り替え実行, 現在の値:", emojiSelect.value);
-    if (emojiSelect.value === "kansai") {
-      radioGroup.style.display = "none";  // 非表示
-    } else {
-      radioGroup.style.display = "flex";  // 表示
-    }
-  }
-
-  toggleRadioGroup(); // 初期表示
-  emojiSelect.addEventListener("change", toggleRadioGroup); // 変更時
-});
-
+// テンプレート取得処理
 function initTemplates() {
   const emoji = document.getElementById("js-emoji");
   const tone = document.getElementById("js-tone");
@@ -95,8 +101,6 @@ function initTemplates() {
   if (!emoji || !tone || !category || !list) return;
 
   function fetchTemplates() {
-    console.log("🎯 fetchTemplates called");
-    console.log("emoji:", emoji.value, "tone:", tone.value, "category:", category.value);
 
     const params = new URLSearchParams({
       emoji: emoji.value,
@@ -110,7 +114,6 @@ function initTemplates() {
     })
       .then(res => res.text())
       .then(html => {
-        console.log("🎯 fetch success, updating templates-list");
         list.innerHTML = html;
         attachCopyHandlers();
       })
@@ -127,7 +130,7 @@ function initTemplates() {
 document.addEventListener("turbo:load", initTemplates);
 document.addEventListener("DOMContentLoaded", initTemplates);
 
-//コピー処理　テンプレートよう
+//コピー処理　テンプレート用
 function attachCopyHandlers() {
   const buttons = document.querySelectorAll(".copy-btn");
 
