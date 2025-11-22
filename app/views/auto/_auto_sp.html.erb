@@ -27,7 +27,7 @@
 
 
   <div class="mt-2 mb-4 mx-auto" style="max-width:500px;">
-    <div id="emoji-radio-group-sp" class="mb-4 fs-6 d-flex justify-content-between">
+    <div id="emoji-radio-group-sp" class="mb-3 fs-6 justify-content-between flex-wrap">
       <% Translation.radio_emojis.keys.each do |key| %>
         <label class="d-flex align-items-center">
           <%= radio_button_tag :radio_emoji, key, params[:radio_emoji] == key %>

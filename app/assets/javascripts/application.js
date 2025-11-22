@@ -1,3 +1,5 @@
+console.log("application.js loaded")
+console.log("application.js START");
 console.log("✅ application.js loaded");
 
 //出力結果表示
@@ -145,3 +147,62 @@ document.addEventListener("turbo:load", () => {
     });
   }
 });
+
+
+document.addEventListener("turbo:load", initRadioVisibility);
+document.addEventListener("DOMContentLoaded", initRadioVisibility);
+
+function initRadioVisibility() {
+  // ▼ PC
+  setupRadioToggle("emoji-select-pc", "emoji-radio-group-pc");
+
+  // ▼ SP
+  setupRadioToggle("emoji-select-sp", "emoji-radio-group-sp");
+}
+
+
+//-----------------------------------------
+// 共通：指定IDの select と radioGroup を紐付けて制御
+//-----------------------------------------
+function setupRadioToggle(selectId, groupId) {
+  const select = document.getElementById(selectId);
+  const radioGroup = document.getElementById(groupId);
+
+  if (!select || !radioGroup) return; // その画面に要素が無ければスキップ
+
+  function toggle() {
+    const value = select.value;
+    console.log(`${selectId} 選択:`, value);
+
+    // kansai のときだけ非表示
+    if (value === "kansai") {
+      radioGroup.style.display = "none";
+    } else {
+      radioGroup.style.display = "flex"; // d-flex のまま維持
+    }
+  }
+
+  toggle(); // 初回反映
+  select.addEventListener("change", toggle); // セレクト変更時
+}
+
+// Bootstrapのタブ初期化
+function setupRadioToggle(selectId, groupId) {
+  const select = document.getElementById(selectId);
+  const radioGroup = document.getElementById(groupId);
+
+  if (!select || !radioGroup) return;
+
+  function toggle() {
+    const value = select.value;
+
+    if (value === "kansai") {
+      radioGroup.classList.add("d-none");
+    } else {
+      radioGroup.classList.remove("d-none");
+    }
+  }
+
+  toggle();
+  select.addEventListener("change", toggle);
+}
