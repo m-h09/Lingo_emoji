@@ -187,13 +187,22 @@ function setupRadioToggle(selectId, groupId) {
 }
 
 // Bootstrapのタブ初期化
-document.addEventListener("turbo:load", () => {
-  const tabTriggerList = document.querySelectorAll('[data-bs-toggle="pill"], [data-bs-toggle="tab"]');
-  tabTriggerList.forEach((tabTriggerEl) => {
-    const tab = new bootstrap.Tab(tabTriggerEl);
-    tabTriggerEl.addEventListener("click", function (e) {
-      e.preventDefault();
-      tab.show();
-    });
-  });
-});
+function setupRadioToggle(selectId, groupId) {
+  const select = document.getElementById(selectId);
+  const radioGroup = document.getElementById(groupId);
+
+  if (!select || !radioGroup) return;
+
+  function toggle() {
+    const value = select.value;
+
+    if (value === "kansai") {
+      radioGroup.classList.add("d-none");
+    } else {
+      radioGroup.classList.remove("d-none");
+    }
+  }
+
+  toggle();
+  select.addEventListener("change", toggle);
+}
