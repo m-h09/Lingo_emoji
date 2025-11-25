@@ -83,11 +83,14 @@
         <div id="txt-body"><%= output_text %></div>
       <% end %>
 
-      <button class="btn btn-link position-absolute top-0 end-0 mt-2 me-2 p-0"
-              type="button" aria-label="コピー"
-              data-content="<%= output_text %>">
+      <button class="copy-btn btn btn-link position-absolute top-0 end-0 mt-2 me-2 p-0"
+        type="button" aria-label="コピー"
+        data-content="<%= output_text %>">
         <%= image_tag "copy_icon_128895.svg", style:"width:24px; height:24px;" %>
       </button>
+      <div class="copy-toast badge text-bg-dark position-absolute top-0 end-0 mt-2 me-5" style="display:none;">
+        コピーしました
+      </div>
     </div>
   </div>
 
