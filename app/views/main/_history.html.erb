@@ -27,4 +27,8 @@
     <p class="text-center">現在登録はありません。</p>
   <% end %>
 </div>
-<%= paginate @histories %>
+</div>
+
+<% if @histories.present? %>
+  <%= paginate @histories %>
+<% end %>

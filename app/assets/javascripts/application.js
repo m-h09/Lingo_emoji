@@ -2,20 +2,17 @@ console.log("application.js loaded")
 console.log("application.js START");
 console.log("✅ application.js loaded");
 
-//出力結果表示
-
+//-----------------------------------------
+// 出力結果表示
+//-----------------------------------------
 function initSelectToggle() {
   const selectToggle = document.getElementById("js_select-Toggle");
   if (selectToggle) {
-    selectToggle.value ="";
-    //セレクトメニューが変更されたら実行
+    selectToggle.value = "";
     selectToggle.addEventListener('change', () => {
-      //選択されたvalueを取得
       const toggleVal = selectToggle.value;
       document.querySelectorAll('.bl_selectCont').forEach(selectCont => {
-        //各コンテンツのIDがtoggleValと一致するか確認して条件に応じてis_activeクラスを制御
         const isActive = selectCont.id === toggleVal;
-        // isActiveがtrueならis_activeクラスを追加、falseなら削除
         selectCont.classList.toggle('is_active', isActive);
       });
     });
@@ -24,32 +21,37 @@ function initSelectToggle() {
 document.addEventListener("turbo:load", initSelectToggle);
 document.addEventListener("DOMContentLoaded", initSelectToggle);
 
-//クリアボタン処理
+
+//-----------------------------------------
+// クリアボタン
+//-----------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
-  const clearBtn   = document.getElementById("clear-btn");
-  const textArea   = document.querySelector("textarea[name='base_prompt']");
-  const outputDiv  = document.getElementById("txt-body");
+  const clearBtn = document.getElementById("clear-btn");
+  const textArea = document.querySelector("textarea[name='base_prompt']");
+  const outputDiv = document.getElementById("txt-body");
 
   if (clearBtn) {
     clearBtn.addEventListener("click", () => {
-      if (textArea) textArea.value = "";        // 入力欄を空にする
-      if (outputDiv) outputDiv.textContent = ""; // 出力結果も空にする
+      if (textArea) textArea.value = "";
+      if (outputDiv) outputDiv.textContent = "";
     });
   }
 });
 
-// リロード時だけリセット
+//-----------------------------------------
+// リロード時にリセット
+//-----------------------------------------
 window.addEventListener("load", () => {
   const [navEntry] = performance.getEntriesByType("navigation");
   if (navEntry && navEntry.type === "reload") {
     const textArea = document.querySelector("textarea[name='base_prompt']");
     const outputDiv = document.getElementById("txt-body");
-    if (textArea) textArea.value = ""; // 入力欄を空にする
-    if (outputDiv) outputDiv.textContent = ""; // 出力結果も空にする
+    if (textArea) textArea.value = "";
+    if (outputDiv) outputDiv.textContent = "";
   }
 });
 
-// 戻る/進む など BFCache 復元時もリセット
+// BFCache 復元時
 window.addEventListener("pageshow", (event) => {
   if (event.persisted) {
     const textArea = document.querySelector("textarea[name='base_prompt']");
@@ -59,7 +61,10 @@ window.addEventListener("pageshow", (event) => {
   }
 });
 
-// テンプレート取得処理
+
+//-----------------------------------------
+// テンプレート取得（AJAX）
+//-----------------------------------------
 function initTemplates() {
   const emoji = document.getElementById("js-emoji");
   const tone = document.getElementById("js-tone");
@@ -69,7 +74,6 @@ function initTemplates() {
   if (!emoji || !tone || !category || !list) return;
 
   function fetchTemplates() {
-
     const params = new URLSearchParams({
       emoji: emoji.value,
       tone: tone.value,
@@ -88,17 +92,17 @@ function initTemplates() {
       .catch(err => console.error("fetch failed:", err));
   }
 
-  // change イベントにバインド
   [emoji, tone, category].forEach(sel => {
     sel.addEventListener("change", fetchTemplates);
   });
 }
-
-// Turboと通常ロード両方で呼ぶ
 document.addEventListener("turbo:load", initTemplates);
 document.addEventListener("DOMContentLoaded", initTemplates);
 
-//コピー処理　テンプレート用
+
+//-----------------------------------------
+// コピー（テンプレート用）
+//-----------------------------------------
 function attachCopyHandlers() {
   const buttons = document.querySelectorAll(".copy-btn");
 
@@ -113,9 +117,7 @@ function attachCopyHandlers() {
 
         if (toast) {
           toast.style.display = "block";
-          setTimeout(() => {
-            toast.style.display = "none";
-          }, 1500);
+          setTimeout(() => { toast.style.display = "none"; }, 1500);
         }
       } catch (e) {
         console.error("copy failed:", e);
@@ -123,11 +125,13 @@ function attachCopyHandlers() {
     });
   });
 }
-
 document.addEventListener("turbo:load", attachCopyHandlers);
 document.addEventListener("DOMContentLoaded", attachCopyHandlers);
 
-// 自動生成エリアのコピー処理
+
+//-----------------------------------------
+// 自動生成エリアのコピー
+//-----------------------------------------
 document.addEventListener("turbo:load", () => {
   const btn = document.getElementById("copy-btn");
   const txt = document.getElementById("txt-body");
@@ -149,44 +153,18 @@ document.addEventListener("turbo:load", () => {
 });
 
 
+//-----------------------------------------
+// ラジオボタン 表示/非表示制御
+//-----------------------------------------
 document.addEventListener("turbo:load", initRadioVisibility);
 document.addEventListener("DOMContentLoaded", initRadioVisibility);
 
 function initRadioVisibility() {
-  // ▼ PC
   setupRadioToggle("emoji-select-pc", "emoji-radio-group-pc");
-
-  // ▼ SP
   setupRadioToggle("emoji-select-sp", "emoji-radio-group-sp");
 }
 
-
-//-----------------------------------------
-// 共通：指定IDの select と radioGroup を紐付けて制御
-//-----------------------------------------
-function setupRadioToggle(selectId, groupId) {
-  const select = document.getElementById(selectId);
-  const radioGroup = document.getElementById(groupId);
-
-  if (!select || !radioGroup) return; // その画面に要素が無ければスキップ
-
-  function toggle() {
-    const value = select.value;
-    console.log(`${selectId} 選択:`, value);
-
-    // kansai のときだけ非表示
-    if (value === "kansai") {
-      radioGroup.style.display = "none";
-    } else {
-      radioGroup.style.display = "flex"; // d-flex のまま維持
-    }
-  }
-
-  toggle(); // 初回反映
-  select.addEventListener("change", toggle); // セレクト変更時
-}
-
-// Bootstrapのタブ初期化
+// ★★ 正しい setupRadioToggle はこれ1つだけ！ ★★
 function setupRadioToggle(selectId, groupId) {
   const select = document.getElementById(selectId);
   const radioGroup = document.getElementById(groupId);
@@ -195,6 +173,7 @@ function setupRadioToggle(selectId, groupId) {
 
   function toggle() {
     const value = select.value;
+    console.log(`${selectId} 選択:`, value);
 
     if (value === "kansai") {
       radioGroup.classList.add("d-none");
