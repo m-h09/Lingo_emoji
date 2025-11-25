@@ -22,9 +22,9 @@ document.addEventListener("turbo:load", initSelectToggle);
 document.addEventListener("DOMContentLoaded", initSelectToggle);
 
 
-//-----------------------------------------
+
 // クリアボタン
-//-----------------------------------------
+
 document.addEventListener("DOMContentLoaded", () => {
   const clearBtn = document.getElementById("clear-btn");
   const textArea = document.querySelector("textarea[name='base_prompt']");
@@ -38,9 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-//-----------------------------------------
+
 // リロード時にリセット
-//-----------------------------------------
+
 window.addEventListener("load", () => {
   const [navEntry] = performance.getEntriesByType("navigation");
   if (navEntry && navEntry.type === "reload") {
@@ -62,9 +62,9 @@ window.addEventListener("pageshow", (event) => {
 });
 
 
-//-----------------------------------------
+
 // テンプレート取得（AJAX）
-//-----------------------------------------
+
 function initTemplates() {
   const emoji = document.getElementById("js-emoji");
   const tone = document.getElementById("js-tone");
@@ -100,9 +100,9 @@ document.addEventListener("turbo:load", initTemplates);
 document.addEventListener("DOMContentLoaded", initTemplates);
 
 
-//-----------------------------------------
+
 // コピー（テンプレート用）
-//-----------------------------------------
+
 function attachCopyHandlers() {
   const buttons = document.querySelectorAll(".copy-btn");
 
@@ -129,9 +129,9 @@ document.addEventListener("turbo:load", attachCopyHandlers);
 document.addEventListener("DOMContentLoaded", attachCopyHandlers);
 
 
-//-----------------------------------------
+
 // 自動生成エリアのコピー
-//-----------------------------------------
+
 document.addEventListener("turbo:load", () => {
   const btn = document.getElementById("copy-btn");
   const txt = document.getElementById("txt-body");
@@ -185,3 +185,4 @@ function setupRadioToggle(selectId, groupId) {
   toggle();
   select.addEventListener("change", toggle);
 }
+
