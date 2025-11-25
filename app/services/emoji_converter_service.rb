@@ -137,7 +137,7 @@ class EmojiConverterService
     when "no_kaomoji"
       "顔系絵文字（😊😂😢など）は一切使わないでください"
     when "no_icon"
-      "アイコン系絵文字（📚🚗など）は使わないでください..."
+      "アイコン系絵文字（📚🚗など）は使わないでください...顔系絵文字（😊😂😢など）は使ってください"
     when "nothing"
       "絵文字は何でも使ってください"
     else
@@ -199,22 +199,7 @@ class EmojiConverterService
     end
   end
 
-  # ---------------------------
-  # 出力後のフィルタ処理（ラジオボタンの内容に応じて絵文字を削除）
-  # ---------------------------
-  def clean_text(text)
-    return text if @emoji == "emoji_kansai" && @radio_emoji == "no_kaomoji"
-    case @radio_emoji
-    when "no_kaomoji"
-      remove_face_emojis(text)
-    when "no_icon"
-      remove_icon_emojis(text)
-    when "nothing"
-      remove_face_and_icon_emojis(text)
-    else
-      text
-    end
-  end
+
 
   def clean_text(text)
     # 絵文字＋関西（emoji_kansai）の特別ルール
@@ -234,7 +219,7 @@ class EmojiConverterService
     when "no_icon"
       remove_icon_emojis(text)
     when "nothing"
-      remove_face_and_icon_emojis(text)
+      text
     else
       text
     end
