@@ -44,9 +44,13 @@
 
       <%= form_with url: main_index_path, method: :post, data: { turbo: false }, html: { autocomplete: "off" } do %>
         <% if request.user_agent.to_s.downcase =~ /(iphone|android)/ %>
-          <%= render "auto/auto_sp" %>
+          <div class="d-block d-md-none">
+            <%= render "auto/auto_sp" %>
+          </div>
         <% else %>
-          <%= render "auto/auto_pc" %>
+          <div class="d-none d-md-block">
+            <%= render "auto/auto_pc" %>
+          </div>
         <% end %>
       <% end %>
 
