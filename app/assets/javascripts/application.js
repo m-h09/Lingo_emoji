@@ -185,4 +185,3 @@ function setupRadioToggle(selectId, groupId) {
   toggle();
   select.addEventListener("change", toggle);
 }
-
