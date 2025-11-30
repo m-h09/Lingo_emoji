@@ -1,28 +1,18 @@
+console.log("application.js loaded")
+console.log("application.js START");
 console.log("✅ application.js loaded");
-import "@hotwired/turbo-rails"
-import "bootstrap";
 
-document.addEventListener("turbo:load", () => {
-  console.log("🎯 turbo:load fired");
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("🎯 DOMContentLoaded fired");
-});
-//出力結果表示
-
+//-----------------------------------------
+// 出力結果表示
+//-----------------------------------------
 function initSelectToggle() {
   const selectToggle = document.getElementById("js_select-Toggle");
   if (selectToggle) {
-    selectToggle.value ="";
-    //セレクトメニューが変更されたら実行
+    selectToggle.value = "";
     selectToggle.addEventListener('change', () => {
-      //選択されたvalueを取得
       const toggleVal = selectToggle.value;
       document.querySelectorAll('.bl_selectCont').forEach(selectCont => {
-        //各コンテンツのIDがtoggleValと一致するか確認して条件に応じてis_activeクラスを制御
         const isActive = selectCont.id === toggleVal;
-        // isActiveがtrueならis_activeクラスを追加、falseなら削除
         selectCont.classList.toggle('is_active', isActive);
       });
     });
@@ -31,32 +21,37 @@ function initSelectToggle() {
 document.addEventListener("turbo:load", initSelectToggle);
 document.addEventListener("DOMContentLoaded", initSelectToggle);
 
-//クリアボタン処理
+
+
+// クリアボタン
+
 document.addEventListener("DOMContentLoaded", () => {
-  const clearBtn   = document.getElementById("clear-btn");
-  const textArea   = document.querySelector("textarea[name='base_prompt']");
-  const outputDiv  = document.getElementById("txt-body");
+  const clearBtn = document.getElementById("clear-btn");
+  const textArea = document.querySelector("textarea[name='base_prompt']");
+  const outputDiv = document.getElementById("txt-body");
 
   if (clearBtn) {
     clearBtn.addEventListener("click", () => {
-      if (textArea) textArea.value = "";        // 入力欄を空にする
-      if (outputDiv) outputDiv.textContent = ""; // 出力結果も空にする
+      if (textArea) textArea.value = "";
+      if (outputDiv) outputDiv.textContent = "";
     });
   }
 });
 
-// リロード時だけリセット
+
+// リロード時にリセット
+
 window.addEventListener("load", () => {
   const [navEntry] = performance.getEntriesByType("navigation");
   if (navEntry && navEntry.type === "reload") {
     const textArea = document.querySelector("textarea[name='base_prompt']");
     const outputDiv = document.getElementById("txt-body");
-    if (textArea) textArea.value = ""; // 入力欄を空にする
-    if (outputDiv) outputDiv.textContent = ""; // 出力結果も空にする
+    if (textArea) textArea.value = "";
+    if (outputDiv) outputDiv.textContent = "";
   }
 });
 
-// 戻る/進む など BFCache 復元時もリセット
+// BFCache 復元時
 window.addEventListener("pageshow", (event) => {
   if (event.persisted) {
     const textArea = document.querySelector("textarea[name='base_prompt']");
@@ -65,28 +60,10 @@ window.addEventListener("pageshow", (event) => {
     if (outputDiv) outputDiv.textContent = "";
   }
 });
-// セレクトメニューの値によってラジオボタンの表示/非表示を切り替え
-
-document.addEventListener("DOMContentLoaded", () => {
 
 
-  const emojiSelect = document.getElementById("emoji-select");
-  const radioGroup = document.getElementById("emoji-radio-group");
 
-  if (!emojiSelect || !radioGroup) return;
-
-  function toggleRadioGroup() {
-    console.log("切り替え実行, 現在の値:", emojiSelect.value);
-    if (emojiSelect.value === "kansai") {
-      radioGroup.style.display = "none";  // 非表示
-    } else {
-      radioGroup.style.display = "flex";  // 表示
-    }
-  }
-
-  toggleRadioGroup(); // 初期表示
-  emojiSelect.addEventListener("change", toggleRadioGroup); // 変更時
-});
+// テンプレート取得（AJAX）
 
 function initTemplates() {
   const emoji = document.getElementById("js-emoji");
@@ -97,9 +74,6 @@ function initTemplates() {
   if (!emoji || !tone || !category || !list) return;
 
   function fetchTemplates() {
-    console.log("🎯 fetchTemplates called");
-    console.log("emoji:", emoji.value, "tone:", tone.value, "category:", category.value);
-
     const params = new URLSearchParams({
       emoji: emoji.value,
       tone: tone.value,
@@ -112,24 +86,23 @@ function initTemplates() {
     })
       .then(res => res.text())
       .then(html => {
-        console.log("🎯 fetch success, updating templates-list");
         list.innerHTML = html;
         attachCopyHandlers();
       })
       .catch(err => console.error("fetch failed:", err));
   }
 
-  // change イベントにバインド
   [emoji, tone, category].forEach(sel => {
     sel.addEventListener("change", fetchTemplates);
   });
 }
-
-// Turboと通常ロード両方で呼ぶ
 document.addEventListener("turbo:load", initTemplates);
 document.addEventListener("DOMContentLoaded", initTemplates);
 
-//コピー処理　テンプレートよう
+
+
+// コピー（テンプレート用）
+
 function attachCopyHandlers() {
   const buttons = document.querySelectorAll(".copy-btn");
 
@@ -144,9 +117,7 @@ function attachCopyHandlers() {
 
         if (toast) {
           toast.style.display = "block";
-          setTimeout(() => {
-            toast.style.display = "none";
-          }, 1500);
+          setTimeout(() => { toast.style.display = "none"; }, 1500);
         }
       } catch (e) {
         console.error("copy failed:", e);
@@ -154,11 +125,13 @@ function attachCopyHandlers() {
     });
   });
 }
-
 document.addEventListener("turbo:load", attachCopyHandlers);
 document.addEventListener("DOMContentLoaded", attachCopyHandlers);
 
-// 自動生成エリアのコピー処理
+
+
+// 自動生成エリアのコピー
+
 document.addEventListener("turbo:load", () => {
   const btn = document.getElementById("copy-btn");
   const txt = document.getElementById("txt-body");
@@ -178,3 +151,37 @@ document.addEventListener("turbo:load", () => {
     });
   }
 });
+
+
+//-----------------------------------------
+// ラジオボタン 表示/非表示制御
+//-----------------------------------------
+document.addEventListener("turbo:load", initRadioVisibility);
+document.addEventListener("DOMContentLoaded", initRadioVisibility);
+
+function initRadioVisibility() {
+  setupRadioToggle("emoji-select-pc", "emoji-radio-group-pc");
+  setupRadioToggle("emoji-select-sp", "emoji-radio-group-sp");
+}
+
+// ★★ 正しい setupRadioToggle はこれ1つだけ！ ★★
+function setupRadioToggle(selectId, groupId) {
+  const select = document.getElementById(selectId);
+  const radioGroup = document.getElementById(groupId);
+
+  if (!select || !radioGroup) return;
+
+  function toggle() {
+    const value = select.value;
+    console.log(`${selectId} 選択:`, value);
+
+    if (value === "kansai") {
+      radioGroup.classList.add("d-none");
+    } else {
+      radioGroup.classList.remove("d-none");
+    }
+  }
+
+  toggle();
+  select.addEventListener("change", toggle);
+}

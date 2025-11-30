@@ -1,0 +1,21 @@
+<div>
+  <p class="text-center mt-2 small">出力結果の全履歴から削除したいものを削除できます。</p>
+  <p class="text-center mt-0 small text-danger">ただし一度削除すると戻せません</p>
+</div>
+<div class="mb-4 d-flex justify-content-center align-items-center">
+  <% if logged_in? %>
+    <%= form_with url: main_edit_history_path, method: :get, local: true, html: { class: "d-flex align-items-center" } do |f| %>
+      <%= f.text_field :q, placeholder: "検索ワード", class: "form-control me-2", style: "width: 250px;" %>
+      <%= f.submit "検索", class: "btn btn-outline-dark" %>
+    <% end %>
+  <% else %>
+    <p>ログインしてください。</p>
+  <% end %>
+
+</div>
+<div class="mb-4 d-flex justify-content-center align-items-center">
+  <div class= "d-flex align-items-center">
+    <%= render "regist/h-delete" %>
+  </div>
+</div>
+<%= paginate @translations %>

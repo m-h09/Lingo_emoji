@@ -1,10 +1,47 @@
-<footer class="bg light border-top py-3" style="background-color: #fffff0">
+<footer class="d-none d-md-block fotter_nav bg light border-top py-3" style="background-color: #fffff0;  position: relative; z-index: 1;">
   <div class="container d-flex justify-content-between align-items-center">
-    <div class="footer-links d-flex gap-4">
-      <a href="#" class="me-4 text-decoration-nonne text-dark">よくある質問</a>
-      <a href="#" class="me-4 text-decoration-nonne text-dark" style>利用規約</a>
+    <div class="d-flex flex-column flex-lg-row gap-3 text-lg-start">
+      <%= link_to "よくある質問", faq_path, class: "me-4 text-decoration-none text-dark" %>
+      <%= link_to "利用規約", terms_path, class: "me-4 text-decoration-none text-dark" %>
+      <%= link_to "プライバシーポリシー", privacy_path, class: "me-4 text-decoration-none text-dark" %>
+      <%= link_to "問い合わせフォーム", new_contact_path, class: "me-4 text-decoration-none text-dark" %>
+      <!-- Twitterシェアボタン -->
+      <div class="mt-0">
+        <a href="https://twitter.com/intent/tweet?url=https://lingo-emoji.onrender.com/"
+          target="_blank"
+          class="btn btn-dark p-1"
+          style="padding: 2px 4px; border-radius: 6px; margin-top: -4px">
+          <i class="bi bi-twitter-x" style="font-size: 15px;"></i>
+        </a>
+      </div>
     </div>
     <div class="text-end text-dark" style="font-family:monospace;">
+        &copy; 2025 EMOJI関西弁変換
+    </div>
+  </div>
+</footer>
+
+<!-- スマホ用フッター -->
+<footer class="d-block d-md-none fotter_nav bg light border-top py-3" style="background-color: #fffff0;  position: relative;">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="d-flex flex-column flex-lg-row gap-3 text-lg-start small">
+      <%= link_to "よくある質問", faq_path, class: "me-4 text-decoration-none text-dark small" %>
+      <%= link_to "利用規約", terms_path, class: "me-4 text-decoration-none text-dark small" %>
+      <%= link_to "プライバシーポリシー", privacy_path, class: "me-4 text-decoration-none text-dark small" %>
+      <%= link_to "問い合わせフォーム", new_contact_path, class: "me-4 text-decoration-none text-dark small" %>
+    <!-- Twitterシェアボタン -->
+      <!-- Twitterシェアボタン -->
+      <div class="mt-0">
+        <a href="https://twitter.com/intent/tweet?url=https://lingo-emoji.onrender.com/"
+          target="_blank"
+          class="btn btn-dark p-1"
+          style="padding: 2px 4px; border-radius: 6px; margin-top: -4px">
+          <i class="bi bi-twitter-x" style="font-size: 15px;"></i>
+        </a>
+      </div>
+    </div>
+    <div class="text-center small mt-5 mb-0">
       &copy; 2025 EMOJI関西弁変換
     </div>
+  </div>
 </footer>

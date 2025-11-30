@@ -1,54 +1,64 @@
-<body class="bg-center" style="background-color: #fffff0">
-  <div class="mt-5 position-relative mx-auto text-center rounded w-50" style="bottom:30px;">
-    <h1 class="guide-title">利用ガイド</h1>
-  </div>
-  <%= link_to "トップへ戻る", root_path, class: "back-link" %>
 
-  <div class="guide-container ">
-    <div class="guide-section">
-      <h2 class="guide-section1">自動生成</h2>
-      <p class="guide-section2">
-        入力された文章をAIを使ってその文章にあった絵文字、<br>
-        関西弁に変換することができます
-      </p>
-      <br>
-      <ul>
-        <li class="guide-section3">自動生成を選択</li>
-          <%= image_tag "tab_guide_auto.png", alt: "タブの見本", class: "guide-image1" %>
-          <li class="guide-section3">下の三つの選択肢からどんなテキストに変換したいか<br>
-          スタイル、トーン、モードを選ぶ</li>
-            <%= image_tag "tab_guide_pulldown.png", alt: "自動生成の見本", class: "guide-image3" %>
-          <li class="guide-section3">絵文字の種類を選択したい方は下記で少しの変更ができます</li>
-            <%= image_tag "tab_guide_emoji.png", alt: "絵文字の見本", class: "guide-image3" %>
-          <li class="guide-section3">「入力フォーム」に入力し、Enterもしくは、「変換」を押すと<br>
-            出力結果に表示されます</li>
-            <p class="input_guide">入力フォーム↓</p>
-            <%= image_tag "tab_guide_input.png", alt: "入力フォーム・出力結果の見本", class: "guide-image3" %>
-          <li class="guide-section3">以下のアイコン、ボタンは必要に応じて使っていただけます</li>
-            <%= image_tag "tab_retry.png", alt: "リトライボタンの見本", class: "guide-retry" %>
-            <p class="guide-section5">変換の再試行</p>
-            <%= image_tag "tab_clear.png", alt: "クリアボタンの見本", class: "guide-clear" %>
-            <p class="guide-section4">入力フォームの文字を全削除</p>
-      </ul>
+<body class="bg-center  m-0 border-0 bd-example" style="background-color: #fffff0">
+<%= link_to "トップへ戻る", root_path, class: "back-link" %>
+  <div class="mt-5 mx-auto rounded w-50 position-relative text-center bg-info">
+    <!-- PC -->
+    <div class="mt-5 mb-2 mx-auto rounded w-50 position-relative text-center bg-info d-none d-md-block">
+      <div class="header-title text-center">
+        <h2 class="text-white mb-0 py-2 ">サイトの使い方</h2>
+      </div>
     </div>
-
-    <div class="guide-section">
-      <h2 class="guide-section1">テンプレート</h2>
-      <p class="guide-section2">
-        既存のテンプレートお使ってシーンに合わせた文字付きの文章、<br>
-        関西弁の文章を選択して使用することができます</p>
-      <br>
-      <ul>
-        <li class="guide-section3">テンプレートを選択</li>
-          <%= image_tag "tab_guide_template.png", alt: "タブの見本", class: "guide-image2" %>
-        <li class="guide-section3">下の二つの選択肢からどんなテキストに変換したいか<br>
-        スタイル、トーンを選ぶ</li>
-          <%= image_tag "tab_guide_pulldown2.png", alt: "テンプレートの見本", class: "guide-image3" %>
-        <li class="guide-section3">スタイル、トーンを選択したらシーンを選択</li>
-          <%= image_tag "tab-select.png", alt: "シーン選択の見本", class: "guide-image4" %>
-        <li class="guide-section3">シーンを選択したら下にテンプレートが表示されます<br>
-          <%= image_tag "tab_template.png", alt: "テンプレートの見本", class: "guide-image5" %>
-      </ul>
-
+    </div>
+    <!-- スマホ -->
+    <div class="mt-5 mx-auto rounded w-80 position-relative text-center bg-info">
+    <div class="mt-5 mb-2 mx-auto rounded w-100 position-relative text-center bg-info d-block d-md-none">
+      <div class="header-title text-center">
+        <h2 class="w-100 text-white mb-0 py-2">サイトの使い方</h2>
+      </div>
     </div>
   </div>
+
+  <!-- ▼ タブメニュー -->
+  <ul class="nav nav-tabs mt-4 justify-content-center" id="guideTab" role="tablist">
+
+    <li class="nav-item">
+      <a class="nav-link active" id="auto_guide_tab" data-bs-toggle="tab" href="#auto_guide" role="tab">
+        自動生成ガイド
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" id="template_guide_tab" data-bs-toggle="tab" href="#template_guide" role="tab">
+      テンプレートガイド
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" id="other_guide_tab" data-bs-toggle="tab" href="#other_guide" role="tab">
+        その他機能説明
+      </a>
+    </li>
+
+  </ul>
+  <!-- ▲ タブメニュー -->
+
+  <!-- ▼ タブの中身 -->
+  <div class="tab-content border-top border-bottom rounded-bottom py-2 mx-auto
+              w-100 w-md-75 w-lg-50"
+       id="guideTabContent"
+       style="max-width:750px;">
+
+    <div class="tab-pane fade show active" id="auto_guide" role="tabpanel" aria-labelledby="auto_guide_tab">
+      <%= render "guides/autoguide" %>
+    </div>
+
+    <div class="tab-pane fade" id="template_guide" role="tabpanel" aria-labelledby="template_guide_tab">
+      <%= render "guides/templateguide" %>
+    </div>
+
+    <div class="tab-pane fade" id="other_guide" role="tabpanel" aria-labelledby="other_guide_tab">
+      <%= render "guides/others" %>
+    </div>
+
+  </div>
+</body>

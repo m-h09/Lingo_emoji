@@ -49,16 +49,16 @@ MessageTemplate.create!([
 
   # 関西弁変換・カジュアル・日常
   MessageTemplate.create!([
-    { category: :daily, emoji: :kansai, tone: :formal, content: "今日、何してんの？" },
-    { category: :daily, emoji: :kansai, tone: :formal, content: "最近、調子どうや？" },
-    { category: :daily, emoji: :kansai, tone: :formal, content: "今日はええ天気やな" },
-    { category: :daily, emoji: :kansai, tone: :formal, content: "元気にしてるん？" },
-    { category: :daily, emoji: :kansai, tone: :formal, content: "明日の予定、決まってる？" },
-    { category: :daily, emoji: :kansai, tone: :formal, content: "最近ハマってるん、なんや？" },
-    { category: :daily, emoji: :kansai, tone: :formal, content: "休みんとき、何してん？" },
-    { category: :daily, emoji: :kansai, tone: :formal, content: "今、ちょっと時間ある？" },
-    { category: :daily, emoji: :kansai, tone: :formal, content: "ちょっと聞きたいんやけどええか？" },
-    { category: :daily, emoji: :kansai, tone: :formal, content: "また話そな" }
+    { category: :daily, emoji: :kansai, tone: :casual, content: "今日、何してんの？" },
+    { category: :daily, emoji: :kansai, tone: :casual, content: "最近、調子どうや？" },
+    { category: :daily, emoji: :kansai, tone: :casual, content: "今日はええ天気やな" },
+    { category: :daily, emoji: :kansai, tone: :casual, content: "元気にしてるん？" },
+    { category: :daily, emoji: :kansai, tone: :casual, content: "明日の予定、決まってる？" },
+    { category: :daily, emoji: :kansai, tone: :casual, content: "最近ハマってるん、なんや？" },
+    { category: :daily, emoji: :kansai, tone: :casual, content: "休みんとき、何してん？" },
+    { category: :daily, emoji: :kansai, tone: :casual, content: "今、ちょっと時間ある？" },
+    { category: :daily, emoji: :kansai, tone: :casual, content: "ちょっと聞きたいんやけどええか？" },
+    { category: :daily, emoji: :kansai, tone: :casual, content: "また話そな" }
   ])
 # 絵文字追加　フォーマル　応答・リアクション
 
@@ -91,29 +91,29 @@ MessageTemplate.create!([
 # 関西弁変換　フォーマル　応答リアクション
 
 MessageTemplate.create!([
-  { category: :reaction, emoji: :add, tone: :casual, content: "いいやん👍" },
-  { category: :reaction, emoji: :add, tone: :casual, content: "わかったで👌" },
-  { category: :reaction, emoji: :add, tone: :casual, content: "助かるわ〜🙏" },
-  { category: :reaction, emoji: :add, tone: :casual, content: "了解やで〜😊" },
-  { category: :reaction, emoji: :add, tone: :casual, content: "すぐ確認するわ🔍" },
-  { category: :reaction, emoji: :add, tone: :casual, content: "ありがと🌸" },
-  { category: :reaction, emoji: :add, tone: :casual, content: "OKやで👌" },
-  { category: :reaction, emoji: :add, tone: :casual, content: "まかしとき！💪" },
-  { category: :reaction, emoji: :add, tone: :casual, content: "すぐ対応するわ💨" },
-  { category: :reaction, emoji: :add, tone: :casual, content: "頼んどくわ✨" }
+  { category: :reaction, emoji: :kansai, tone: :formal, content: "いいですねぇ〜" },
+  { category: :reaction, emoji: :kansai, tone: :formal, content: "わかりました" },
+  { category: :reaction, emoji: :kansai, tone: :formal, content: "助かりますわ〜" },
+  { category: :reaction, emoji: :kansai, tone: :formal, content: "承知しました" },
+  { category: :reaction, emoji: :kansai, tone: :formal, content: "すぐ確認しますね" },
+  { category: :reaction, emoji: :kansai, tone: :formal, content: "ありがとさん" },
+  { category: :reaction, emoji: :kansai, tone: :formal, content: "構いません" },
+  { category: :reaction, emoji: :kansai, tone: :formal, content: "まかしてください" },
+  { category: :reaction, emoji: :kansai, tone: :formal, content: "すぐ対応しますわ" },
+  { category: :reaction, emoji: :kansai, tone: :formal, content: "頼んどきます" }
 ])
 # 関西弁変換　カジュアル　応答リアクション
 MessageTemplate.create!([
-  { category: :reaction, emoji: :add, tone: :casual, content: "ええやん👍" },
-  { category: :reaction, emoji: :add, tone: :casual, content: "わかったわ👌" },
-  { category: :reaction, emoji: :add, tone: :casual, content: "ほんま助かるわ〜🙏" },
-  { category: :reaction, emoji: :add, tone: :casual, content: "了解やで〜😊" },
-  { category: :reaction, emoji: :add, tone: :casual, content: "すぐ見とくわ🔍" },
-  { category: :reaction, emoji: :add, tone: :casual, content: "ありがとさん🌸" },
-  { category: :reaction, emoji: :add, tone: :casual, content: "OKやわ👌" },
-  { category: :reaction, emoji: :add, tone: :casual, content: "まかしときや！💪" },
-  { category: :reaction, emoji: :add, tone: :casual, content: "すぐやっとくわ💨" },
-  { category: :reaction, emoji: :add, tone: :casual, content: "頼んどくわな✨" }
+  { category: :reaction, emoji: :kansai, tone: :casual, content: "ええやん" },
+  { category: :reaction, emoji: :kansai, tone: :casual, content: "わかったわ" },
+  { category: :reaction, emoji: :kansai, tone: :casual, content: "ほんま助かるわ〜" },
+  { category: :reaction, emoji: :kansai, tone: :casual, content: "了解やで〜" },
+  { category: :reaction, emoji: :kansai, tone: :casual, content: "すぐ見とくわ" },
+  { category: :reaction, emoji: :kansai, tone: :casual, content: "ありがとさん" },
+  { category: :reaction, emoji: :kansai, tone: :casual, content: "OKやわ" },
+  { category: :reaction, emoji: :kansai, tone: :casual, content: "まかしときや！" },
+  { category: :reaction, emoji: :kansai, tone: :casual, content: "すぐやっとくわ" },
+  { category: :reaction, emoji: :kansai, tone: :casual, content: "頼んどくわな" }
 ])
 
 # 絵文字追加　フォーマル　お誘い・関心
@@ -145,30 +145,30 @@ MessageTemplate.create!([
 
 # 関西弁変換　フォーマル　お誘い・関心
 MessageTemplate.create!([
-  { category: :invitation, emoji: :add, tone: :formal, content: "今度お茶しませんか？" },
-  { category: :invitation, emoji: :add, tone: :formal, content: "週末どうしてはりますか？" },
-  { category: :invitation, emoji: :add, tone: :formal, content: "少しお話しさせてもらっても構いませんか？" },
-  { category: :invitation, emoji: :add, tone: :formal, content: "今、何してはりますか？" },
-  { category: :invitation, emoji: :add, tone: :formal, content: "休みの日、どんな風に過ごしてはりますか？" },
-  { category: :invitation, emoji: :add, tone: :formal, content: "今からお時間よろしければ、ご都合いかがでしょうか？" },
-  { category: :invitation, emoji: :add, tone: :formal, content: "相談したいことがあるねんけど、時間とれますか？" },
-  { category: :invitation, emoji: :add, tone: :formal, content: "次に会う予定、ぼちぼち立てましょうか？" },
-  { category: :invitation, emoji: :add, tone: :formal, content: "最近どうしてはりますか？お変わりないですか？" },
-  { category: :invitation, emoji: :add, tone: :formal, content: "お元気にしてはりますか？" }
+  { category: :invitation, emoji: :kansai, tone: :formal, content: "今度お茶しませんか？" },
+  { category: :invitation, emoji: :kansai, tone: :formal, content: "週末どうしてはりますか？" },
+  { category: :invitation, emoji: :kansai, tone: :formal, content: "少しお話しさせてもらっても構いませんか？" },
+  { category: :invitation, emoji: :kansai, tone: :formal, content: "今、何してはりますか？" },
+  { category: :invitation, emoji: :kansai, tone: :formal, content: "休みの日、どんな風に過ごしてはりますか？" },
+  { category: :invitation, emoji: :kansai, tone: :formal, content: "今からお時間よろしければ、ご都合いかがでしょうか？" },
+  { category: :invitation, emoji: :kansai, tone: :formal, content: "相談したいことがあるねんけど、時間とれますか？" },
+  { category: :invitation, emoji: :kansai, tone: :formal, content: "次に会う予定、ぼちぼち立てましょうか？" },
+  { category: :invitation, emoji: :kansai, tone: :formal, content: "最近どうしてはりますか？お変わりないですか？" },
+  { category: :invitation, emoji: :kansai, tone: :formal, content: "お元気にしてはりますか？" }
 ])
 
 # 関西弁変換　カジュアル　お誘い・関心
 MessageTemplate.create!([
-  { category: :invitation, emoji: :add, tone: :casual, content: "今度お茶しぃひん？" },
-  { category: :invitation, emoji: :add, tone: :casual, content: "週末どうしてる？一緒に出かけへん？" },
-  { category: :invitation, emoji: :add, tone: :casual, content: "ちょっと話したいねん" },
-  { category: :invitation, emoji: :add, tone: :casual, content: "今何してんの？" },
-  { category: :invitation, emoji: :add, tone: :casual, content: "休みの日、どう過ごしてる？" },
-  { category: :invitation, emoji: :add, tone: :casual, content: "今から遊ばへん？" },
-  { category: :invitation, emoji: :add, tone: :casual, content: "相談したいことあるんやけど、時間ある？" },
-  { category: :invitation, emoji: :add, tone: :casual, content: "次遊ぶ予定立てへん？" },
-  { category: :invitation, emoji: :add, tone: :casual, content: "今何考えてるん？" },
-  { category: :invitation, emoji: :add, tone: :casual, content: "最近どう？元気しとる？" }
+  { category: :invitation, emoji: :kansai, tone: :casual, content: "今度お茶しぃひん？" },
+  { category: :invitation, emoji: :kansai, tone: :casual, content: "週末どうしてる？一緒に出かけへん？" },
+  { category: :invitation, emoji: :kansai, tone: :casual, content: "ちょっと話したいねん" },
+  { category: :invitation, emoji: :kansai, tone: :casual, content: "今何してんの？" },
+  { category: :invitation, emoji: :kansai, tone: :casual, content: "休みの日、どう過ごしてる？" },
+  { category: :invitation, emoji: :kansai, tone: :casual, content: "今から遊ばへん？" },
+  { category: :invitation, emoji: :kansai, tone: :casual, content: "相談したいことあるんやけど、時間ある？" },
+  { category: :invitation, emoji: :kansai, tone: :casual, content: "次遊ぶ予定立てへん？" },
+  { category: :invitation, emoji: :kansai, tone: :casual, content: "今何考えてるん？" },
+  { category: :invitation, emoji: :kansai, tone: :casual, content: "最近どう？元気しとる？" }
 ])
 
 # 絵文字追加　フォーマル　SNS

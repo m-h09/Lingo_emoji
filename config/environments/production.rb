@@ -76,5 +76,5 @@ Rails.application.configure do
     authentication: :plain,
     enable_starttls_auto: true
   }
-  config.action_mailer.default_options = { from: ENV["MAIL_SENDER_ADDRESS"] }
+  config.action_mailer.default_options = { from: "EMOJI関西弁変換 <music8.d0fss2@gmail.com>" }
 end
