@@ -1,4 +1,23 @@
-<div class="container">
+<style>
+  /* PC（768px以上）の時だけタブを大きくする */
+  @media (min-width: 768px) {
+    #pills-tab .nav-link {
+      font-size: 1.0rem !important;
+      padding: 0.7rem 1.2rem !important;
+    }
+  }
+  #emoji-radio-group-pc label {
+    display: flex !important;
+    align-items: center !important;
+  }
+  #emoji-radio-group-pc {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+  }
+</style>
+
+<div class="container" id="index">
   <% if logged_in? %>
     <%= render "shared/after_login_view" %>
   <% else %>

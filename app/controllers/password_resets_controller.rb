@@ -8,7 +8,7 @@ class PasswordResetsController < ApplicationController
 
     @user&.deliver_reset_password_instructions!
 
-    redirect_to login_path, success: "パスワードリセットの案内を送信しました。メールをご確認ください。"
+    redirect_to login_path, success: "パスワードリセットの案内を送信しました。注：迷惑メールボックスに入っている可能性があります"
   end
 
   def edit

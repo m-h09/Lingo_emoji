@@ -1,0 +1,37 @@
+<div class="justify-content-center">
+  <div class="mt-5 mb-5 position-relative mx-auto text-center rounded w-75 w-md-50" style="bottom:30px;">
+    <h3 class="guide-title mb-4">その他機能</h3>
+    <p>ユーザー登録をしてログインした後に<br>使える機能を紹介します。</p>
+  </div>
+  <div class="w-100">
+      <ul class="px-3">
+        <li class="mb-3">「Myテンプレート」タブの追加
+          <p class="mt-2 small">こちらは自動生成で出力した履歴を元に自身のテンプレートを
+          作成し、表示することができます。</p>
+          <%= image_tag "other_display.png", class: "w-75 mx-auto d-block" %>
+        </li>
+        <li>「Myテンプレート編集画面」を表示
+          <p class="mt-2 small">「編集」ボタンを押すと表示されます</p>
+          <p class="text-center ">この画面で出力結果の履歴からテンプレートを登録できます</p>
+          <%= image_tag "mytemplate_add.png", class: "mt-4 w-75 mx-auto d-block" %>
+        </li>
+        <li class="mt-5">
+        「Myテンプレート」から登録を削除
+          <p class="mt-3  small">チェックボックスを選択し、「削除」を押すと
+          削除されます<br>※「Myテンプレート」からの削除のため履歴自体は
+          登録追加へ戻る</p>
+          <%= image_tag "other_delete_tab2.png", class: "mt-3 w-75 mx-auto d-block" %>
+          <p class="text-center small ">「Myテンプレート」へ反映</p>
+          <%= image_tag "other_delete_display.png", class: "w-75 mx-auto d-block" %>
+          <p class="text-center small">「登録追加」は「登録削除」したとしても履歴を閲覧できる場所なので<br>
+          今のところ「削除」ボタンはない</p>
+        </li>
+        <li class="mt-5">
+        履歴自体の削除
+        <p class="mt-3 small">「履歴削除」タブは「登録追加」タブで表示されている出力結果の履歴自体を削除できる場所です。</p>
+        <p class="mt-1 small">　削除したい項目の検索も可能。</p>
+          <%= image_tag "other_translation_delete.png", class: "mt-3 w-75 mx-auto d-block" %>
+        </li>
+      </ul>
+  </div>
+</div>
