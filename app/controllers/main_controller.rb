@@ -6,7 +6,7 @@ class MainController < ApplicationController
       @user = current_user
       @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(10)
     else
-      # ログイン前のメインページ表示
+      @histories = Kaminari.paginate_array([]).page(params[:page]).per(10)
     end
   end
 
@@ -15,9 +15,9 @@ class MainController < ApplicationController
       emoji: params[:emoji],
       tone: params[:tone],
       category: params[:category]
-    ).limit(10)
+    ).order(id: :desc).page(params[:page]).per(10)
 
-    # JSリクエストなら部分テンプレートだけ返す
+    # JSから部分テンプレートだけ返す
     respond_to do |format|
       format.html { render partial: "templates/list", locals: { templates: @templates } }
       format.any { render plain: "unsupported format", status: 406 }
@@ -62,7 +62,7 @@ class MainController < ApplicationController
     if params[:records].present?
       deleted_records = params[:records] # 画面上でチェックされたrecord
       current_user.translations.where(output_text: deleted_records).destroy_all
-      redirect_to main_edit_history_path, success: "選択した翻訳を削除しました"
+      redirect_to main_edit_history_path, success: "選択した項目を削除しました"
     else
       redirect_to main_edit_history_path, danger: "削除する項目を選択してください"
     end
@@ -83,10 +83,12 @@ class MainController < ApplicationController
   end
 
   def create
+    @input_text = nil
     base_prompt = params[:base_prompt]
 
     if base_prompt.blank?
       @input_error = "入力してから「変換」ボタンを押してください"
+      @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(10) if logged_in?
       render :index and return
     end
 
@@ -117,12 +119,12 @@ class MainController < ApplicationController
 
   rescue Timeout::Error
     @api_error = "OpenAIの処理がタイムアウトしました。時間をおいて再度お試しください。"
-    @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(20) if logged_in?
+    @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(10) if logged_in?
     render :index
 
   rescue StandardError => e
     @global_error = "予期しないエラーが発生しました。#{e.message}"
-    @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(20) if logged_in?
+    @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(10) if logged_in?
     render :index
   end
 end
