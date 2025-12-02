@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "~> 7.2.3"
+gem "rails", "~> 8.0.4"
 gem "sprockets-rails"
 gem "pg", "~> 1.6"
 gem "puma", ">= 5.0"
@@ -11,7 +11,7 @@ gem "bootsnap", require: false
 gem "meta-tags", "2.22.1"
 gem "ruby-openai"
 gem "sorcery"
-gem "rails-i18n", "~> 7.0.0"
+gem "rails-i18n", "~> 8.1.0"
 gem "carrierwave"
 gem "cloudinary"
 gem "kaminari"
