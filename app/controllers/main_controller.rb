@@ -6,7 +6,7 @@ class MainController < ApplicationController
       @user = current_user
       @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(10)
     else
-      @histories = Kaminari.paginate_array([]).page(params[:page]).per(10)
+      # ログイン前のメインページ表示
     end
   end
 

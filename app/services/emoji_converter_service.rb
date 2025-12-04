@@ -36,7 +36,7 @@ class EmojiConverterService
   def tone_emoji_rule
     case @tone
     when "formal"
-      "絵文字は基本使わない。使う場合も最小限にする。"
+      "アイコン系から選択。上司に使う程度の絵文字を使う。使う場合も最小限にする。"
     when "casual"
       "絵文字は楽しく、バランスよく使う。"
     when "frank"
@@ -160,6 +160,7 @@ class EmojiConverterService
         - #{strength_emoji_rule}
         - #{emoji_rule}
         入力文を繰り返さず、変換後の文だけを出力してください。不要な文や説明は加えないでください。
+        文章はそのままにして、絵文字だけを追加してください。
       PROMPT
     when "kansai"
       <<~PROMPT
