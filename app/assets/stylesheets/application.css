@@ -13,6 +13,41 @@
  *= require_tree .
  *= require_self
  */
+ /* 全てに共通 */
+ header nav.navbar {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  min-height: unset;
+}
+ header {
+  position: relative;
+  padding-top: 0px;
+  padding-bottom: 8px;
+
+}
+html, body {
+  overscroll-behavior: none;
+  font-family: monospace;
+}
+
+footer {
+position: relative;
+
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  footer {
+    height: 20px;
+    position:relative;
+  }
+}
+@media screen and (max-width: 480px) {
+  footer {
+    height: 15px;
+    position:relative;
+  }
+}
+
+/* 全てに共通終了 */
 
 #copy-btn {
   position: absolute;
@@ -106,6 +141,221 @@
 
 /* ここまで自動生成用 */
 
+/* ハンバーガーメニュー */
+.menu-btn {
+  position: absolute;
+  right: 20px;
+  display: flex;
+  height: 30px;
+  width: 30px;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+  background-color: #666657;
+  transform: translateY(-10px);
 
-/* PCサイズだけ元に戻す */
-/* ▼▼ スマホだけに適用 (〜480px) ▼▼ */
+}
+
+.menu-btn span,
+.menu-btn span::before,
+.menu-btn span::after{
+  content: '';
+  display: block;
+  height: 2px;
+  width: 15px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  position: absolute;
+
+}
+.menu-btn span:before {
+  bottom: 5px;
+}
+
+.menu-btn span:after {
+  top: 5px;
+}
+
+#menu-btn-check {
+  display: none;
+}
+.menu-content ul {
+  padding: 70px 10px 4px;
+}
+.menu-content ul li {
+  padding-bottom: 8px;
+  border-bottom: solid 1px #ffffff;
+  list-style: none;
+
+
+}
+
+
+.menu-content ul li a {
+  position: relative;
+  padding-right: 32px;
+  text-decoration: none;
+  color: #fff;
+  padding: 12px 32px 12px 16px;
+  top: 10px;
+
+}
+
+.menu-content ul li a:visited {
+  color: #fff;
+}
+/* クリック前 */
+.menu-content ul li a:hover {
+  color: #ccccb4;
+}
+
+
+
+
+.sns {
+  padding-left: 100px;
+}
+/* 共通のメニューの見た目 */
+.menu-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #666657;
+  z-index: 80;
+  left: 100%;
+  transition: left 0.4s ease;
+}
+#menu-btn-check:checked ~ .menu-content {
+  left: 0;
+}
+
+            /* PCサイズ対応 */
+@media screen and (min-width: 1025px) {
+  .menu-content {
+    left: 100%;
+    transition: left 0.5s;
+  }
+  #menu-btn-check:checked ~ .menu-content {
+    left: 80%;/*メニューを画面内へ*/
+  }
+
+}
+            /* タブレット */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  .menu-content {
+    left: 100%;
+    transition: left 0.4s ease;
+
+  }
+  #menu-btn-check:checked ~ .menu-content {
+
+    left: 700px;
+  }
+
+}
+
+             /* スマホ対応 */
+  @media screen and (max-width: 480px) {
+    .menu-btn {
+      position: absolute;
+      top: 23px;
+      right: 20px;
+      display: flex;
+      height: 30px;
+      width: 30px;
+      justify-content: center;
+      align-items: center;
+      z-index: 90;
+      background-color: #666657;
+
+    }
+    .menu-content {
+      left: 100%;
+
+    }
+    #menu-btn-check:checked ~ .menu-content {
+      /* transform: translateX(0); */
+      left: 45%;
+    }
+
+
+  }
+/* ハンバーガーメニュー終了 */
+/* タイトル */
+/* 共通 */
+.text-block {
+  text-decoration: none;
+}
+.title-block{
+  /* 横並び */
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  text-decoration: none;
+  padding: 3px;
+  transform: translateY(5px);
+}
+.text-block1, .text-block2{
+  color: #666657;
+  font-family: Courier;
+  line-height: 1;
+}
+
+
+/* 共通終了 */
+            /* PCサイズ対応 */
+@media screen and (min-width: 1025px) {
+  .text-block {
+    transform:  translateY(6px);
+  }
+  .text-block1 {
+
+    font-size: 25px;
+    font-weight: 400;
+  }
+  .text-block2 {
+    right: 550px;
+    font-size: 18px;
+    font-weight: 300;
+  }
+  .text-block {
+    transform: translateY(4px);
+  }
+}
+            /* タブレット */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .text-block1, .text-block2{
+    position: relative;
+    top: 3px;
+  }
+  .text-block1 {
+  font-size: 23px;
+  font-weight: 500;
+  }
+  .text-block2 {
+    font-size: 18px;
+    font-weight: 200;
+  }
+}
+            /* スマホ対応 */
+
+@media screen and (max-width: 480px) {
+  .text-block1, .text-block2{
+    position: relative;
+    top: 3px;
+  }
+  .text-block1 {
+
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .text-block2 {
+    font-size: 16px;
+    font-weight: 200;
+  }
+}
+/* タイトル終了 */
+/* アイコン画像サイズ調整 */
