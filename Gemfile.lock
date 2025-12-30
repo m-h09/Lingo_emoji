@@ -237,8 +237,8 @@ GEM
     parser (3.3.10.0)
       ast (~> 2.4.1)
       racc
-    pg (1.6.2-aarch64-linux)
-    pg (1.6.2-x86_64-linux)
+    pg (1.6.3-aarch64-linux)
+    pg (1.6.3-x86_64-linux)
     pp (0.6.3)
       prettyprint
     prettyprint (0.2.0)
@@ -298,10 +298,8 @@ GEM
       erb
       psych (>= 4.0.0)
       tsort
-      
     regexp_parser (2.11.3)
     reline (0.6.2)
-
       io-console (~> 0.5)
     rexml (3.4.4)
     rubocop (1.81.7)
