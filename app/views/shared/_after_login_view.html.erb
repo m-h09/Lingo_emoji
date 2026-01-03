@@ -1,63 +1,79 @@
-<div class="bg-center mx-auto" style="max-width:750px; background-color:#fffff0;">
-
-  <!-- PCタイトル -->
-  <div class="text-center d-none d-md-flex justify-content-center mt-5 mx-auto rounded bg-info" style="width:80%;">
-    <h1 class="text-white mb-0 py-2">EMOJI関西弁変換</h1>
-  </div>
-<!-- スマホタイトル -->
-  <div class="text-center d-flex d-md-none justify-content-center mt-5 mx-auto rounded bg-info" style="width:80%;">
-    <h2 class="text-white mb-0 py-2">EMOJI関西弁変換</h2>
-  </div>
-
-  <!-- タブエリア -->
-  <div class="container py-4">
-    <ul class="nav nav-pills justify-content-center gap-3 mb-2" id="pills-tab" role="tablist">
-
-      <li class="nav-item">
-        <a class="nav-link custom-tab active" id="pills-auto-tab" data-bs-toggle="pill"
-          data-turbo="false" href="#pills-auto">
-          自動生成
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link custom-tab" id="pills-templates-tab" data-bs-toggle="pill"
-          data-turbo="false" href="#pills-templates">
-          テンプレート
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link custom-tab" id="pills-histories-tab" data-bs-toggle="pill"
-          data-turbo="false" href="#pills-histories">
-          Myテンプレート
-        </a>
-      </li>
-
-    </ul>
-  </div>
-
-  <!-- タブコンテンツ -->
-  <div class="tab-content border border-top-0 rounded-bottom py-2 mx-auto" id="pills-tabContent" style="max-width:750px;">
-
-    <div class="tab-pane fade show active" id="pills-auto" role="tabpanel" aria-labelledby="pills-auto-tab" tabindex="0">
-
-      <%= form_with url: main_index_path, method: :post, data: { turbo: false }, html: { autocomplete: "off" } do %>
-        <% if request.user_agent.to_s.downcase =~ /(iphone|android)/ %>
-          <%= render "auto/auto_sp" %>
-        <% else %>
-          <%= render "auto/auto_pc" %>
-        <% end %>
-      <% end %>
-
-    </div>
-
-    <div class="tab-pane fade" id="pills-templates" role="tabpanel" aria-labelledby="pills-templates-tab" tabindex="0">
-      <%= render "templates" %>
-    </div>
-
-    <div class="tab-pane fade" id="pills-histories" role="tabpanel" aria-labelledby="pills-histories-tab" tabindex="0">
-      <%= render "main/history" %>
+<div class="after-login">
+  <!-- トップページ　題名 --->
+  <div class="message-box">
+    <div class="first-message" >
+      <h2 class="message-1">誰でも簡単、テキストに彩りを♪</h2>
+      <div class="min-box">
+        <p class="message-2">このツールを使えば、簡単にテキストをemojiで装飾することができます！チャットやSNS,ブログ記事を楽しく彩ることができます！
+        emojiの雰囲気や個数、なども簡単に選択できるようになっています！さらに、関西弁変換機能も搭載！文章を関西弁に変換して、ユーモアを加えましょう！
+        </p>
+      </div>
     </div>
   </div>
+
+  <!--メニュータイトル -->
+  <div class="menu-line-box">
+    <div class="menu-box">
+      <span class="menu-title">Menu</span>
+    </div>
+  </div>
+
+  <!-- 選択ボタン一覧 -->
+  <div class="menu-select">
+    <div class="select-box">
+      <h2 class="auto-title">AI生成</h2>
+      <div class="auto-box">
+        <button type="button" class="select-button">
+          <span class="icon-box">💖</span>
+          <div class="btn-text-box">
+            <span class="btn-title">Emoji追加</span>
+            <span class="mini-text">文脈に合わせた絵文字を追加</span>
+          </div>
+        </button>
+
+        <button tyoe="button" class="select-button">
+          <span class="icon-box">🐙</span>
+          <div class="btn-text-box">
+            <span class="btn-title">関西弁変換</span>
+            <span class="mini-text">文章を関西弁に変換</span>
+          </div>
+        </button>
+        <button type="button" class="select-button">
+          <span class="icon-box">🤹‍♀️</span>
+          <div class="btn-text-box">
+            <span class="btn-title">Emoji追加＋関西弁変換</span>
+            <span class="mini-text">絵文字追加と関西弁変換を同時に実行</span>
+          </div>
+        </button>
+      </div>
+
+      <h2 class="template-title">テンプレート</h2>
+      <div class="template-box">
+        <button type="button" class="select-button">
+        <span class="icon-box">💘</span>
+          <div class="btn-text-box">
+            <span class="btn-title">Emoji</span>
+            <span class="mini-text">テンプレートから絵文字を追加</span>
+          </div>
+        </button>
+        <button type="button" class="select-button">
+        <span class="icon-box">👨‍🦱</span>
+          <div class="btn-text-box">
+            <span class="btn-title">関西弁</span>
+            <span class="mini-text">テンプレートから
+              文章を関西弁に変換</span>
+          </div>
+        </button>
+        <button type="button" class="select-button">
+        <span class="icon-box">🔐</span>
+          <div class="btn-text-box">
+            <span class="btn-title">Myテンプレート</span>
+            <span class="mini-text">AI生成で出力した履歴からテンプレートが作れる！</span>
+          </div>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
 </div>
