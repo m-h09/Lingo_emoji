@@ -1,52 +1,79 @@
-<header  class="bg light border-bottom py-2 mb-2" style="background-color: #fffff0;">
-  <nav class='navbar navbar-expand-lg navigation navbar-light pb-2 pt-2 position-relative'>
-    <div class="container-fluid d-flex align-items-center justify-content-between" style="position: relative;">
-      <%= link_to root_path, class: 'navbar-brand', style: 'position: relative; z-index: 1020; cursor: pointer;' do %>
-        <%= image_tag 'smallicon.png', size: '52x52', style:'margin-left: 15px; cursor: pointer;'%>
-      <% end %>
+<header class="bg light border-bottom " style="background-color: #fffff0;">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
 
-      <button class='navbar-toggler pb-0' type="button" onclick="document.querySelector('#navbarSupportedContent').classList.toggle('show')"
-              aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
-          <span class='navbar-toggler-icon py-0'></span>
-      </button>
-      <!-- ヘッダーのボタン-->
-      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto align-items-center text-center">
-          <!-- 使い方ガイド -->
-          <li class="d-flex align-items-center me-3">
-            <!-- ？マーク -->
-            <a href="/guide" class="text-decoration-none me-1" title="サービス利用ガイド">
-              <i class="bi bi-question-circle fs-3 text-secondary"></i>
+      <!-- ロゴ部分 -->
+      <div class="title-block">
+        <%= link_to root_path, class: 'navbar-brand' do %>
+          <%= image_tag 'smallicon.png', size: '32x32' %>
+        <% end %>
+        <!-- 「EMOJI関西弁変換」の文字 -->
+        <%= link_to root_path, class: 'text-block' do %>
+          <span class="text-block1">EMOJI</span>
+          <span class="text-block2">関西弁変換</span>
+        <% end %>
+      </div>
+
+
+
+
+      <!-- ハンバーガーメニューのボタン -->
+      <div class="hanburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+
+        <!-- ハンバーガーメニューの中身 -->
+        <div class="menu-content">
+          <ul>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle"
+                href="#"
+                id="header-profile"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <span class="header-username"><%= current_user.name %></span>
+                <%= image_tag (current_user.avatar_url.presence || asset_path("sample.png")),
+                              class: 'rounded-circle mr15',
+                              width: '40',
+                              height: '40' %>
+
+              </a>
+
+              <ul class="dropdown-menu">
+                <li><%= link_to t('header.profile'), profile_path, class: 'dropdown-item' %></li>
+                <li><%= link_to t('header.logout'), logout_path, class: 'dropdown-item', data: { turbo_method: :delete } %></li>
+              </ul>
+            </li>
+
+
+            <!-- 使い方 -->
+            <li class=" my-2">
+              <%= link_to "使い方", guide_path %>
+            </li>
+            <!-- よくある質問（FAQ）など-->
+            <li class="my-2">
+              <%= link_to "よくある質問（FAQ）", faq_path %>
+            </li>
+            <li class="my-2">
+              <%= link_to "利用規約", terms_path %>
+            </li>
+            <li class="my-2">
+              <%= link_to "プライバシーポリシー", privacy_path %>
+            </li>
+            <li class="my-2">
+              <%= link_to "問い合わせフォーム", new_contact_path %>
+            </li>
+          </ul>
+          <div class="sns mt-0">
+            <a href="https://twitter.com/intent/tweet?url=https://lingo-emoji.onrender.com/"
+              target="_blank"
+              class="btn btn-dark p-1">
+              <i class="bi bi-twitter-x" style="font-size: 20px;"></i>
             </a>
-
-            <!-- 使い方テキスト -->
-            <a href="/guide" class="text-decoration-none" title="サービス利用ガイド">
-              <span class="fs-6 text-secondary">使い方</span>
-            </a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle"
-              href="#"
-              id="header-profile"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false">
-
-              <%= image_tag (current_user.avatar_url.presence || asset_path("sample.png")),
-                            class: 'rounded-circle mr15',
-                            width: '40',
-                            height: '40' %>
-
-            </a>
-
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="header-profile">
-              <li class="dropdown-item"><%= current_user.name %></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><%= link_to t('header.profile'), profile_path, class: 'dropdown-item' %></li>
-              <li><%= link_to t('header.logout'), logout_path, class: 'dropdown-item', data: { turbo_method: :delete } %></li>
-            </ul>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
