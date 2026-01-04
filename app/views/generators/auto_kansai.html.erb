@@ -1,0 +1,50 @@
+<%= form_with model: @translation do |f| %>
+  <%= f.hidden_field :emoji, value: "kansai" %>
+  <div class="auto-view">
+
+    <div class="message-box">
+      <div class="auto-message" >
+        <h2 class="auto-1">関西弁変換</h2>
+        <div class="auto-min-box">
+          <p class="auto-2">このツールを使えば、簡単にテキストをemojiで装飾することができます！雰囲気に合わせた絵文字をカスタマイズでき、テキストに対しての絵文字の多さも調節可能です。チャットやSNS、ブログ記事を楽しく彩ることができます！！
+          </p>
+      </div>
+    </div>
+
+    <div class="form-box">
+      <div class="question-box">
+        <div class="question-text">
+          <h6 class="question-1">どんなトーンのemojiにする？</h6><p class="question-2">※必須</p>
+        </div>
+        <div class="answer-box">
+          <%= select_tag :tone, options_for_select(
+            Translation.tones.keys.map { |key| [t("enums.translation.tone.#{key}"), key] }, params[:tone]
+          ),prompt: "選択してください", class: "answer-select" %>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-text">
+          <h6 class="question-1">emojiの多さは？</h6><p class="question-2">※必須</p>
+        </div>
+        <div class="answer-box">
+          <%= select_tag :strength, options_for_select(
+                Translation.strengths.keys.map { |key| [t("enums.translation.strength.#{key}"), key] }, params[:strength]
+              ), prompt: "選択してください",class: "answer-select-2" %>
+        </div>
+      </div>
+
+
+
+    </div>
+    <div class="submit-title">
+      <h4 class="submit-box">EMOJIを追加したい文章は？</h4>
+      <p class="sub-2">※必須</p>
+    </div>
+
+    <%= render 'auto/auto_box' %>
+
+
+
+  </div>
+<% end %>

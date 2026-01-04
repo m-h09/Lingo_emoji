@@ -29,6 +29,13 @@ Rails.application.routes.draw do
 
   resource :profile, only: %i[show edit update]
   resources :password_resets, only: %i[new create edit update]
+  resources :generators, only: %i[create]
+  get "generators/auto_emoji", to: "generators#auto_emoji"
+  post "generators/auto_emoji", to: "generators#create"
+  get "generators/auto_kansai", to: "generators#auto_kansai"
+  post "generators/auto_kansai", to: "generators#create"
+  get "generators/auto_both", to: "generators#auto_both"
+  post "generators/auto_both", to: "generators#create"
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener_web" if Rails.env.development?
 end

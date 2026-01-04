@@ -56,14 +56,14 @@ ja:
         emoji_kansai: "絵文字＋関西弁変換"
       tone:
         formal: "フォーマル"
-        casual: "カジュアル"
+        casual: "フレンドリー"
         frank: "フランク"
       strength:
-        weak: "弱"
-        medium: "中 "
-        strong: "強"
+        weak: "少ない"
+        medium: "普通 "
+        strong: "多い"
       radio_emoji:
-        no_kaomoji: "顔系絵文字なし"
+        no_kaomoji: "😊系なし"
         no_icon: "アイコン系なし"
         nothing: "選択なし"
     message_template:
