@@ -101,53 +101,6 @@ footer {
   padding-block: 50px;
 }
 
-/*　自動生成用　*/
-/* 出力エリア用 */
-.copy-wrapper { position: relative; }
-
-/* アイコンを右上に固定 */
-.copy-btn-abs {
-  top: .5rem;
-  right: .5rem;
-}
-
-/* トーストをアイコンの左横に表示（初期は非表示） */
-.copy-toast {
-  position: absolute;
-  right: .5rem;
-  top: -1.8rem;
-  background: #fff;          /* 白背景 */
-  color: #333;               /* 文字色は濃いグレー */
-  padding: .2rem .5rem;
-  border-radius: .25rem;
-  font-size: .75rem;
-  line-height: 1.2;
-  box-shadow: 0 2px 6px rgba(0,0,0,.15); /* 少し影をつけて見やすく */
-  display: none;
-  z-index: 10;
-  white-space: nowrap;
-}
-
-/* ✅ コピーボタンを枠なしにして馴染ませる */
-.copy-btn {
-  border: none;
-  background: transparent;   /* 背景透明 */
-  padding: 0;
-  cursor: pointer;
-}
-
-.copy-btn img {
-  width: 20px;
-  height: 20px;
-  opacity: 0.7;              /* 少し馴染むように薄める */
-  transition: opacity 0.2s;
-}
-
-.copy-btn img:hover {
-  opacity: 1;                /* ホバー時ははっきり */
-}
-
-/* ここまで自動生成用 */
 
 /* ハンバーガーメニュー */
 .menu-btn {
@@ -236,11 +189,12 @@ footer {
   z-index: 9998;
   left: 100%;
   transition: left 0.4s ease;
-
+  pointer-events: none;
 
 }
 #menu-btn-check:checked ~ .menu-content {
   left: 0;
+  pointer-events: auto;
 }
 
             /* PCサイズ対応 */
@@ -459,14 +413,14 @@ footer {
 
   }
 
-.message-1 {
-  text-align: center;
-  font-size: 30px;
+  .message-1 {
+    text-align: center;
+    font-size: 30px;
 
-}
-.message-2 {
-  font-size: 15px;
-}
+  }
+  .message-2 {
+    font-size: 15px;
+  }
 
 
 }
@@ -554,20 +508,12 @@ footer {
   .auto-box {
     display: flex;
     flex-direction: column;
-
-
-  }
-
-  .auto-box button {
-    display: flex;
-    justify-content: flex-start; /* ← 左端に詰める */
-    align-items: flex-start;
-    padding-left: 8px;
-    margin-bottom: 9px;
   }
   .btn-title {
     font-size:25px;
     font-weight: 800;
+    color: #000;
+    text-decoration: none;
   }
   .mini-text {
     color: #999990 ;
@@ -601,6 +547,10 @@ footer {
   align-items: center;
   gap: 12px;
   text-align: left;
+  text-decoration: none; /* ← 下線を消す */
+  border: 2px solid #000;  /* ← 黒枠 */
+  padding-left: 8px;
+  margin-bottom: 9px;
 
 }
 .select-button:hover{
@@ -651,6 +601,361 @@ footer {
   pointer-events: none;
 }
 /* 中央エリア終了 */
-.text-red {
-  color: red;
+
+
+/* auto変換ツール */
+  .message-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;  /* ← 上から下へ積む（auto-messageの下にform-box） */
+    align-items: center;     /* ← 中央寄せ（auto-messageの幅 min(1100px,90%) を綺麗に見せる） */
+    gap: 16px;               /* ← auto-message と form-box の間隔 */
+  }
+.auto-message {
+  width: min(1100px, 65%);
+  margin:24px 0;
+
+
+  background :#e7f5fe;
+  border:10px solid#8bcdff;
+  border-radius: 6px;
+
 }
+.auto-1 {
+  text-align: center;
+  font-size: 40px;
+}
+.auto-min-box {
+  position: relative;
+  margin: 10px 20px 10px 20px;
+  color: #868686 ;
+}
+.form-box {
+  display: flex;
+
+}
+.question-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+}
+/* 見た目の中心が揃うように、サイズと行高を固定 */
+.question-1,
+.question-2,
+.question-3{
+  line-height: 1.2;
+}
+.question-2, .question-3 { position: relative; top: 3px; }
+
+.question-1{
+  font-size: 16px;
+}
+
+/* ※必須/自由選択側を少し小さくしても、行高は同じにする */
+.question-2,
+.question-3{
+  font-size: 14px;
+  display: inline-block; /* 変な行揃えが出にくい */
+}
+.question-2{
+  color: red;
+
+}
+.question-3{
+  color: blue;
+}
+/* 幅調整 */
+.question-text {
+  margin-right: 50px;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  display: inline-flex;
+  align-items: center;    /* ←中央揃え */
+  gap: 8px;
+
+
+}
+.answer-box {
+  display: flex;
+  justify-content: center;
+  margin-right: 20px;
+}
+.answer-select {
+  width: 200px;
+  height: 35px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 12px;
+}
+.answer-select-2 {
+  width: 130px;
+  height: 35px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 12px;
+
+}
+.answer-select-3 {
+  width: 150px;
+  height: 35px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 12px;
+
+}
+.submit-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;            /* ← 文字の間隔 */
+  width: 64%;
+  margin: 10px auto 0;
+}
+
+.sub-2 {
+  color:red;
+  margin-top: 2px;
+
+}
+
+
+            /* タブレット版 */
+ @media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  .form-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 中央寄せを解除して左基準にする */
+  .question-box {
+    align-items: flex-start !important;
+  }
+
+  /* 質問文ブロックの余計な左右marginを消す */
+  .question-text {
+    margin: 0 0 6px 0 !important;
+  }
+
+  /* select を左端に揃えるのは親 */
+  .answer-box {
+    justify-content: flex-start !important;
+    margin-right: 0 !important;
+  }
+
+  /* select自体は普通にブロックでOK */
+  .answer-select,
+  .answer-select-2,
+  .answer-select-3 {
+    display: block !important;
+  }
+}
+
+        /* スマホ版 */
+  @media screen and (max-width: 480px) {
+    .auto-message {
+      width: 100%;
+      margin:16px 0;
+    }
+    .auto-1{
+      font-size: 20px;
+    }
+    .auto-2 {
+      overflow:hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      font-size: 12px;
+    }
+    .form-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 中央寄せを解除して左基準にする */
+    .question-box {
+      align-items: flex-start !important;
+      margin-bottom: 10px;
+    }
+
+    /* 質問文ブロックの余計な左右marginを消す */
+    .question-text {
+      margin: 0 0 3px 0 !important;
+    }
+
+    /* select を左端に揃えるのは親 */
+    .answer-box {
+      justify-content: flex-start !important;
+      margin-right: 0 !important;
+    }
+
+    /* select自体は普通にブロックでOK */
+    .answer-select,
+    .answer-select-2,
+    .answer-select-3 {
+      display: block !important;
+    }
+    .textform-box {
+      top: 0;
+    }
+    .auto-button-box { top: 0; }
+  }
+
+
+
+
+/* auto変換ツール終了 */
+
+/* 入力フォーム */
+.textform-box > * {
+  width: 100%;
+}
+.textform-box .form-control {
+  width: 100%;
+  box-sizing: border-box;
+}
+.textform-box {
+  width: 65%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top:-20px;
+  margin-bottom: 50px;
+  border: #000 solid 0.5px;
+  border-radius: 8px;
+}
+
+/* 変換ボタン */
+.auto-button-box{
+  width: 65%;
+  position: relative;
+  top:-50px;
+
+}
+.change-box {
+  width: 100%;          /* ← 入力フォームと同じ */
+  margin: 0 auto;
+}
+.change-button {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+
+  font-size: 22px;
+
+   /* グラデーション */
+   background: linear-gradient(
+    135deg,
+    #be9dfb 0%,
+    #8796fa 50%,
+    #92c6ff 100%
+  );
+  color:white;
+
+}
+
+
+
+/* 出力エリア用 */
+
+.result-box-main {
+  width: 65%;
+  height: 80%;
+  margin: 0px auto;
+  padding: 24px 24px 28px;
+
+  background: #d7cdf8;
+  border-radius: 16px;
+
+
+}
+.result-text {
+  text-align: center;
+  margin-bottom:20px;
+  font-size: 23px;
+}
+
+.copy-wrapper {
+  position: relative;
+ }
+
+/* アイコンを右上に固定 */
+.copy-btn-abs {
+  top: .5rem;
+  right: .5rem;
+}
+
+/* トーストをアイコンの左横に表示（初期は非表示） */
+.copy-toast {
+  position: absolute;
+  right: .5rem;
+  top: -1.8rem;
+  background: #fff;          /* 白背景 */
+  color: #333;               /* 文字色は濃いグレー */
+  padding: .2rem .5rem;
+  border-radius: .25rem;
+  font-size: .75rem;
+  line-height: 1.2;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15); /* 少し影をつけて見やすく */
+  display: none;
+  z-index: 10;
+  white-space: nowrap;
+}
+#txt {
+  min-height: 200px;  /* ← 好きな高さにする */
+}
+.output-text {
+  font-size: 18px;
+}
+
+/* ✅ コピーボタンを枠なしにして馴染ませる */
+.copy-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
+.copy-btn img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.7;              /* 少し馴染むように薄める */
+  transition: opacity 0.2s;
+}
+
+.copy-btn img:hover {
+  opacity: 1;                /* ホバー時ははっきり */
+}
+
+.form-control {
+  font-size: 17px;
+}
+      /* スマホ版  */
+@media screen and (max-width: 480px) {
+    #txt {
+      min-height: 120px;  /* ← 好きな高さにする */
+    }
+  .result-text {
+    font-size: 18px;
+  }
+  .form-control {
+    font-size: 14px;
+  }
+  .change-button {
+    font-size: 17px;
+  }
+}
+/* ここまで自動生成用 */

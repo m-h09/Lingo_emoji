@@ -1,0 +1,58 @@
+<div class="auto-generation-pc">
+<% output_text = @output.presence %>
+      <% if @input_errors.present? %>
+        <ul class="text-danger fw-bold">
+          <% @input_errors.each do |msg| %>
+            <li>【入力エラー】<%= msg %></li>
+          <% end %>
+        </ul>
+      <% end %>
+  </div>
+
+  <!-- 入力欄 -->
+  <div class="textform-box" id="txt">
+    <%= render "shared/base_prompt_input" %>
+  </div>
+
+  <!-- ボタン行 -->
+  <div class="auto-button-box">
+
+    <div class="change-box">
+      <%= submit_tag "emojiを追加する",
+          class: "change-button btn" %>
+    </div>
+
+  </div>
+
+  <!-- 出力結果 -->
+  <div class="result-box-main">
+    <h4 id="result" class="result-text">AI解答はこちら！</h4>
+
+    <div id="txt" class="copy-wrapper ">
+      <% if @output_error.present? %>
+        <p class="result-box-mini"><%= @output_error %></p>
+      <% else %>
+        <div id="txt-answer" class="output-text"><%= output_text %></div>
+      <% end %>
+
+      <!-- コピーアイコン -->
+      <button class="copy-btn"
+        type="button" aria-label="コピー"
+        data-content="<%= output_text %>">
+        <%= image_tag "copy_icon_128895.svg" %>
+      </button>
+
+      <div class="copy-toast badge text-bg-dark " style="display:none;">
+        コピーしました
+      </div>
+    </div>
+  </div>
+  <% if @output.present? || @output_error.present? || @api_error.present? || @global_error.present? %>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const el = document.getElementById("result");
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  </script>
+<% end %>
+</div>
