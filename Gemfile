@@ -8,7 +8,7 @@ gem "importmap-rails"
 gem "jbuilder"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
-gem "meta-tags", "2.22.1"
+gem "meta-tags", "2.22.3"
 gem "ruby-openai"
 gem "sorcery"
 gem "rails-i18n", "~> 7.0.0"
