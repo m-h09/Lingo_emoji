@@ -63,48 +63,43 @@ window.addEventListener("pageshow", (event) => {
 
 
 
-// テンプレート取得（AJAX）
-
+/// テンプレート取得（AJAX）
 function initTemplates() {
-  const emoji = document.getElementById("js-emoji");
+  const emojiEl = document.getElementById("js-emoji"); // hidden
   const tone = document.getElementById("js-tone");
   const category = document.getElementById("js-category");
   const list = document.getElementById("templates-list");
 
-  if (!emoji || !tone || !category || !list) return;
+  if (!emojiEl || !tone || !category || !list) return;
 
   function fetchTemplates() {
     const params = new URLSearchParams({
-      emoji: emoji.value,
+      emoji: emojiEl.value,
       tone: tone.value,
       category: category.value
     });
 
-    fetch(`/templates?${params.toString()}`, {
+    fetch(`/templates/list?${params.toString()}`, {
       method: "GET",
-      headers: { "Accept": "text/html", "X-Requested-With": "XMLHttpRequest"}
+      headers: { "Accept": "text/html", "X-Requested-With": "XMLHttpRequest" }
     })
       .then(res => res.text())
       .then(html => {
         list.innerHTML = html;
-        attachCopyHandlers();
+        if (typeof attachCopyHandlers === "function") attachCopyHandlers();
       })
       .catch(err => console.error("fetch failed:", err));
   }
 
-  [emoji, tone, category].forEach(sel => {
-    sel.addEventListener("change", fetchTemplates);
-  });
+  [tone, category].forEach(sel => sel.addEventListener("change", fetchTemplates));
 }
+
 document.addEventListener("turbo:load", initTemplates);
 document.addEventListener("DOMContentLoaded", initTemplates);
-
-
-
 // コピー（テンプレート用）
 
 function attachCopyHandlers() {
-  const buttons = document.querySelectorAll(".copy-btn");
+  const buttons = document.querySelectorAll(".copy-btn-template");
 
   buttons.forEach((btn) => {
     btn.addEventListener("click", async () => {

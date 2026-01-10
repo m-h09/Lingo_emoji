@@ -1,0 +1,18 @@
+<%= form_with url: "#", method: :get, data: { turbo: false } do %>
+  <%= hidden_field_tag :emoji, "add" %>
+  <input type="hidden" id="js-emoji" value="add">
+
+  <div class="message-box">
+    <div class="auto-message">
+      <h2 class="auto-template">テンプレート</h2>
+      <h2 class="auto-1-2">😆EMOJI😘</h2>
+      <div class="auto-min-box">
+        <p class="auto-2">
+          このツールを使えば、簡単にテキストをemojiで装飾することができます！雰囲気に合わせた絵文字をカスタマイズでき、テキストに対しての絵文字の多さも調節可能です。チャットやSNS、ブログ記事を楽しく彩ることができます！！
+        </p>
+      </div>
+    </div>
+
+    <%= render "main/templates" %>
+  </div>
+<% end %>

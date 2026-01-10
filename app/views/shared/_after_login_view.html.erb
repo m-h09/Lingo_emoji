@@ -31,39 +31,40 @@
           </div>
         <% end %>
 
-        <button tyoe="button" class="select-button">
+        <%= link_to generators_auto_kansai_path, class: "select-button" do %>
           <span class="icon-box">🐙</span>
           <div class="btn-text-box">
             <span class="btn-title">関西弁変換</span>
             <span class="mini-text">文章を関西弁に変換</span>
           </div>
-        </button>
-        <button type="button" class="select-button">
+        <% end %>
+
+        <%= link_to generators_auto_both_path, class: "select-button" do %>
           <span class="icon-box">🤹‍♀️</span>
           <div class="btn-text-box">
             <span class="btn-title">Emoji追加＋関西弁変換</span>
             <span class="mini-text">絵文字追加と関西弁変換を同時に実行</span>
           </div>
-        </button>
+        <% end %>
       </div>
 
       <h2 class="template-title">テンプレート</h2>
       <div class="template-box">
-        <button type="button" class="select-button">
+      <%= link_to emoji_template_templates_path, class: "select-button" do %>
         <span class="icon-box">💘</span>
           <div class="btn-text-box">
             <span class="btn-title">Emoji</span>
             <span class="mini-text">テンプレートから絵文字を追加</span>
           </div>
-        </button>
-        <button type="button" class="select-button">
-        <span class="icon-box">👨‍🦱</span>
-          <div class="btn-text-box">
-            <span class="btn-title">関西弁</span>
-            <span class="mini-text">テンプレートから
-              文章を関西弁に変換</span>
-          </div>
-        </button>
+        <% end %>
+        <%= link_to emoji_template_templates_path, class: "select-button" do %>
+          <span class="icon-box">👨‍🦱</span>
+            <div class="btn-text-box">
+              <span class="btn-title">関西弁</span>
+              <span class="mini-text">テンプレートから
+                文章を関西弁に変換</span>
+            </div>
+        <% end %>
         <button type="button" class="select-button">
         <span class="icon-box">🔐</span>
           <div class="btn-text-box">
