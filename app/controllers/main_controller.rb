@@ -10,7 +10,7 @@ class MainController < ApplicationController
     end
   end
 
-  
+
 
   def guide; end
 

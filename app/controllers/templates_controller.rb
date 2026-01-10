@@ -26,7 +26,7 @@ class TemplatesController < ApplicationController
   def fetch_tone_category
     tone     = params[:tone]     || params.dig(:message_template, :tone)
     category = params[:category] || params.dig(:message_template, :category)
-    [tone, category]
+    [ tone, category ]
   end
 
   def invalid_select?(value)
