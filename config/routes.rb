@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   post "main/add_history", to: "main#add_history", as: :main_add_history
   post "main/delete_history", to: "main#delete_history", as: :main_delete_history
   post "main/translation_delete", to: "main#translation_delete", as: :main_translation_delete
-  get "templates", to: "main#templates"
   get "guide", to: "main#guide"
   root "main#index"
   get "faq", to: "static_pages#faq"
@@ -36,6 +35,14 @@ Rails.application.routes.draw do
   post "generators/auto_kansai", to: "generators#create"
   get "generators/auto_both", to: "generators#auto_both"
   post "generators/auto_both", to: "generators#create"
+
+  resources :templates, only: [] do
+    collection do
+      get  :emoji_template   # /templates/emoji_template
+      get  :list   # ajaxで一覧HTML返す用（名前は好きに変えてOK）
+    end
+  end
+
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener_web" if Rails.env.development?
 end

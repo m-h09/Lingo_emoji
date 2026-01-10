@@ -1,14 +1,19 @@
-<div class="d-flex gap-3 mb-4 justify-content-center flex-wrap">
-  <%= select_tag :emoji, options_for_select(MessageTemplate.emojis.keys.map { |key|
-      [t("enums.message_template.emoji.#{key}"), key]
-    }, params[:emoji]), class: "form-select w-auto", id: "js-emoji" %>
-
+<%= hidden_field_tag :emoji, "add", id: "js-emoji" %>
+<div class="template-tone-box">
+  <div class="template-tone-question">
+    <h6 class="template-tone-text">どんなトーンの文章にする？</h6>
+    <p class="template-tone-2">※必須</p>
+  </div>
   <%= select_tag :tone, options_for_select(MessageTemplate.tones.keys.map { |key|
       [t("enums.message_template.tone.#{key}"), key]
     }, params[:tone]), class: "form-select w-auto", id: "js-tone" %>
 </div>
 
-<div class="d-flex mb-3 justify-content-center">
+<div class="template-place-box">
+  <div class="template-place-question">
+    <h6 class="template-place-text">どの場面で使う文章？</h6>
+    <p class="template-place-2">※必須</p>
+  </div>
   <%= select_tag :category, options_for_select(MessageTemplate.categories.keys.map { |key|
       [t("enums.list.#{key}"), key]
     }, params[:category]), prompt: "選択してください", class: "form-select w-auto", id: "js-category" %>

@@ -625,6 +625,14 @@ footer {
   text-align: center;
   font-size: 40px;
 }
+.auto-template {
+  text-align: center;
+  font-size: 20px;
+}
+.auto-1-2 {
+  text-align: center;
+  font-size: 50px;
+}
 .auto-min-box {
   position: relative;
   margin: 10px 20px 10px 20px;
@@ -959,3 +967,47 @@ footer {
   }
 }
 /* ここまで自動生成用 */
+
+
+/* テンプレート選択ボタン  */
+.template-tone-box {
+  display: flex;
+  flex-direction: column;
+}
+.template-tone-question {
+  display: flex;
+  align-items: center;
+}
+.template-tone-text {
+  display: flex;
+}
+.template-tone-2 {
+  color: red;
+  margin-bottom: 4px;
+}
+.form-select {
+  text-align: center;
+}
+.template-place-box {
+  display:flex;
+  flex-direction: column;
+}
+.template-place-question {
+  display: flex;
+  align-items: center;
+}
+.template-place-2 {
+  color: red;
+  margin-bottom: 4px;
+}
+.template-category-select {
+  width:60%;
+  margin: 0 auto;
+  table-layout: fixed;
+}
+.category-1 {
+  widhth: calc(100% - 56px);
+  white-space: normal;
+  overflow-wrap: anywhere;
+
+}

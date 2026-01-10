@@ -14,7 +14,7 @@
     <div class="form-box">
       <div class="question-box">
         <div class="question-text">
-          <h6 class="question-1">どんなトーンのemojiにする？</h6><p class="question-2">※必須</p>
+          <h6 class="question-1">どれくらいのトーンする？</h6><p class="question-2">※必須</p>
         </div>
         <div class="answer-box">
           <%= select_tag :tone, options_for_select(
@@ -25,12 +25,22 @@
 
       <div class="question-box">
         <div class="question-text">
-          <h6 class="question-1">emojiの多さは？</h6><p class="question-2">※必須</p>
+          <h6 class="question-1">関西弁の強さは？</h6><p class="question-2">※必須</p>
         </div>
         <div class="answer-box">
-          <%= select_tag :strength, options_for_select(
-                Translation.strengths.keys.map { |key| [t("enums.translation.strength.#{key}"), key] }, params[:strength]
-              ), prompt: "選択してください",class: "answer-select-2" %>
+        <%= select_tag :strength, options_for_select(
+            Translation.strengths.keys.map { |key|
+              label =
+                case key.to_s
+                when "weak"   then "ちょい関西"
+                when "medium" then "ほどほど関西"
+                when "strong" then "ゴリゴリ関西"
+                end
+              [label, key]
+            },
+            params[:strength]
+          ),
+          prompt: "選択してください", class: "answer-select-2"%>
         </div>
       </div>
 

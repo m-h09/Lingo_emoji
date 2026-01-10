@@ -10,19 +10,7 @@ class MainController < ApplicationController
     end
   end
 
-  def templates
-    @templates = MessageTemplate.where(
-      emoji: params[:emoji],
-      tone: params[:tone],
-      category: params[:category]
-    ).order(id: :desc).page(params[:page]).per(10)
-
-    # JSから部分テンプレートだけ返す
-    respond_to do |format|
-      format.html { render partial: "templates/list", locals: { templates: @templates } }
-      format.any { render plain: "unsupported format", status: 406 }
-    end
-  end
+  
 
   def guide; end
 
