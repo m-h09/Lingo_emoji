@@ -18,56 +18,54 @@ class MainController < ApplicationController
     @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(10)
   end
 
-  def add_history
-    outputs = params[:output_texts] || []
+  # def add_history
+  #   outputs = params[:output_texts] || []
 
-    if outputs.any?
-      outputs.each do |text|
-        current_user.histories.find_or_create_by!(record: text)
-      end
-      redirect_to main_index_path, success: "Myテンプレートへ項目を追加しました"
-    else
-      redirect_to main_edit_history_path, danger: "チェックを入れてください"
-    end
-  end
-  def delete_history
-    if params[:records].present?
-      deleted_records = params[:records] # 画面上でチェックされたrecord
-      deleted_records.each do |text|
-        unless current_user.translations.exists?(output_text: text)
-        current_user.translations.create!(output_text: text)
-        end
-    end
-      # historyから削除
-      current_user.histories.where(record: deleted_records).destroy_all
-      redirect_to main_edit_history_path, success: "選択した履歴を削除しました"
-    else
-      redirect_to main_edit_history_path, danger: "削除する履歴を選択してください"
-    end
-  end
+  #   if outputs.any?
+  #     outputs.each do |text|
+  #       current_user.histories.find_or_create_by!(record: text)
+  #     end
+  #     redirect_to main_index_path, success: "Myテンプレートへ項目を追加しました"
+  #   else
+  #     redirect_to main_edit_history_path, danger: "チェックを入れてください"
+  #   end
+  # end
+  # def delete_history
+  #   if params[:records].present?
+  #     deleted_records = params[:records] # 画面上でチェックされたrecord
+  #     deleted_records.each do |text|
+  #       unless current_user.translations.exists?(output_text: text)
+  #       current_user.translations.create!(output_text: text)
+  #       end
+  #   end
+  #     # historyから削除
+  #     current_user.histories.where(record: deleted_records).destroy_all
+  #     redirect_to main_edit_history_path, success: "選択した履歴を削除しました"
+  #   else
+  #     redirect_to main_edit_history_path, danger: "削除する履歴を選択してください"
+  #   end
+  # end
 
-  def translation_delete
-    if params[:records].present?
-      deleted_records = params[:records] # 画面上でチェックされたrecord
-      current_user.translations.where(output_text: deleted_records).destroy_all
-      redirect_to main_edit_history_path, success: "選択した項目を削除しました"
-    else
-      redirect_to main_edit_history_path, danger: "削除する項目を選択してください"
-    end
-  end
+  # def translation_delete
+  #   if params[:records].present?
+  #     deleted_records = params[:records] # 画面上でチェックされたrecord
+  #     current_user.translations.where(output_text: deleted_records).destroy_all
+  #     redirect_to main_edit_history_path, success: "選択した項目を削除しました"
+  #   else
+  #     redirect_to main_edit_history_path, danger: "削除する項目を選択してください"
+  #   end
+  # end
 
 
   def edit_history
     # すでに履歴に登録された output_text を除外
-    used_outputs = current_user.histories.pluck(:record)
+    # used_outputs = current_user.histories.pluck(:record)
 
-    @translations = current_user.translations.where.not(output_text: used_outputs).order(id: :desc).page(params[:page]).per(10)
-    # 登録削除よう
+    # @translations = current_user.translations.where.not(output_text: used_outputs).order(id: :desc).page(params[:page]).per(10)
+    # # 登録削除よう
     @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(10)
 
-    if params[:q].present?  # 検索履歴
-      @translations = @translations.where("output_text LIKE ?", "%#{params[:q]}%")
-    end
+
   end
 
   def create

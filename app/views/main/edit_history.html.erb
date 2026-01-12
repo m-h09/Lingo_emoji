@@ -1,80 +1,59 @@
-<div class="container mt-3">
-  <style>
-    /* PC（768px以上）の時だけタブを大きくする */
-    @media (min-width: 768px) {
-      #pills-tab .nav-link {
-        font-size: 1.0rem !important;
-        padding: 0.7rem 1.2rem !important;
-      }
-    }
-  </style>
-  <div class=" mb-5 px-3 py-2 ">
-    <%= link_to "←1つ前に戻る",  main_index_path, class: "mb-3" %>
-  </div>
-  <!-- PC -->
-  <div class="mt-5 mb-2 mx-auto rounded w-50 position-relative text-center bg-info d-none d-md-block">
-    <div class="header-title text-center">
-      <h1 class="text-white mb-0 py-2 ">Myテンプレート編集画面</h1>
-    </div>
-  </div>
-  <!-- スマホ -->
-  <div class="mt-5 mb-2 mx-auto rounded w-75 position-relative text-center bg-info d-block d-md-none">
-    <div class="header-title text-center">
-      <h5 class="w-100 text-white mb-0 py-2">Myテンプレート編集画面</h5>
-    </div>
-  </div>
-  <!-- pc -->
-  <p class="text-muted small text-center mt-3 d-none d-md-block">
-  追加・削除したいテンプレートにチェックを入れてボタンを押してください
-  </p>
-  <!-- スマホ -->
-  <p class="text-muted small text-center mt-3 d-block d-md-none" style="font-size: 0.6rem; line-height: 1.2;">
-  追加・削除したいテンプレートにチェックを入れてボタンを押してください
-  </p>
-  <div class="container py-4">
-    <div class="nav nav-pills justify-content-center gap-3 mb-5" id="pills-tab" role="tablist">
-      <button class="nav-link active"
-              id="pills-addition-tab"
-              data-bs-toggle="pill"
-              data-bs-target="#pills-addition"
-              type="button" role="tab"
-              aria-controls="pills-addition" aria-selected="true"
-              data-turbo="false">
-        登録追加
-      </button>
-
-      <button class="nav-link"
-              id="pills-delete-tab"
-              data-bs-toggle="pill"
-              data-bs-target="#pills-delete"
-              type="button" role="tab"
-              aria-controls="pills-delete" aria-selected="false"
-              data-turbo="false">
-        登録削除
-      </button>
-      <button class="nav-link"
-              id="pills-h-delete-tab"
-              data-bs-toggle="pill"
-              data-bs-target="#pills-history_delete"
-              type="button" role="tab"
-              aria-controls="pills-history_delete" aria-selected="false"
-              data-turbo="false">
-        履歴削除
-      </button>
-    </div>
-
-
-
-    <div class="tab-content border border-top-0 rounded-bottom py-2 mx-auto w-100 w-md-75 w-lg-50" id="pills-tabContent" style="max-width:750px;">
-      <div class="tab-pane fade show active" id="pills-addition" role="tabpanel" aria-labelledby="pills-addition-tab" tabindex="0">
-        <%= render "regist_addition" %>
-      </div>
-      <div class="tab-pane fade" id="pills-delete" role="tabpanel" aria-labelledby="pills-delete-tab" tabindex="0">
-        <%= render "regist_delete" %>
-      </div>
-      <div class="tab-pane fade" id="pills-history_delete" role="tabpanel" aria-labelledby="pills-history_delete-tab" tabindex="0">
-        <%= render "history_delete" %>
+<div class="history-line-box">
+  <div class="history-message-box">
+    <div class="auto-message">
+      <h2 class="auto-1-2">✌Myテンプレート✌</h2>
+      <div class="auto-min-box">
+        <p class="auto-2">
+          このツールを使えば、簡単にテキストをemojiで装飾することができます！このテンプレートで雰囲気に合わせた絵文字を使用することができます。それによりチャットやSNS、ブログ記事を楽しく彩ることができます！！
+        </p>
       </div>
     </div>
+    <div class="history-sub-box">
+      <span class="history-sub-title">AI生成の履歴からオリジナルテンプレートを作成しよう！</span>
+      <div class="edit-history-sub-box">
+        <%= link_to "編集はこちらから", "#template-menu", class: "history-sub-text", id: "down-edit" %>
+      </div>
+    </div>
+    <%= render "main/history" %>
   </div>
+
+
+
+  <div class="menu-line-box">
+    <div class="menu-box">
+      <span class="menu-title" id="template-menu">テンプレート編集Menu</span>
+    </div>
+  </div>
+  <!-- 選択ボタン一覧 -->
+  <div class="history-menu-select">
+    <div class="history-select-box">
+      <div class="history-select">
+        <%= link_to translation_addition_templates_path, class: "history-select-button" do %>
+          <span class="h-icon-box">💖</span>
+          <div class="history-btn-text-box">
+            <span class="h-btn-title">テンプレートに登録</span>
+            <span class="h-mini-text">ログイン中にAI生成した履歴からテキストを選択すると自分のテンプレートを作成できます！</span>
+          </div>
+        <% end %>
+
+        <%= link_to translation_delete_templates_path, class: "history-select-button" do %>
+          <span class="h-icon-box">🐙</span>
+          <div class="history-btn-text-box">
+            <span class="h-btn-title">テンプレートから削除</span>
+            <span class="h-mini-text">Myテンプレートに登録したテキストをMyテンプレートから削除。※</span>
+          </div>
+        <% end %>
+
+        <%= link_to delete_history_templates_path, class: "history-select-button" do %>
+          <span class="h-icon-box">🤹‍♀️</span>
+          <div class="history-btn-text-box">
+            <span class="h-btn-title">履歴を削除</span>
+            <span class="h-mini-text">絵文字追加と関西弁変換を同時に実行</span>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+
 </div>

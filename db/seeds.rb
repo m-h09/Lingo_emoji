@@ -256,16 +256,16 @@ MessageTemplate.create!([
 ])
 # 関西弁変換　フォーマル　確認・質問
 MessageTemplate.create!([
-  { category: :check_question, emoji: :kansai, tone: :casual, content: "これで合ってる？" },
-  { category: :check_question, emoji: :kansai, tone: :casual, content: "もう一回確認してもいい？" },
-  { category: :check_question, emoji: :kansai, tone: :casual, content: "どうする？" },
-  { category: :check_question, emoji: :kansai, tone: :casual, content: "ここでええ？" },
-  { category: :check_question, emoji: :kansai, tone: :casual, content: "ちょっと説明してくれる？" },
-  { category: :check_question, emoji: :kansai, tone: :casual, content: "もっと詳しく聞きたいわ" },
-  { category: :check_question, emoji: :kansai, tone: :casual, content: "これ、よく使う？" },
-  { category: :check_question, emoji: :kansai, tone: :casual, content: "それってどういう意味や？" },
-  { category: :check_question, emoji: :kansai, tone: :casual, content: "他に希望ある？" },
-  { category: :check_question, emoji: :kansai, tone: :casual, content: "よければ教えてくれる？" }
+  { category: :check_question, emoji: :kansai, tone: :formal, content: "これで合ってますか？" },
+  { category: :check_question, emoji: :kansai, tone: :formal, content: "もう一回確認してもよろしいですか？" },
+  { category: :check_question, emoji: :kansai, tone: :formal, content: "どないします？" },
+  { category: :check_question, emoji: :kansai, tone: :formal, content: "ここでよろしいですか？" },
+  { category: :check_question, emoji: :kansai, tone: :formal, content: "説明してもらえないでしょうか？" },
+  { category: :check_question, emoji: :kansai, tone: :formal, content: "もっと詳しく聞きたいですわ" },
+  { category: :check_question, emoji: :kansai, tone: :formal, content: "これ、よく使いはります？" },
+  { category: :check_question, emoji: :kansai, tone: :formal, content: "それってどういう意味ですか？" },
+  { category: :check_question, emoji: :kansai, tone: :formal, content: "他に希望ありますか？" },
+  { category: :check_question, emoji: :kansai, tone: :formal, content: "よろしければ聞かしてもろていいですか？" }
 ])
 # 関西弁変換　カジュアル　確認・質問
 MessageTemplate.create!([

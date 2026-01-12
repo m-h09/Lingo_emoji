@@ -11,13 +11,13 @@
         <tr>
         <!-- テンプレート表示部分 -->
           <td category-1><%= template.content %></td>
-          <td class="text-end category-2">
+          <td class="text-end">
             <div class="copy-wrapper d-inline-flex align-items-center">
               <button class="copy-btn-template "
                       type="button"
                       aria-label="コピー"
                       data-content="<%= template.content %>">
-                <%= image_tag "copy_icon_128895.svg", alt: "コピーする" %>
+                <%= image_tag "copy_icon_128895.svg", alt: "コピーする", class:"copy-btn-template-image" %>
               </button>
               <div class="ms-2 copy-toast text-success small" style="display:none;">コピーしました</div>
             </div>

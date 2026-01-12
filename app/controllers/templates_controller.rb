@@ -4,6 +4,86 @@ class TemplatesController < ApplicationController
   def emoji_template
     @templates = []
   end
+  def kansai_template
+    @templates = []
+  end
+
+
+
+  def translation_addition
+    @translations = current_user.translations.order(id: :desc).page(params[:page]).per(10)
+    if params[:q].present?  # 検索履歴
+      @translations = @translations.where("output_text LIKE ?", "%#{params[:q]}%")
+    end
+
+  end
+  def translation_delete
+    @translations = current_user.translations.order(id: :desc).page(params[:page]).per(10)
+    @histories = current_user.histories.order(id: :desc).page(params[:page]).per(10)
+
+  end
+
+
+
+  def add_history
+    used_outputs = current_user.histories.pluck(:record)
+    @translations = current_user.translations.where.not(output_text: used_outputs)
+    .order(id: :desc).page(params[:page]).per(10)
+      outputs = (params[:output_texts] || [])
+                .map { |t| t.to_s.strip }
+                .reject(&:blank?)
+                .uniq
+
+    if outputs.any?
+      outputs.each do |text|
+        current_user.histories.find_or_create_by!(record: text)
+      end
+
+      redirect_to main_edit_history_path,
+        success: "Myテンプレートへ項目を追加しました"
+    else
+      redirect_to add_history_templates_path,
+        danger: "チェックを入れてください"
+    end
+  end
+  def delete_history
+    @translations = current_user.translations.order(id: :desc).page(params[:page]).per(10)
+    if params[:q].present?  # 検索履歴
+      @translations = @translations.where("output_text LIKE ?", "%#{params[:q]}%")
+    end
+  end
+
+  def delete_history_execute
+    records = (params[:records] || []).map { |t| t.to_s.strip }.reject(&:blank?).uniq
+
+    if records.empty?
+      redirect_to delete_history_templates_path, danger: "削除する履歴を選択してください"
+      return
+    end
+    redirect_to delete_history_templates_path, success: "選択した履歴を削除しました"
+  end
+
+
+  def translation_delete_execute
+    records = (params[:records] || []).map { |t| t.to_s.strip }.reject(&:blank?).uniq
+
+    if records.empty?
+      redirect_to translation_delete_templates_path, danger: "削除する項目を選択してください"
+      return
+    end
+
+    ActiveRecord::Base.transaction do
+      # histories(record) → translations(output_text) に戻す
+      records.each do |text|
+        current_user.translations.find_or_create_by!(output_text: text)
+      end
+
+      # histories から削除
+      current_user.histories.where(record: records).destroy_all
+    end
+
+    redirect_to translation_delete_templates_path, success: "履歴へ戻しました"
+  end
 
   def list
     tone, category = fetch_tone_category

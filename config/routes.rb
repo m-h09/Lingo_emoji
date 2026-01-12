@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   post "main/index", to: "main#create"
   get "main/history", to: "main#history"
   get "main/edit_history", to: "main#edit_history"
-  post "main/add_history", to: "main#add_history", as: :main_add_history
   post "main/delete_history", to: "main#delete_history", as: :main_delete_history
   post "main/translation_delete", to: "main#translation_delete", as: :main_translation_delete
   get "guide", to: "main#guide"
@@ -39,7 +38,14 @@ Rails.application.routes.draw do
   resources :templates, only: [] do
     collection do
       get  :emoji_template   # /templates/emoji_template
-      get  :list   # ajaxで一覧HTML返す用（名前は好きに変えてOK）
+      get :kansai_template  # /templates/kansai_template
+      get  :list         # /templates/list
+      get :translation_addition # /templates/translation_addition
+      post :add_history # /templates/translation_addition
+      get :translation_delete   # /templates/translation_delete
+      post :translation_delete_execute   # /templates/translation_delete_execute
+      get :delete_history      # /templates/praivate_template
+      post:delete_history_execute      # /templates/praivate_template
     end
   end
 

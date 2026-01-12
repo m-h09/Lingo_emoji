@@ -1001,13 +1001,242 @@ footer {
   margin-bottom: 4px;
 }
 .template-category-select {
-  width:60%;
+  width: 50%;
   margin: 0 auto;
   table-layout: fixed;
 }
 .category-1 {
-  widhth: calc(100% - 56px);
+  width: calc(60% - 56px);
   white-space: normal;
   overflow-wrap: anywhere;
-
 }
+.copy-btn-template {
+  border:none;
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+  color: #FFF;
+  cursor: pointer;
+}
+/* テンプレート終了 */
+
+/* テンプレート編集 */
+/* 中央エリア */
+      /* タイトル */
+      .history-line-box {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .history-box{
+        background-color: #666657;
+        width: min(1100px, 90%);
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+
+      }
+      .history-title {
+        position: relative;
+        color: #ffffff;
+        text-align: center;
+        font-size: 30px;
+        letter-spacing: 0.3em;
+        font-weight: bold;
+        margin-top : 28px;
+        z-index: 2;
+      }
+
+      /* タブレット版 */
+
+      /* スマホ版 */
+      @media screen and (max-width: 480px) {
+        .history-box{
+          margin-top: 10px;
+
+        }
+        .history-title {
+          font-size: 22px;
+          letter-spacing: 0.3em;
+
+        }
+      }
+          /* タイトル終了 */
+          /* 選択エリア */
+        .history-message-box {
+          width:100%;
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 50px;
+        }
+        .history-message-box .auto-message,
+        .history-message-box {
+          width: min(1100px, 90%);
+          margin: 0 auto;          /* ブロックだけ中央 */
+          text-align: left;        /* 中身は左寄せ */
+        }
+        .history-sub-box {
+          width: min(1100px, 90%);
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          margin-top: 20px;
+          margin-bottom: 40px;
+        }
+        .edit-history-sub-box {
+          background-color: #8796fa;
+          width: 60%;
+          height: 50px;
+          display: flex;
+          margin: 0 auto;
+          justify-content: center;
+          border: #000 solid 2px;
+
+        }
+        .edit-history-sub-box:hover{
+          background-color: #3f3ced;
+
+        }
+
+        .history-sub-title{
+          font-size: 22px;
+        }
+        .history-menu-select {
+          width:100%;
+          display: flex;
+          justify-content: center;
+
+        }
+        .history-select-box {
+
+          display: block;
+          width: min(1100px, 90%);
+          margin-top: 30px;
+          margin-bottom: 50px;
+          text-align: center;
+
+        }
+
+        .history-sub-text {
+          font-size: 25px;
+          text-decoration: none;
+          color:white;
+          margin-top:5px;
+
+        }
+        .history-template {
+          margin-bottom: 600px;
+        }
+        .history-select {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .h-btn-title {
+          font-size:25px;
+          font-weight: 800;
+          color: #000;
+          text-decoration: none;
+          margin-top: 10px;
+        }
+        .h-mini-text {
+          color: #999990 ;
+        }
+
+        .btn-sub{
+          font-size: 12px;
+          opacity: .8;
+          margin-top: 4px;
+          line-height: 1.2;
+        }
+      .history-select-button {
+        background-color: #f7f8ff;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-align: left;
+        text-decoration: none; /* ← 下線を消す */
+        border: 2px solid #000;  /* ← 黒枠 */
+        padding-left: 8px;
+        margin-bottom: 40px;
+
+      }
+      .history-select-button:hover{
+        background-color: #e0e2ff;
+
+      }
+
+      .h-icon-box {
+        align-self: stretch;
+        font-size: 32px;      /* ← アイコンサイズ */
+        line-height: 1;
+        text-align: center;
+        flex-shrink: 0;
+        margin-top: 30px;
+                /* ← 背景を白に */
+        width: 66px;
+        height: 55px;
+
+      }
+      .history-btn-text-box {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
+
+      /* 「編集はこちら」からをスクロールするため */
+      html { scroll-behavior: smooth; }
+
+
+
+      /* 中央エリア終了 */
+
+
+      /* Myテンプレート登録追加 */
+    .page-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+    .history-addition-text {
+      font-size: 30px;
+      text-align: center;
+    }
+    .table-translation {
+      width: 100%;
+    }
+    .translation-text{
+      widht: 100%;
+    }
+    .translation-form-control {
+      width:100%;
+      height: 45px;
+    }
+    .translation-search-btn {
+      height: 45px;
+    }
+    .trans-h-box {
+      width: 40%;
+      display: block;
+      justify-content: center;
+      margin: 0 auto;
+      margin-bottom:10px;
+
+    }
+    .addition-btn {
+      margin-left: 20px;
+
+    }
+
+    /* スマホ版 */
+    @media screen and (max-width: 480px) {
+      .translation-form-control {
+        width: 80%;
+        height: 40px;
+      }
+      .translation-search-btn {
+        height: 40px;
+      }
+    }

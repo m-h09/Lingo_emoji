@@ -1,17 +1,17 @@
-<%= form_with url: main_add_history_path, method: :post do %>
+<%= form_with url: translation_addition_templates_path, method: :post do %>
   <% if @translations.present? %>
-    <div class="position-relative mx-auto" style="width: 320px;">
-      <div class="position-absolute" style="top: -0px; right: 5px;">
-        <%= submit_tag "追加", class: "btn btn-primary btn-sm" %>
+    <div class="position-relative mx-auto" style="width: 580px;">
+      <div class="add-btn-box position-absolute" style="top: -0px; right: 5px;">
+        <%= submit_tag "追加", class:"addition-btn" %>
       </div>
       <br>
       <br>
-      <table class="table table-striped  mb-0">
+      <table class="table-translation table table-striped  mb-0">
         <tbody>
           <% @translations.each do |translation| %>
             <tr>
               <td ><%= translation.output_text %></td>
-              <td class="text-center align-middle">
+              <td class="translation-text text-center align-middle">
                 <%= check_box_tag "output_texts[]", translation.output_text %>
               </td>
             </tr>

@@ -1,16 +1,12 @@
-<div class="container mt-3">
-  <div class="d-flex justify-content-end mb-5 px-3 py-2 ">
-    <%= link_to "編集", main_edit_history_path, class: "nav-link text-primary fw-semibold"  %>
-  </div>
+<div class="history-template container mt-3">
   <% if @histories.present? %>
-    <table class="table table-striped " style="width: 300px; margin: 0 auto;">
-      <tbody>
+    <table class="table table-striped template-category-select ">
         <% @histories.each do |history| %>
           <tr>
             <td><%= history.record %></td>
-            <td class="text-end text-center align-middle" style="width: 50px;">
+            <td class="text-end category-2">
               <div class="copy-wrapper d-inline-flex align-items-center">
-                <button class="copy-btn btn btn-outline-secondary btn-sm"
+                <button class="copy-btn-template"
                         type="button"
                         aria-label="コピー"
                         data-content="<%= history.record %>">
@@ -25,6 +21,7 @@
     </table>
   <% else %>
     <p class="text-center">現在登録はありません。</p>
+    <p class="text-center">編集画面へGO！</p>
   <% end %>
 </div>
 </div>

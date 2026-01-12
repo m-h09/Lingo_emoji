@@ -1,0 +1,18 @@
+<%= form_with url: "#", method: :get, data: { turbo: false } do %>
+  <%= hidden_field_tag :emoji, "kansai" %>
+  <input type="hidden" id="js-emoji" value="kansai">
+
+  <div class="message-box">
+    <div class="auto-message">
+      <h2 class="auto-template">テンプレート</h2>
+      <h2 class="auto-1-2">🐙関西弁🐙</h2>
+      <div class="auto-min-box">
+        <p class="auto-2">
+          このツールを使えば、簡単にテキストを関西弁に変換することができます！雰囲気に合わせた関西弁のテンプレートを用意しています。それによってチャットやSNS、ブログ記事を楽しく彩ることができます！！
+        </p>
+      </div>
+    </div>
+
+    <%= render "main/templates" %>
+  </div>
+<% end %>
