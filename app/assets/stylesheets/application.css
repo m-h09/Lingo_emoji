@@ -732,7 +732,7 @@ footer {
 
 
             /* タブレット版 */
- @media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
 
   .form-box {
     display: flex;
@@ -1002,13 +1002,17 @@ footer {
 }
 .template-category-select {
   width: 50%;
+  height: 300px;
   margin: 0 auto;
+  margin-top: 20px;
   table-layout: fixed;
 }
 .category-1 {
   width: calc(60% - 56px);
   white-space: normal;
   overflow-wrap: anywhere;
+  font-size: 20px;
+
 }
 .copy-btn-template {
   border:none;
@@ -1059,6 +1063,13 @@ footer {
         .history-title {
           font-size: 22px;
           letter-spacing: 0.3em;
+
+        }
+        .category-1 {
+          width: calc(60% - 56px);
+          white-space: normal;
+          overflow-wrap: anywhere;
+          font-size: 14px;
 
         }
       }
@@ -1208,7 +1219,7 @@ footer {
       width: 100%;
     }
     .translation-text{
-      widht: 100%;
+      width: 100%;
     }
     .translation-form-control {
       width:100%;
@@ -1240,3 +1251,112 @@ footer {
         height: 40px;
       }
     }
+/* テンプレート登録等終了 */
+
+/* ツール説明 */
+.tool-manual-box {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* ← 全体を中央に */
+  margin: 40px 0;
+}
+.tool-box {
+  width: 70%;
+  background-color: #d1ebf9;
+}
+.sub-box{
+  display: flex;                 /* ← これが重要 */
+  justify-content: center;       /* 横中央 */
+  align-items: center;            /* ← 中身サイズに合わせる */
+  padding: 12px 36px;
+  background: #fafdff;            /* 好きな色 */
+  border-radius: 9999px;          /* ← 楕円 */
+  margin: 0 auto 24px;            /* 中央寄せ */
+  margin-top: 40px;
+  margin-bottom:40px;
+  text-align: center;
+  width:20%;
+}
+.sub-box-1{
+  display: flex;                 /* ← これが重要 */
+  justify-content: center;       /* 横中央 */
+  align-items: center;            /* ← 中身サイズに合わせる */
+  padding: 12px 36px;
+  background: #fafdff;            /* 好きな色 */
+  border-radius: 9999px;          /* ← 楕円 */
+  margin: 0 auto 24px;            /* 中央寄せ */
+  margin-top: 40px;
+  margin-bottom:40px;
+  text-align: center;
+  width:30%;
+}
+.tool-manual-1{
+  display: flex;
+  margin-bottom: 20px;
+  margin-right:30px;
+}
+.tool-manual-2{
+  display: flex;
+  margin-bottom: 20px;
+  margin-left:30px;
+  display: flex;
+  flex-direction: column;
+}
+.manual-content-box {
+  margin-left : 70px;
+}
+.manual-content-box-1{
+  margin-left : 50px;
+  display: flex;
+  flex-direction: column;
+
+}
+.manual-content-box-2{
+  margin-left : 50px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+/* 見出しの余白を調整 */
+.tool-title{
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+.manual-image {
+  position: relative;
+  width : 20%;
+  height: auto;
+  margin-left: 50px;
+}
+.input-image {
+  position: relative;
+  width : 50%;
+  height: auto;
+  margin:0 auto;
+
+
+}
+.select-image {
+  position: relative;
+  width : 60%;
+  height: auto;
+  margin:0 auto;
+  margin-bottom:40px;
+}
+
+.output-image {
+  position: relative;
+  width : 50%;
+  height: auto;
+  margin:0 auto;
+}
+.manual-auto-text {
+  margin-left: 150px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(79, 146, 246);
+  width :fit-content;
+}

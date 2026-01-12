@@ -15,12 +15,10 @@ class TemplatesController < ApplicationController
     if params[:q].present?  # 検索履歴
       @translations = @translations.where("output_text LIKE ?", "%#{params[:q]}%")
     end
-
   end
   def translation_delete
     @translations = current_user.translations.order(id: :desc).page(params[:page]).per(10)
     @histories = current_user.histories.order(id: :desc).page(params[:page]).per(10)
-
   end
 
 

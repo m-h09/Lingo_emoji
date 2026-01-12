@@ -37,15 +37,15 @@ Rails.application.routes.draw do
 
   resources :templates, only: [] do
     collection do
-      get  :emoji_template   # /templates/emoji_template
+      get :emoji_template   # /templates/emoji_template
       get :kansai_template  # /templates/kansai_template
-      get  :list         # /templates/list
+      get :list         # /templates/list
       get :translation_addition # /templates/translation_addition
       post :add_history # /templates/translation_addition
       get :translation_delete   # /templates/translation_delete
       post :translation_delete_execute   # /templates/translation_delete_execute
       get :delete_history      # /templates/praivate_template
-      post:delete_history_execute      # /templates/praivate_template
+      post :delete_history_execute      # /templates/praivate_template
     end
   end
 

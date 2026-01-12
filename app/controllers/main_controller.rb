@@ -64,8 +64,6 @@ class MainController < ApplicationController
     # @translations = current_user.translations.where.not(output_text: used_outputs).order(id: :desc).page(params[:page]).per(10)
     # # 登録削除よう
     @histories = current_user.histories.order(created_at: :desc).page(params[:page]).per(10)
-
-
   end
 
   def create
