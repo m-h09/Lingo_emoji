@@ -1,0 +1,40 @@
+<div class="menu-line-box">
+  <div class="m-menu-box">
+    <%= link_to root_path do %>
+      <span class="m-menu-title">
+        トップページへ戻る
+      </span>
+    <% end %>
+  </div>
+</div>
+<div class="history-menu-select">
+    <div class="history-select-box">
+      <div class="history-select">
+
+        <%= link_to main_edit_history_path, class: "select-button" do %>
+          <span class="icon-box">🔐</span>
+            <div class="btn-text-box">
+              <span class="btn-title">Myテンプレート画面へ戻る</span>
+              <span class="mini-text">登録したテンプレートを使ってみよう！</span>
+            </div>
+        <% end %>
+        <br>
+        <%= link_to translation_delete_templates_path, class: "history-select-button" do %>
+          <span class="h-icon-box">🐙</span>
+          <div class="history-btn-text-box">
+            <span class="h-btn-title">テンプレートから削除</span>
+            <span class="h-mini-text">Myテンプレートに登録したテキストをMyテンプレートから削除。※</span>
+          </div>
+        <% end %>
+
+        <%= link_to delete_history_templates_path, class: "history-select-button" do %>
+          <span class="h-icon-box">🧹</span>
+          <div class="history-btn-text-box">
+            <span class="h-btn-title">履歴を削除</span>
+            <span class="h-mini-text">絵文字追加と関西弁変換を同時に実行</span>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>

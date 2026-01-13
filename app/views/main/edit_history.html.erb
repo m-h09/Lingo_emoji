@@ -11,7 +11,7 @@
     <div class="history-sub-box">
       <span class="history-sub-title">AI生成の履歴からオリジナルテンプレートを作成しよう！</span>
       <div class="edit-history-sub-box">
-        <%= link_to "編集はこちらから", "#template-menu", class: "history-sub-text", id: "down-edit" %>
+      <%= link_to "編集はこちらから", "#template-menu", class: "history-sub-text", id: "down-edit" %>
       </div>
     </div>
     <%= render "main/history" %>
@@ -29,7 +29,7 @@
     <div class="history-select-box">
       <div class="history-select">
         <%= link_to translation_addition_templates_path, class: "history-select-button" do %>
-          <span class="h-icon-box">💖</span>
+          <span class="h-icon-box">💕</span>
           <div class="history-btn-text-box">
             <span class="h-btn-title">テンプレートに登録</span>
             <span class="h-mini-text">ログイン中にAI生成した履歴からテキストを選択すると自分のテンプレートを作成できます！</span>
@@ -37,7 +37,7 @@
         <% end %>
 
         <%= link_to translation_delete_templates_path, class: "history-select-button" do %>
-          <span class="h-icon-box">🐙</span>
+          <span class="h-icon-box">🧼</span>
           <div class="history-btn-text-box">
             <span class="h-btn-title">テンプレートから削除</span>
             <span class="h-mini-text">Myテンプレートに登録したテキストをMyテンプレートから削除。※</span>
@@ -45,7 +45,7 @@
         <% end %>
 
         <%= link_to delete_history_templates_path, class: "history-select-button" do %>
-          <span class="h-icon-box">🤹‍♀️</span>
+          <span class="h-icon-box">🧹</span>
           <div class="history-btn-text-box">
             <span class="h-btn-title">履歴を削除</span>
             <span class="h-mini-text">絵文字追加と関西弁変換を同時に実行</span>

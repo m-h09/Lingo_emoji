@@ -4,10 +4,14 @@
 </div>
 
 
-<div class="mb-4 d-flex justify-content-center align-items-center">
-  <div class="mb-7 d-flex justify-content-center align-items-center">
-    <div class="d-flex align-items-center">
-      <%= render "regist/delete" %>
-    </div>
+<div class="translation-wrapper mx-auto">
+  <div class="d-flex justify-content-center align-items-center">
+    <%= render "regist/delete" %>
+  </div>
+
+  <div class="page-wrapper">
+    <%= paginate @translations %>
   </div>
 </div>
+
+  

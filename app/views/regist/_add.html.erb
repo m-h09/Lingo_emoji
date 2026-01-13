@@ -1,12 +1,24 @@
 <%= form_with url: translation_addition_templates_path, method: :post do %>
   <% if @translations.present? %>
-    <div class="position-relative mx-auto" style="width: 580px;">
-      <div class="add-btn-box position-absolute" style="top: -0px; right: 5px;">
-        <%= submit_tag "追加", class:"addition-btn" %>
+    <div class=" position-relative">
+      <div class="translation-head">
+        <div class="translation-head__left">
+          <% if logged_in? %>
+            <%= form_with url: translation_addition_templates_path, method: :get, local: true, html: { class: "d-flex align-items-center" } do |f| %>
+              <%= f.text_field :q, placeholder: "検索ワード", class: "translation-form-control me-2" %>
+              <%= f.submit "検索", class: "translation-search-btn btn btn-outline-dark" %>
+          <% end %>
+          <% else %>
+            <p>ログインしてください。</p>
+          <% end %>
+
+        </div>
+
+        <div class="translation-head__right">
+          <%= submit_tag "追加", class: "addition-btn btn btn-outline-dark" %>
+        </div>
       </div>
-      <br>
-      <br>
-      <table class="table-translation table table-striped  mb-0">
+      <table class="table-translation table table-striped">
         <tbody>
           <% @translations.each do |translation| %>
             <tr>
@@ -25,3 +37,4 @@
     <p class="text-center mt-4">現在登録はありません。</p>
   <% end %>
 <% end %>
+
