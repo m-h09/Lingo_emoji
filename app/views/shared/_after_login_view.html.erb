@@ -57,7 +57,7 @@
             <span class="mini-text">テンプレートから絵文字を追加</span>
           </div>
         <% end %>
-        <%= link_to emoji_template_templates_path, class: "select-button" do %>
+        <%= link_to kansai_template_templates_path, class: "select-button" do %>
           <span class="icon-box">👨‍🦱</span>
             <div class="btn-text-box">
               <span class="btn-title">関西弁</span>
@@ -65,13 +65,13 @@
                 文章を関西弁に変換</span>
             </div>
         <% end %>
-        <button type="button" class="select-button">
-        <span class="icon-box">🔐</span>
-          <div class="btn-text-box">
-            <span class="btn-title">Myテンプレート</span>
-            <span class="mini-text">AI生成で出力した履歴からテンプレートが作れる！</span>
-          </div>
-        </button>
+        <%= link_to main_edit_history_path, class: "select-button" do %>
+          <span class="icon-box">🔐</span>
+            <div class="btn-text-box">
+              <span class="btn-title">Myテンプレート</span>
+              <span class="mini-text">AI生成で出力した履歴からテンプレートが作れる！</span>
+            </div>
+        <% end %>
       </div>
 
     </div>

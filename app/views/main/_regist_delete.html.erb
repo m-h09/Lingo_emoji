@@ -2,19 +2,16 @@
   <p class="text-center mt-2 small">Myテンプレートの登録を削除。</p>
   <p class="text-center mt-2 mb-3 small text-danger">履歴自体の削除は、登録削除後、「履歴削除」タブから削除してください。</p>
 </div>
-<%= form_with url: main_delete_history_path, method: :post do %>
-  <div class="mt-3 mb-5 position-relative mx-auto" style="top: 5px; bottom: 15px; max-width: 300px;">
-    <!-- 削除ボタン -->
-    <div class="position-absolute mt-4 end-0 mb-4 " style="top: -50px; right: 38px;">
-      <%= submit_tag "削除", class: "btn btn-danger btn-sm" %>
-    </div>
 
-    <!-- テーブルを中央寄せで配置 -->
+
+<div class="translation-wrapper mx-auto">
+  <div class="d-flex justify-content-center align-items-center">
+    <%= render "regist/delete" %>
   </div>
 
-  <div class="mb-7 d-flex justify-content-center align-items-center">
-    <div class="d-flex align-items-center">
-      <%= render "regist/delete" %>
-    </div>
+  <div class="page-wrapper">
+    <%= paginate @translations %>
   </div>
-<% end %>
+</div>
+
+  

@@ -1,21 +1,13 @@
-<div>
+<div class="sentence-1">
   <p class="text-center mt-2 small">出力結果の全履歴です。追加したい文章を選択して「追加」ボタンを押してください。</p>
-  <p class="text-center mt-2 small text-danger">履歴の削除は、「履歴削除」タブから削除してください。</p>
+  <p class="text-center mt-2 small text-danger">履歴の削除は、MYテンプレートページの「履歴削除」から削除してください。</p>
 </div>
-<div class="mb-4 d-flex justify-content-center align-items-center">
-  <% if logged_in? %>
-    <%= form_with url: main_edit_history_path, method: :get, local: true, html: { class: "d-flex align-items-center" } do |f| %>
-      <%= f.text_field :q, placeholder: "検索ワード", class: "form-control me-2", style: "width: 250px;" %>
-      <%= f.submit "検索", class: "btn btn-outline-dark" %>
-    <% end %>
-  <% else %>
-    <p>ログインしてください。</p>
-  <% end %>
-
-</div>
-<div class="mb-4 d-flex justify-content-center align-items-center">
-  <div class= "d-flex align-items-center">
+<div class="translation-wrapper mx-auto">
+  <div class="d-flex justify-content-center align-items-center">
     <%= render "regist/add" %>
   </div>
+
+  <div class="page-wrapper">
+    <%= paginate @translations %>
+  </div>
 </div>
-<%= paginate @translations %>
