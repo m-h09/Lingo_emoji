@@ -2,8 +2,8 @@
 [![Image from Gyazo](https://i.gyazo.com/9487b76167be2dff1506e38cf49218a8.png)](https://gyazo.com/9487b76167be2dff1506e38cf49218a8)
 アプリケーションURL:https://lingo-emoji.onrender.com/
 ## 目次
-<!-- START doctoc -->
-<!-- END doctoc -->
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
 ## ◾️サービスの概要
