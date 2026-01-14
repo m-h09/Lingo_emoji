@@ -26,4 +26,11 @@
       <span class="t-s-btn-title">Emojiテンプレート</span>
     </div>
   <% end %>
+  <% if logged_in? %>
+    <%= link_to main_edit_history_path, class: "t-s-button" do %>
+      <div class="t-s-btn-text-box">
+        <span class="t-s-btn-title">Myテンプレート</span>
+      </div>
+    <% end %>
+  <% end %>
 </div>
