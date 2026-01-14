@@ -1,15 +1,17 @@
 <div class="justify-content-center">
-  <%= link_to "トップへ戻る", root_path, class: "mt-6 back-link" %>
+  <div class="back-link-box2">
+    <%= link_to "トップへ戻る", root_path, class: "back-link2" %>
+  </div>
   <div class="mt-5 position-relative mx-auto text-center rounded w-50" style="bottom:30px;">
     <h1 class="guide-title mb-4">利用規約</h1>
   </div>
   <div class="d-flex align-items-start">
       <ul class="mt-4 mx-auto w-85">
-        <li class="mb-3">第1条（適用）
-          <p class="mt-2 small">本規約は、「EMOJI関西弁変換」（以下「本サービス」）の利用に関する条件を定めるものです。</p>
+        <li class="mb-3"><h5 class="faq-title">第1条（適用）</h5>
+          <p class="mt-2 faq-answer">本規約は、「EMOJI関西弁変換」（以下「本サービス」）の利用に関する条件を定めるものです。</p>
         </li>
-        <li class="mt-5 mb-3">第2条（禁止事項）
-          <p class="mt-2 small">ユーザーは以下の行為を行ってはなりません。</p>
+        <li class="mt-5 mb-3"><h5 class="faq-title">第2条（禁止事項）</h5>
+          <p class="mt-2 faq-answer">ユーザーは以下の行為を行ってはなりません。</p>
           <ul class="mt-2 small">
             <li>不正アクセス・システムの改ざん</li>
             <li>他のユーザーや第三者の権利を侵害する行為</li>
@@ -17,31 +19,31 @@
             <li>本サービスの運営を妨害する行為</li>
           </ul>
         </li>
-        <li class="mt-5 mb-3">第3条（著作権）
-          <p class="mt-2 small">本サービス内で提供される文章テンプレート・デザイン・プログラム等の著作権は当方に帰属します</p>
+        <li class="mt-5 mb-3"><h5 class="faq-title">第3条（著作権）</h5>
+          <p class="mt-2 faq-answer">本サービス内で提供される文章テンプレート・デザイン・プログラム等の著作権は当方に帰属します</p>
         </li>
-        <li class="mt-5 mb-3">第4条（免責事項）
-          <ul class="mt-2 small">
+        <li class="mt-5 mb-3"><h5 class="faq-title">第4条（免責事項）</h5>
+          <ul class="mt-2 faq-answer">
             <li>本サービスは、正確な変換結果を保証するものではありません。</li>
             <li>本サービスの利用により生じたトラブル・損害について、当方は一切の責任を負いません。</li>
             <li>本サービスは予告なく内容を変更・停止することがあります。</li>
           </ul>
         </li>
-        <li class="mt-5 mb-3">第5条（個人情報）
-          <p class="mt-2 small">登録されたメールアドレスなどの個人情報は、ログイン機能とユーザー管理の目的にのみ利用します。</p>
+        <li class="mt-5 mb-3"><h5 class="faq-title">第5条（個人情報）</h5>
+          <p class="mt-2 faq-answer">登録されたメールアドレスなどの個人情報は、ログイン機能とユーザー管理の目的にのみ利用します。</p>
         </li>
-        <li class="mt-5 mb-3">第6条（利用停止）
-          <p class="mt-2 small">ユーザーが規約に違反した場合、アカウント停止や利用制限を行うことがあります。</p>
+        <li class="mt-5 mb-3"><h5 class="faq-title">第6条（利用停止）</h5>
+          <p class="mt-2 faq-answer">ユーザーが規約に違反した場合、アカウント停止や利用制限を行うことがあります。</p>
         </li>
-        <li class="mt-5 mb-3">第7条（規約の変更）
-          <p class="mt-2 small">本規約は必要に応じて変更されることがあります。変更後はメールでの配信もしくは本ページに掲載します。</p>
+        <li class="mt-5 mb-3"><h5 class="faq-title">第7条（規約の変更）</h5>
+          <p class="mt-2 faq-answer">本規約は必要に応じて変更されることがあります。変更後はメールでの配信もしくは本ページに掲載します。</p>
         </li>
         <div class="mb-5 mt-4 small">
           制定日：2025年12月1日<br>
           以上<br>
         </div>
         <div class="mt-5 mb-3 text-center">
-          <div class="mt-5 mb-0 text-center">
+          <div class="faq-answer mt-5 mb-0 text-center">
           利用規約に関して何かございましたら
           </div>
         <%= link_to "問い合わせフォーム", new_contact_path, class: "me-4" %>

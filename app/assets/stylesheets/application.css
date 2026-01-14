@@ -791,6 +791,10 @@ footer {
     .form-box {
       display: flex;
       flex-direction: column;
+      width: 80%;
+    }
+    .submit-title {
+      width: 80%;
     }
 
     /* 中央寄せを解除して左基準にする */
@@ -973,6 +977,28 @@ footer {
   }
   .change-button {
     font-size: 17px;
+  }
+  .textform-box {
+    width: 80%;
+  }
+  .auto-button-box{
+    width: 80%;
+    position: relative;
+    top:-50px;
+  }
+  .result-box-main {
+    width: 80%;
+    height: 70%;
+    margin: 0px auto;
+    padding: 22px 22px 26px;
+
+    background: #d7cdf8;
+    border-radius: 16px;
+    .output-text {
+      font-size: 14px;
+    }
+
+
   }
 }
 /* ここまで自動生成用 */
@@ -1714,4 +1740,85 @@ footer {
   text-decoration: none;
   color: #ffffff;
   margin-top: 13px;
+}
+/* テンプレートメニュー終了  */
+.back-link-box {
+  background-color: #3f3ced;
+  width: 40%;
+  height: 40px;
+  margin: 0 auto;
+  margin-bottom:30px;
+  display: flex;
+  align-items: center;      /* 縦中央 */
+  justify-content: center;  /* 横中央 */
+
+}
+.back-link-box:hover{
+  background-color: #7ac5ff;
+  color: black;
+
+}
+.back-link:hover {
+  color: black;
+}
+.back-link {
+  text-decoration: none;
+  color:#ffffff;
+
+}
+.faq-title {
+  font-size: 18px;
+}
+.faq-answer{
+  color:#544040
+}
+
+.back-link-box-1 {
+  background-color: #3f3ced;
+  width: 30%;
+  height: 40px;
+  margin: 0 auto;
+  margin-top:10px;
+  margin-bottom:80px;
+  display: flex;
+  align-items: center;      /* 縦中央 */
+  justify-content: center;  /* 横中央 */
+
+}
+.back-link-box-1:hover{
+  background-color: #7ac5ff;
+  color: black;
+
+}
+.back-link-1:hover {
+  color: black;
+}
+.back-link-1 {
+  text-decoration: none;
+  color:#ffffff;
+
+}
+.back-link-box2 {
+  background-color: #3f3ced;
+  width: 25%;
+  height: 40px;
+  margin: 0 auto;
+  margin-bottom:70px;
+  display: flex;
+  align-items: center;      /* 縦中央 */
+  justify-content: center;  /* 横中央 */
+
+}
+.back-link-box2:hover{
+  background-color: #7ac5ff;
+  color: black;
+
+}
+.back-link2:hover {
+  color: black;
+}
+.back-link2 {
+  text-decoration: none;
+  color:#ffffff;
+
 }

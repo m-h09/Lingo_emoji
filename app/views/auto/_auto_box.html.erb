@@ -10,7 +10,7 @@
   </div>
 
   <!-- 入力欄 -->
-  <div class="textform-box" id="txt">
+  <div class="textform-box">
     <%= render "shared/base_prompt_input" %>
   </div>
 
@@ -36,9 +36,7 @@
       <% end %>
 
       <!-- コピーアイコン -->
-      <button class="copy-btn"
-        type="button" aria-label="コピー"
-        data-content="<%= output_text %>">
+      <button class="copy-btn" type="button" aria-label="コピー"data-content="<%= output_text %>">
         <%= image_tag "copy_icon_128895.svg" %>
       </button>
 

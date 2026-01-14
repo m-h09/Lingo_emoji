@@ -1,13 +1,15 @@
 <div class="justify-content-center">
-<%= link_to "トップへ戻る", root_path, class: "back-link" %>
+  <div class="back-link-box-1">
+    <%= link_to "トップへ戻る", root_path, class: "back-link-1" %>
+  </div>
   <div class="mt-5 position-relative mx-auto text-center rounded w-50" style="bottom:30px;">
     <h1 class="guide-title mb-4">プライバシーポリシー</h1>
     <p class="mt-5">EMOJI関西弁変換（以下、「当サービス」） は、利用者の個人情報を適切に取り扱うため、<br>以下の通りプライバシーポリシーを定めます。</p>
   </div>
   <div class="d-flex align-items-start">
       <ul class="mt-4 mx-auto w-85">
-        <li class="mb-3">第1条（取得する情報）
-          <p class="mt-2 small">当サービスでは、以下の利用者情報を取得する場合があります。</p>
+        <li class="mb-3"><h5 class="faq-title">第1条（取得する情報）</h5>
+          <p class="mt-2 faq-answer">当サービスでは、以下の利用者情報を取得する場合があります。</p>
           <ol class="small">
             <li> ユーザー登録時に入力する情報
               <ul class="mt-2 mb-3">
@@ -34,8 +36,8 @@
             </li>
           </ol>
         </li>
-        <li class="mt-5 mb-3">第2条（情報の利用目的）
-          <p class="mt-2 mb-3 small">取得した情報は、以下の目的でのみ利用します。</p>
+        <li class="mt-5 mb-3"><h5 class="faq-title">第2条（情報の利用目的）</h5>
+          <p class="mt-2 mb-3 faq-answer">取得した情報は、以下の目的でのみ利用します。</p>
           <ol class="small">
             <li>サービス提供および品質改善のため</li>
             <li>不具合対応・問い合わせへの返答のため</li>
@@ -43,17 +45,17 @@
             <li>不正行為防止およびセキュリティ向上のため</li>
           </ol>
         </li>
-        <li class="mt-5 mb-3">第3条（第三者提供について）
-          <p class="mt-2 small">ユーザーの同意がある場合、または法令に基づく場合を除き、<br>
+        <li class="mt-5 mb-3"><h5 class="faq-title">第3条（第三者提供について）</h5>
+          <p class="mt-2 faq-answer">ユーザーの同意がある場合、または法令に基づく場合を除き、<br>
           個人情報を第三者に提供することはありません。</p>
         </li>
-        <li class="mt-5 mb-3">第4条（個人情報の管理）
-          <p class="mt-2 small">当サービス、取得したユーザー情報を適切に管理し、<br>
+        <li class="mt-5 mb-3"><h5 class="faq-title">第4条（個人情報の管理）</h5>
+          <p class="mt-2 faq-answer">当サービス、取得したユーザー情報を適切に管理し、<br>
           漏洩・紛失・改ざんなどを防ぐためのセキュリティ対策を講じます</p>
           <p class="mt-4 small">パスワードは安全な方法で暗号化されて保存されます。</p>
         </li>
-        <li class="mt-5 mb-3">第5条（Cookieの利用について）
-          <p class="mt-3 small">当サービスは、以下目的でCookieを使用することがあります。</p>
+        <li class="mt-5 mb-3"><h5 class="faq-title">第5条（Cookieの利用について）</h5>
+          <p class="mt-3 faq-answer">当サービスは、以下目的でCookieを使用することがあります。</p>
           <ul>
             <li>ログイン状態の保持</li>
             <li>サービスの利便性向上</li>
@@ -61,15 +63,15 @@
           </ul>
           <p class="mt-4 small">Cookieには個人を解くてできる情報は含まれません。</p>
         </li>
-        <li class="mt-5 mb-3">第6条（プライバシーポリシーの変更）
-          <p class="mt-2 small">本ポリシーの内容は、日庁に応じて予告なく変更することがあります。<br>
+        <li class="mt-5 mb-3"><h5 class="faq-title">第6条（プライバシーポリシーの変更）</h5>
+          <p class="mt-2 faq-answer">本ポリシーの内容は、日庁に応じて予告なく変更することがあります。<br>
           重大な変更があるばあいは、サイト上で通知します。</p>
         </li>
-        <li class="mt-5 mb-3">第7条（お問い合わせ窓口）
-          <p class="mt-2 small">プライバシーポリシーに関するお問い合わせは、以下へお願いいたします。</p>
+        <li class="mt-5 mb-3"><h5 class="faq-title">第7条（お問い合わせ窓口）</h5>
+          <p class="mt-2 faq-answer">プライバシーポリシーに関するお問い合わせは、以下へお願いいたします。</p>
           <%= link_to "問い合わせフォーム", new_contact_path, class: "me-4" %>
         </li>
-        <div class="mb-5 mt-4 small">
+        <div class="mb-5 mt-4">
           制定日：2025年12月1日<br>
           以上<br>
         </div>

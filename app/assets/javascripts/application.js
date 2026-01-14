@@ -1,4 +1,7 @@
-console.log("application.js loaded")
+console.log("[copy] file loaded");
+document.addEventListener("turbo:load", () => console.log("[copy] turbo:load fired"));
+document.addEventListener("DOMContentLoaded", () => console.log("[copy] DOMContentLoaded fired"));
+console.log("application.js loaded");
 console.log("application.js START");
 console.log("✅ application.js loaded");
 
@@ -127,26 +130,41 @@ document.addEventListener("DOMContentLoaded", attachCopyHandlers);
 
 // 自動生成エリアのコピー
 
-document.addEventListener("turbo:load", () => {
-  const btn = document.getElementById("copy-btn");
-  const txt = document.getElementById("txt-body");
-  const toast = document.getElementById("copy-toast");
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("[copy] DOMContentLoaded fired");
 
-  if (btn && txt) {
-    btn.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(txt.textContent.trim());
-        if (toast) {
-          toast.style.display = "block";
-          setTimeout(() => { toast.style.display = "none"; }, 1500);
-        }
-      } catch (err) {
-        console.error("copy failed:", err);
+  document.addEventListener("click", async (e) => {
+    const btn = e.target.closest(".copy-btn");
+    if (!btn) return;
+
+    console.log("[copy] clicked");
+
+    // ① まず data-content を優先
+    const textFromData = btn.dataset.content;
+
+    // ② なければ同じ枠内の .output-textから拾う
+    const wrapper = btn.closest(".copy-wrapper");
+    const textFromDom = wrapper?.querySelector(".output-text")?.textContent;
+
+    const text = (textFromData || textFromDom || "").trim();
+    console.log("[copy] text length =", text.length);
+
+    if (!text) return;
+
+    try {
+      await navigator.clipboard.writeText(text);
+      console.log("[copy] copied!");
+
+      const toast = wrapper?.querySelector(".copy-toast");
+      if (toast) {
+        toast.style.display = "block";
+        setTimeout(() => (toast.style.display = "none"), 1500);
       }
-    });
-  }
+    } catch (err) {
+      console.error("[copy] copy failed:", err);
+    }
+  });
 });
-
 
 //-----------------------------------------
 // ラジオボタン 表示/非表示制御
