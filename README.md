@@ -69,24 +69,44 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 |[![Image from Gyazo](https://i.gyazo.com/7cf358f423ede8c7d2544a9f74468826.gif)](https://gyazo.com/7cf358f423ede8c7d2544a9f74468826)|
 |<p align="left">上記の動画のようにテキストを入力する他に２、３つほど選択してもらい、ユーザーが思う理想のテキストの雰囲気に近づけるようにしいました。</p>
 <br>
-///////続き↓
-<p>以下のタブで変換の仕様を変更することができる</p>
-- 変換モード（画面上部の左側タブ）は「EMOJI追加・関西弁変換・EMOJI＋関西弁変換」
-- スタイル（画面上部の中央タブ）は「フォーマル・フレンドリー」
-- トーン（画面上部の右側タブ)は「強・中・弱」「多・普通・少ない」など選択肢によって表示が変わる
-次にラジオボタンで細かい絵文字のコントロールができる
--「顔系絵文字なし」→ 今の時代多用すると嫌がられる風潮にあるため
--「アイコン系なし」→ 表情を特に伝えたい時に顔系絵文字などの出現率がたかくなるため
--「選択なし」→ ランダムで考えてくれる
 
-## スマホ画面のみ出力結果が上部、入力フォームが下部に来るようにしています
-<a href="https://gyazo.com/ffbd5061a0c14f7e7f2156aafd6b2888"><img src="https://i.gyazo.com/ffbd5061a0c14f7e7f2156aafd6b2888.png" alt="Image from Gyazo" width="346"/></a>
-<p>理由として、スマホだと入力する際にしたからキーボードが出てくるため、出力結果の確認とコピーがしやすい配置にしたかったため</p>
+|テンプレート|
+| :---: |
+|[![Image from Gyazo](https://i.gyazo.com/c384e9202107317e6a578ad9582e223e.png)](https://gyazo.com/c384e9202107317e6a578ad9582e223e)|
+|<p align ="left">データベースに「Emoji」「関西弁」のテンプレートを用意しました。
+<br>Myテンプレートはログインした状態でAI生成を利用すると履歴が自動的に保存され、その履歴を使うことができます。</p>|
+<br>
 
-### テンプレート
-<p algin="center>
-  <a href="https://gyazo.com/87fd611d031b64a8ec33d46826ea0c2f"><img src="https://i.gyazo.com/87fd611d031b64a8ec33d46826ea0c2f.gif" alt="Image from Gyazo" width="700"/></a>
-</p>
+|Myテンプレート|
+| :---: |
+|[![Image from Gyazo](https://i.gyazo.com/97521a067cb849690078fd95205205f6.png)](https://gyazo.com/97521a067cb849690078fd95205205f6)|
+|<p align="left">「Myエンプレート」ではAI生成の履歴が残っていきます。
+<br>まず、「Myテンプレート」をクリックするとMyテンプレートが出てきます。
+<br>「編集はこちら」をクリックすると下画面にスクロールし、メニュが現れます</p>|
+|[![Image from Gyazo](https://i.gyazo.com/5e0307838e76ef29fbec49f7c91aeba2.png)](https://gyazo.com/5e0307838e76ef29fbec49f7c91aeba2)|
+<br>
+<h6>Myテンプレートができることをご紹介</h6>
+<br>
+|「Myテンプレートに登録」|
+| :---: |
+|[![Image from Gyazo](https://i.gyazo.com/71a8eae993ec80d449c79875136753d4.png)](https://gyazo.com/71a8eae993ec80d449c79875136753d4)|
+|<p align="left">AI生成をするとデータ量が多くなるのでpagenateを設置。複数選択が可能です。
+<br>データ量が増えてくるので検索機能も設置<p>|
+|[![Image from Gyazo](https://i.gyazo.com/23d3d5f1538a1d9878573a19a893899e.png)](https://gyazo.com/23d3d5f1538a1d9878573a19a893899e)|
+|<p align="left">登録後はMyテンプレートに移動し、すぐ使えるような動線にしました。</p>|
+<br>
+|「Myテンプレートから削除」|
+| :---: |
+|[![Image from Gyazo](https://i.gyazo.com/0df062b08e238bcaf69926647341da34.png)](https://gyazo.com/0df062b08e238bcaf69926647341da34)|
+|<p align="left">登録を解除する意味で「Myテンプレートから削除」と表現しています。
+<br>削除されると履歴が保管されているデータベースに戻ります。</p>|
+<br>
+|「「履歴を削除」|
+| :---: |
+|[![Image from Gyazo](https://i.gyazo.com/771a68a1ed1b314b08292fa9071c56c8.png)](https://gyazo.com/771a68a1ed1b314b08292fa9071c56c8)|
+|<p align="left">この場所では履歴自体を完全に削除できる場所になります。</p>|
+
+
 
 
 <p>こちらで作成したテンプレートも使っていただける</p>
