@@ -6,6 +6,21 @@
 🌏アプリケーションURL:https://lingo-emoji.onrender.com/
 ## 目次
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [💖サービスの概要](#%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E6%A6%82%E8%A6%81)
+- [👨‍💼ユーザー層について](#%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E5%B1%A4%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
+- [📖このサービスへの思い・作りたい理由](#%E3%81%93%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%B8%E3%81%AE%E6%80%9D%E3%81%84%E3%83%BB%E4%BD%9C%E3%82%8A%E3%81%9F%E3%81%84%E7%90%86%E7%94%B1)
+- [📌サービスの差別化のポイント・押しポイント](#%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%B7%AE%E5%88%A5%E5%8C%96%E3%81%AE%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E3%83%BB%E6%8A%BC%E3%81%97%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88)
+- [ChatGPTとの差別化](#chatgpt%E3%81%A8%E3%81%AE%E5%B7%AE%E5%88%A5%E5%8C%96)
+- [⚙️機能紹介](#%E6%A9%9F%E8%83%BD%E7%B4%B9%E4%BB%8B)
+- [◾️ChatGPTとの差別化](#chatgpt%E3%81%A8%E3%81%AE%E5%B7%AE%E5%88%A5%E5%8C%96)
+- [◾️既存アプリとの違い](#%E6%97%A2%E5%AD%98%E3%82%A2%E3%83%97%E3%83%AA%E3%81%A8%E3%81%AE%E9%81%95%E3%81%84)
+- [■ 使用技術](#%E2%96%A0-%E4%BD%BF%E7%94%A8%E6%8A%80%E8%A1%93)
+  - [ER図](#er%E5%9B%B3)
+- [◾️アプリ概要](#%E3%82%A2%E3%83%97%E3%83%AA%E6%A6%82%E8%A6%81)
+  - [利用シーン](#%E5%88%A9%E7%94%A8%E3%82%B7%E3%83%BC%E3%83%B3)
+
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 
