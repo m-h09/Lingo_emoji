@@ -49,6 +49,8 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 
 ### 自動生成
 <p align="center">
+  <img width="1440" height="777" alt="image" src="https://github.com/user-attachments/assets/55646276-a31f-4082-9757-6fcf0750edfc" />
+
   <a  href="https://gyazo.com/80d26529425ff872c1bc1f36c11f8853"><img src="https://i.gyazo.com/80d26529425ff872c1bc1f36c11f8853.png" alt="Image from Gyazo" width="800"/></a>
 </p>
 <p>以下のタブで変換の仕様を変更することがで切る</p>  
