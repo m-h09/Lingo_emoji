@@ -50,22 +50,23 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 ## ⚙️機能紹介
 | トップページ |
 | :---: |
-| [label](../../Documents/%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C/top-page.mov)
+| [![Image from Gyazo](https://i.gyazo.com/93e5d661d6963ad5aea27071a42d99e5.gif)](https://gyazo.com/93e5d661d6963ad5aea27071a42d99e5)|
 | <p align="left">基本的にはユーザー登録なしで利用が可能です。選択ボタンをクリックするとAI生成やテンプレートの利用がすぐに利用できます。<br>ログインが必須の選択ボタンもあります。</p> |
 <br>
 
 | ユーザー登録 / ログイン |
 | :---: |
-|![Alt text](AI%E7%94%9F%E6%88%90%E3%83%A1%E3%83%8B%E3%83%A5%E3%83%BC.png) |
+|[![Image from Gyazo](https://i.gyazo.com/500e2d031e0c098bbdf01922fc471118.gif)](https://gyazo.com/500e2d031e0c098bbdf01922fc471118) |
+|[![Image from Gyazo](https://i.gyazo.com/e03f7158abce478aea0dd1ad064ef3e1.gif)](https://gyazo.com/e03f7158abce478aea0dd1ad064ef3e1)|
 | <p align="left">ハンバーガーメニューからログイン/ユーザー登録ができます。『名前』『メールアドレス』『パスワード』『確認用パスワード』を入力してユーザー登録を行います。ユーザー登録後は、自動的にログイン処理が行われるようになっており、そのまま直ぐにサービスを利用する事が出来ます。<br></p> |
 <br>
 
 
 | AI生成 |
 | :---: |
-| [label](../../Documents/%E5%8D%92%E6%A5%AD%E5%88%B6%E4%BD%9C/%E3%83%A6%E3%83%BC%E3%82%B5%E3%82%99%E3%83%BC%E7%99%BB%E9%8C%B2.mov)|
+| [![Image from Gyazo](https://i.gyazo.com/d0f614443316437d2e685de3d060505c.png)](https://gyazo.com/d0f614443316437d2e685de3d060505c)|
 | <p align="left">AI生成では３つの生成方法があります。<br>入力されるテキスト合うemojiを生成する「Emoji追加」、テキストを関西弁に変換する「関西弁変換」、Emojiとテキストを関西弁変換できる「Emoji関西弁」を利用することができます<br></p> |
-||[label](<../../Documents/卒業制作/画面収録 2026-01-14 16.46.57.mov>)|
+|[![Image from Gyazo](https://i.gyazo.com/7cf358f423ede8c7d2544a9f74468826.gif)](https://gyazo.com/7cf358f423ede8c7d2544a9f74468826)|
 |<p align="left">上記の動画のようにテキストを入力する他に２、３つほど選択してもらい、ユーザーが思う理想のテキストの雰囲気に近づけるようにしいました。</p>
 <br>
 ///////続き↓
