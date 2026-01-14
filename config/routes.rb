@@ -44,7 +44,8 @@ Rails.application.routes.draw do
       post :add_history # /templates/translation_addition
       get :translation_delete   # /templates/translation_delete
       post :translation_delete_execute   # /templates/translation_delete_execute
-      get :delete_history      # /templates/praivate_template
+      get :delete_history    # /templates/praivate_template
+      post :delete_history
       post :delete_history_execute      # /templates/praivate_template
     end
   end
