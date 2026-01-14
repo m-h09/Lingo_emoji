@@ -1,7 +1,4 @@
-<%= form_with url: translation_addition_templates_path, method: :post do %>
-  <% if @translations.present? %>
-    <div class=" position-relative">
-      <div class="translation-head">
+<div class="translation-head">
         <div class="translation-head__left">
           <% if logged_in? %>
             <%= form_with url: translation_addition_templates_path, method: :get, local: true, html: { class: "d-flex align-items-center" } do |f| %>
@@ -13,11 +10,15 @@
           <% end %>
 
         </div>
+<%= form_with url: add_history_templates_path, method: :post do %>
+  <% if @translations.present? %>
+    <div class=" position-relative">
 
-        <div class="translation-head__right">
+
+      <div class="translation-head__right">
           <%= submit_tag "追加", class: "addition-btn btn btn-outline-dark" %>
-        </div>
       </div>
+    </div>
       <table class="table-translation table table-striped">
         <tbody>
           <% @translations.each do |translation| %>
@@ -31,10 +32,8 @@
         </tbody>
       </table>
 
-
     </div>
   <% else %>
-    <p class="text-center mt-4">現在登録はありません。</p>
+    <p class="text-center mt-4">現在登録はありません。AI生成して履歴を作ってください。</p>
   <% end %>
 <% end %>
-

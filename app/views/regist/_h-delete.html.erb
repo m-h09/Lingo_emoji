@@ -1,7 +1,4 @@
-<%= form_with url: delete_history_execute_templates_path, method: :post, local: true, data: { turbo: false } do %>
-<% if @translations.present? %>
-  <div class="position-relative">
-    <div class="translation-head">
+<div class="translation-head">
       <div class="translation-head__left">
         <% if logged_in? %>
           <%= form_with url: delete_history_templates_path, method: :get, local: true, html: { class: "d-flex align-items-center" } do |f| %>
@@ -17,6 +14,12 @@
         <%= submit_tag "削除", class: "btn btn-danger btn-sm" %>
       </div>
     </div>
+</div>
+<%= form_with url: delete_history_execute_templates_path, method: :post, local: true, data: { turbo: false } do %>
+<% if @translations.present? %>
+    <div class="position-relative">
+
+
     <table class="table-translation table table-striped mb-0">
       <tbody>
         <% @translations.each do |translation| %>
@@ -33,4 +36,7 @@
   <% else %>
     <p class="text-center mt-4">現在登録はありません。</p>
   <% end %>
+  <div class="page-wrapper">
+    <%= paginate @translations %>
+  </div>
 <% end %>

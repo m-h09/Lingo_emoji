@@ -17,7 +17,7 @@ class TemplatesController < ApplicationController
     end
   end
   def translation_delete
-    @translations = current_user.translations.order(id: :desc).page(params[:page]).per(10)
+    # 表示用（GET）
     @histories = current_user.histories.order(id: :desc).page(params[:page]).per(10)
   end
 
@@ -25,62 +25,72 @@ class TemplatesController < ApplicationController
 
   def add_history
     used_outputs = current_user.histories.pluck(:record)
-    @translations = current_user.translations.where.not(output_text: used_outputs)
-    .order(id: :desc).page(params[:page]).per(10)
-      outputs = (params[:output_texts] || [])
-                .map { |t| t.to_s.strip }
-                .reject(&:blank?)
-                .uniq
+    @translations = current_user.translations.where.not(output_text: used_outputs).order(id: :desc).page(params[:page]).per(10)
+
+    outputs = (params[:output_texts] || []).map { |t| t.to_s.strip }.reject(&:blank?).uniq
 
     if outputs.any?
-      outputs.each do |text|
-        current_user.histories.find_or_create_by!(record: text)
+      ActiveRecord::Base.transaction do
+        # ① Myテンプレへ追加
+        outputs.each do |text|
+          current_user.histories.find_or_create_by!(record: text)
+        end
+
+        # ② ここで translations から削除（まとめて）
+        current_user.translations.where(output_text: outputs).destroy_all
       end
 
-      redirect_to main_edit_history_path,
-        success: "Myテンプレートへ項目を追加しました"
+      redirect_to main_edit_history_path, success: "Myテンプレートへ項目を追加しました"
     else
-      redirect_to add_history_templates_path,
-        danger: "チェックを入れてください"
+      redirect_to add_history_templates_path, danger: "チェックを入れてください"
     end
   end
   def delete_history
-    @translations = current_user.translations.order(id: :desc).page(params[:page]).per(10)
-    if params[:q].present?  # 検索履歴
-      @translations = @translations.where("output_text LIKE ?", "%#{params[:q]}%")
+    # 表示用（GET）: translation履歴を一覧表示
+    scope = current_user.translations.order(id: :desc)
+
+    # 検索（q があるときだけ絞り込み）
+    if params[:q].present?
+      q = params[:q].to_s.strip
+      scope = scope.where("output_text LIKE ?", "%#{ActiveRecord::Base.sanitize_sql_like(q)}%")
     end
+    @translations = scope.page(params[:page]).per(10)
   end
-
-  def delete_history_execute
-    records = (params[:records] || []).map { |t| t.to_s.strip }.reject(&:blank?).uniq
-
-    if records.empty?
-      redirect_to delete_history_templates_path, danger: "削除する履歴を選択してください"
-      return
-    end
-    redirect_to delete_history_templates_path, success: "選択した履歴を削除しました"
-  end
-
 
   def translation_delete_execute
     records = (params[:records] || []).map { |t| t.to_s.strip }.reject(&:blank?).uniq
 
+  if records.empty?
+    redirect_to delete_history_templates_path, danger: "削除する項目を選択してください"
+    return
+  end
+
+  ActiveRecord::Base.transaction do
+    # history(record) → translation(output_text) に戻す
+    records.each do |text|
+      current_user.translations.find_or_create_by!(output_text: text)
+    end
+
+    # Myテンプレート（histories）から削除
+    current_user.histories.where(record: records).destroy_all
+  end
+
+  redirect_to translation_delete_templates_path, success: "Myテンプレートから削除しました"
+  end
+
+
+  def delete_history_execute
+    records = Array(params[:records]).map { |t| t.to_s.strip }.reject(&:blank?).uniq
+
     if records.empty?
-      redirect_to translation_delete_templates_path, danger: "削除する項目を選択してください"
+      redirect_to delete_history_templates_path, danger: "削除する項目を選択してください"
       return
     end
 
-    ActiveRecord::Base.transaction do
-      # histories(record) → translations(output_text) に戻す
-      records.each do |text|
-        current_user.translations.find_or_create_by!(output_text: text)
-      end
+    # ✅ 完全削除：translations から消すだけ（historiesへ戻す等はしない）
+    current_user.translations.where(output_text: records).destroy_all
 
-      # histories から削除
-      current_user.histories.where(record: records).destroy_all
-    end
-
-    redirect_to translation_delete_templates_path, success: "履歴へ戻しました"
+    redirect_to delete_history_templates_path, success: "履歴を完全削除しました"
   end
 
   def list
