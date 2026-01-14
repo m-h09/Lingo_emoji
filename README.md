@@ -66,7 +66,7 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 - トーン（画面上部の右側タブ)は「強・中・弱」
 次にラジオボタンで細かい絵文字のコントロールができる
 -「顔系絵文字なし」→ 今の時代多用すると嫌がられる風潮にあるため
-- 「アイコン系なし」→　表情を特に伝えたい時に顔系絵文字などの出現率がたかくなるため
+- 「アイコン系なし」→ 表情を特に伝えたい時に顔系絵文字などの出現率がたかくなるため
 - 「選択なし」→ ランダムで考えてくれる
 
 ## スマホ画面のみ出力結果が上部、入力フォームが下部に来るようにしています
@@ -151,7 +151,7 @@ https://drive.google.com/file/d/1EYnTuQxBm88x_8zdlkcC64ZiETgOvLli/view?usp=drive
  https://rp.mockplus.com/
 https://www.drawio.com/
 
-### ER図
+### ER図 
 [![Image from Gyazo](https://i.gyazo.com/7f84aba471f7fe38556736ca8db1e30f.png)](https://gyazo.com/7f84aba471f7fe38556736ca8db1e30f)
 
 
