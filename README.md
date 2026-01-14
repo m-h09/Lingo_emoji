@@ -38,13 +38,13 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 - 「開いてすぐ使える」シンプルなUI → アカウント登録不要・1画面で完結
 - 将来的には「ビジネスモード（丁寧語変換）」「翻訳モード」などへの拡張性
 [![Image from Gyazo](https://i.gyazo.com/00afc089bec71657e16e600b91bfdd7b.png)](https://gyazo.com/00afc089bec71657e16e600b91bfdd7b)
-  # ChatGPTとの差別化
+  ## ChatGPTとの差別化
    - ChatGPTだと毎回プロンプトが必要、本アプリは入力したい文章を打ってボタンを押して即変換
    - LINE返事などの日常会話に特化
    - AIが落ちてもテンプレ機能があるため安定性がある
    - UIで直感的に使えるため、ユーザーに優しい
  -------
-# ◾️サービスの利用イメージ
+## ◾️サービスの利用イメージ
 - トップページ
 <p align="center">
   <a align="center" href="https://gyazo.com/82c80571a978a33978c814ac5470ddb3"><img src="https://i.gyazo.com/82c80571a978a33978c814ac5470ddb3.gif" alt="Image from Gyazo" width="800"/></a>
@@ -69,7 +69,7 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 - 「アイコン系なし」→　表情を特に伝えたい時に顔系絵文字などの出現率がたかくなるため
 - 「選択なし」→ ランダムで考えてくれる
 
-# スマホ画面のみ出力結果が上部、入力フォームが下部に来るようにしています
+## スマホ画面のみ出力結果が上部、入力フォームが下部に来るようにしています
 <a href="https://gyazo.com/ffbd5061a0c14f7e7f2156aafd6b2888"><img src="https://i.gyazo.com/ffbd5061a0c14f7e7f2156aafd6b2888.png" alt="Image from Gyazo" width="346"/></a>
 <p>理由として、スマホだと入力する際にしたからキーボードが出てくるため、出力結果の確認とコピーがしやすい配置にしたかったため</p>
 
@@ -90,6 +90,7 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 ## ログインユーザー機能
 <a href="https://gyazo.com/0f2af52af4b4512ab6f2df991ccb4d21"><img src="https://i.gyazo.com/0f2af52af4b4512ab6f2df991ccb4d21.png" alt="Image from Gyazo" width="1406"/></a>
 <p>次回から自動でログイン処理が行われるようになっており、すぐにサービスを利用することができます</p>
+
 ## 履歴機能
 <a algin="center" href="https://gyazo.com/f27ee00967216fd013c47e5f6fe587be"><img src="https://i.gyazo.com/f27ee00967216fd013c47e5f6fe587be.png" alt="Image from Gyazo" width="1049"/></a>
 
@@ -150,7 +151,7 @@ https://drive.google.com/file/d/1EYnTuQxBm88x_8zdlkcC64ZiETgOvLli/view?usp=drive
  https://rp.mockplus.com/
 https://www.drawio.com/
 
-###　ER図
+### ER図
 [![Image from Gyazo](https://i.gyazo.com/7f84aba471f7fe38556736ca8db1e30f.png)](https://gyazo.com/7f84aba471f7fe38556736ca8db1e30f)
 
 
@@ -189,12 +190,12 @@ https://www.drawio.com/
 将来的には履歴機能を導入し、よく使う文章やテンプレートに絵文字を加えた形で保存・再利用できる仕組みも検討しています。
 
 
-■1週間辺りの開発に向けられる時間
+### ■1週間辺りの開発に向けられる時間
 - 1週間あたり：28時間
 
 （ストーリポイント1消費するのに2時間を目安として、1週間あたりどれだけストーリポイントを消化できるか確認してください）
 
-■ProjectsのURL
+### ■ProjectsのURL
 作成したProjects（看板・issue・ストーリーポイントが確認できるもの且つ他者でも閲覧可能状態）のURLを貼り付けてください。
 
 ## ■MVPリリースまで
