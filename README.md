@@ -1,6 +1,9 @@
-# ◾️プロジェクト名：EMOJI関西弁変換
+# プロジェクト名：EMOJI関西弁変換
 [![Image from Gyazo](https://i.gyazo.com/9487b76167be2dff1506e38cf49218a8.png)](https://gyazo.com/9487b76167be2dff1506e38cf49218a8)
 アプリケーションURL:https://lingo-emoji.onrender.com/
+## 目次
+<!-- START doctoc -->
+<!-- END doctoc -->
 
 ## ◾️サービスの概要
 「Emoji関西弁変換」は、入力した文章に気軽に絵文字をつけたり、関西弁に変換できるWebサービスです。
