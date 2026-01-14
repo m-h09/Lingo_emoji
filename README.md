@@ -43,14 +43,16 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 - トップページ
 <p align="center">
   <a align="center" href="https://gyazo.com/82c80571a978a33978c814ac5470ddb3"><img src="https://i.gyazo.com/82c80571a978a33978c814ac5470ddb3.gif" alt="Image from Gyazo" width="800"/></a>
+  <img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/fea3017b-22fa-468b-b31c-713634e6473e" />
+
 </p>
   - 画面全体のイメージ（URLを開くとトップに表示される）
   - 基本的にはユーザー登録なしで利用できる
 
 ### 自動生成
 <p align="center">
-  <img width="1440" height="777" alt="image" src="https://github.com/user-attachments/assets/55646276-a31f-4082-9757-6fcf0750edfc" />
-
+  
+  
   <a  href="https://gyazo.com/80d26529425ff872c1bc1f36c11f8853"><img src="https://i.gyazo.com/80d26529425ff872c1bc1f36c11f8853.png" alt="Image from Gyazo" width="800"/></a>
 </p>
 <p>以下のタブで変換の仕様を変更することがで切る</p>  
