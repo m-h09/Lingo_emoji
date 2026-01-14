@@ -1,23 +1,28 @@
 <div class="translation-head">
-      <div class="translation-head__left">
-        <% if logged_in? %>
-          <%= form_with url: delete_history_templates_path, method: :get, local: true, html: { class: "d-flex align-items-center" } do |f| %>
-            <%= f.text_field :q, placeholder: "検索ワード", class: "translation-form-control me-2" %>
-            <%= f.submit "検索", class: "translation-search-btn btn btn-outline-dark" %>
-        <% end %>
-        <% else %>
-          <p>ログインしてください。</p>
-        <% end %>
-      </div>
+  <div class="translation-head__left">
+    <% if logged_in? %>
+      <%= form_with url: delete_history_templates_path,
+                    method: :get,
+                    local: true,
+                    html: { class: "d-flex align-items-center" } do |f| %>
+        <%= f.text_field :q, value: params[:q], placeholder: "検索ワード", class: "translation-form-control me-2" %>
+        <%= f.submit "検索", class: "translation-search-btn btn btn-outline-dark" %>
+      <% end %>
+    <% else %>
+      <p>ログインしてください。</p>
+    <% end %>
+  </div>
+</div>
 
-      <div class="translation-head__right">
-        <%= submit_tag "削除", class: "btn btn-danger btn-sm" %>
-      </div>
-    </div>
+
 </div>
 <%= form_with url: delete_history_execute_templates_path, method: :post, local: true, data: { turbo: false } do %>
 <% if @translations.present? %>
     <div class="position-relative">
+      <div class="translation-head__right">
+          <%= submit_tag "削除", class: "btn btn-danger btn-sm" %>
+        </div>
+      </div>
 
 
     <table class="table-translation table table-striped mb-0">
@@ -28,7 +33,7 @@
             <td class="translation-text text-center align-middle">
               <%= check_box_tag "records[]", translation.output_text %>
             </td>
-          </tr
+          </tr>
         <% end %>
       </tbody>
     </table>
