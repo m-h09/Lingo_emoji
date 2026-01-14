@@ -1,42 +1,15 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
-    - [◾️サービスの概要](#%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E6%A6%82%E8%A6%81)
-  - [◾️ユーザー層について](#%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E5%B1%A4%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6)
-  - [◾️このサービスへの思い・作りたい理由](#%E3%81%93%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%B8%E3%81%AE%E6%80%9D%E3%81%84%E3%83%BB%E4%BD%9C%E3%82%8A%E3%81%9F%E3%81%84%E7%90%86%E7%94%B1)
-  - [◾️サービスの差別化のポイント・押しポイント](#%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%B7%AE%E5%88%A5%E5%8C%96%E3%81%AE%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E3%83%BB%E6%8A%BC%E3%81%97%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88)
-- [ChatGPTとの差別化](#chatgpt%E3%81%A8%E3%81%AE%E5%B7%AE%E5%88%A5%E5%8C%96)
-- [◾️サービスの利用イメージ](#%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%88%A9%E7%94%A8%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8)
-    - [自動生成](#%E8%87%AA%E5%8B%95%E7%94%9F%E6%88%90)
-- [スマホ画面のみ出力結果が上部、入力フォームが下部に来るようにしています](#%E3%82%B9%E3%83%9E%E3%83%9B%E7%94%BB%E9%9D%A2%E3%81%AE%E3%81%BF%E5%87%BA%E5%8A%9B%E7%B5%90%E6%9E%9C%E3%81%8C%E4%B8%8A%E9%83%A8%E5%85%A5%E5%8A%9B%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0%E3%81%8C%E4%B8%8B%E9%83%A8%E3%81%AB%E6%9D%A5%E3%82%8B%E3%82%88%E3%81%86%E3%81%AB%E3%81%97%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99)
-    - [テンプレート](#%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88)
-    - [ログイン後の機能](#%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3%E5%BE%8C%E3%81%AE%E6%A9%9F%E8%83%BD)
-  - [ログインユーザー機能](#%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E6%A9%9F%E8%83%BD)
-- [編集画面](#%E7%B7%A8%E9%9B%86%E7%94%BB%E9%9D%A2)
-      - [ 3つのタブを使い編集が簡単にできる](#3%E3%81%A4%E3%81%AE%E3%82%BF%E3%83%96%E3%82%92%E4%BD%BF%E3%81%84%E7%B7%A8%E9%9B%86%E3%81%8C%E7%B0%A1%E5%8D%98%E3%81%AB%E3%81%A7%E3%81%8D%E3%82%8B)
-  - [登録追加](#%E7%99%BB%E9%8C%B2%E8%BF%BD%E5%8A%A0)
-  - [登録削除](#%E7%99%BB%E9%8C%B2%E5%89%8A%E9%99%A4)
-  - [履歴削除](#%E5%B1%A5%E6%AD%B4%E5%89%8A%E9%99%A4)
-  - [◾️ChatGPTとの差別化](#chatgpt%E3%81%A8%E3%81%AE%E5%B7%AE%E5%88%A5%E5%8C%96)
-  - [◾️既存アプリとの違い](#%E6%97%A2%E5%AD%98%E3%82%A2%E3%83%97%E3%83%AA%E3%81%A8%E3%81%AE%E9%81%95%E3%81%84)
-  - [■ 使用技術](#%E2%96%A0-%E4%BD%BF%E7%94%A8%E6%8A%80%E8%A1%93)
-  - [画面遷移](#%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB)
-    - [ER図](#er%E5%9B%B3)
-  - [◾️アプリ概要](#%E3%82%A2%E3%83%97%E3%83%AA%E6%A6%82%E8%A6%81)
-    - [利用シーン](#%E5%88%A9%E7%94%A8%E3%82%B7%E3%83%BC%E3%83%B3)
-    - [特徴](#%E7%89%B9%E5%BE%B4)
-  - [◾️Webアプリ概要](#web%E3%82%A2%E3%83%97%E3%83%AA%E6%A6%82%E8%A6%81)
-  - [■MVPリリースまで](#%E2%96%A0mvp%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%81%BE%E3%81%A7)
-  - [■MVP後（追加予定機能）](#%E2%96%A0mvp%E5%BE%8C%E8%BF%BD%E5%8A%A0%E4%BA%88%E5%AE%9A%E6%A9%9F%E8%83%BD)
-  - [■MVPレビュー依頼予定日](#%E2%96%A0mvp%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC%E4%BE%9D%E9%A0%BC%E4%BA%88%E5%AE%9A%E6%97%A5)
 
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+# プロジェクト名：EMOJI関西弁変換
 
 [![Image from Gyazo](https://i.gyazo.com/9487b76167be2dff1506e38cf49218a8.png)](https://gyazo.com/9487b76167be2dff1506e38cf49218a8)
 アプリケーションURL:https://lingo-emoji.onrender.com/
+## 目次
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-### ◾️サービスの概要
+
+## ◾️サービスの概要
 「Emoji関西弁変換」は、入力した文章に気軽に絵文字をつけたり、関西弁に変換できるWebサービスです。
 
 近年、SNSやメッセージアプリでのやり取りが増える中、絵文字のない文章はほとんど見かけません。
@@ -68,22 +41,26 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 - 「開いてすぐ使える」シンプルなUI → アカウント登録不要・1画面で完結
 - 将来的には「ビジネスモード（丁寧語変換）」「翻訳モード」などへの拡張性
 [![Image from Gyazo](https://i.gyazo.com/00afc089bec71657e16e600b91bfdd7b.png)](https://gyazo.com/00afc089bec71657e16e600b91bfdd7b)
-  # ChatGPTとの差別化
+  ## ChatGPTとの差別化
    - ChatGPTだと毎回プロンプトが必要、本アプリは入力したい文章を打ってボタンを押して即変換
    - LINE返事などの日常会話に特化
    - AIが落ちてもテンプレ機能があるため安定性がある
    - UIで直感的に使えるため、ユーザーに優しい
  -------
-# ◾️サービスの利用イメージ
+## ◾️サービスの利用イメージ
 - トップページ
 <p align="center">
   <a align="center" href="https://gyazo.com/82c80571a978a33978c814ac5470ddb3"><img src="https://i.gyazo.com/82c80571a978a33978c814ac5470ddb3.gif" alt="Image from Gyazo" width="800"/></a>
+  
+
 </p>
   - 画面全体のイメージ（URLを開くとトップに表示される）
   - 基本的にはユーザー登録なしで利用できる
 
 ### 自動生成
 <p align="center">
+  
+  
   <a  href="https://gyazo.com/80d26529425ff872c1bc1f36c11f8853"><img src="https://i.gyazo.com/80d26529425ff872c1bc1f36c11f8853.png" alt="Image from Gyazo" width="800"/></a>
 </p>
 <p>以下のタブで変換の仕様を変更することがで切る</p>  
@@ -92,10 +69,10 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 - トーン（画面上部の右側タブ)は「強・中・弱」
 次にラジオボタンで細かい絵文字のコントロールができる
 -「顔系絵文字なし」→ 今の時代多用すると嫌がられる風潮にあるため
-- 「アイコン系なし」→　表情を特に伝えたい時に顔系絵文字などの出現率がたかくなるため
-- 「選択なし」→ ランダムで考えてくれる
+-「アイコン系なし」→ 表情を特に伝えたい時に顔系絵文字などの出現率がたかくなるため
+-「選択なし」→ ランダムで考えてくれる
 
-# スマホ画面のみ出力結果が上部、入力フォームが下部に来るようにしています
+## スマホ画面のみ出力結果が上部、入力フォームが下部に来るようにしています
 <a href="https://gyazo.com/ffbd5061a0c14f7e7f2156aafd6b2888"><img src="https://i.gyazo.com/ffbd5061a0c14f7e7f2156aafd6b2888.png" alt="Image from Gyazo" width="346"/></a>
 <p>理由として、スマホだと入力する際にしたからキーボードが出てくるため、出力結果の確認とコピーがしやすい配置にしたかったため</p>
 
@@ -116,6 +93,7 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 ## ログインユーザー機能
 <a href="https://gyazo.com/0f2af52af4b4512ab6f2df991ccb4d21"><img src="https://i.gyazo.com/0f2af52af4b4512ab6f2df991ccb4d21.png" alt="Image from Gyazo" width="1406"/></a>
 <p>次回から自動でログイン処理が行われるようになっており、すぐにサービスを利用することができます</p>
+
 ## 履歴機能
 <a algin="center" href="https://gyazo.com/f27ee00967216fd013c47e5f6fe587be"><img src="https://i.gyazo.com/f27ee00967216fd013c47e5f6fe587be.png" alt="Image from Gyazo" width="1049"/></a>
 
@@ -176,6 +154,7 @@ https://drive.google.com/file/d/1EYnTuQxBm88x_8zdlkcC64ZiETgOvLli/view?usp=drive
  https://rp.mockplus.com/
 https://www.drawio.com/
 
+
 ### ER図
 [![Image from Gyazo](https://i.gyazo.com/7f84aba471f7fe38556736ca8db1e30f.png)](https://gyazo.com/7f84aba471f7fe38556736ca8db1e30f)
 
@@ -215,12 +194,12 @@ https://www.drawio.com/
 将来的には履歴機能を導入し、よく使う文章やテンプレートに絵文字を加えた形で保存・再利用できる仕組みも検討しています。
 
 
-■1週間辺りの開発に向けられる時間
+### ■1週間辺りの開発に向けられる時間
 - 1週間あたり：28時間
 
 （ストーリポイント1消費するのに2時間を目安として、1週間あたりどれだけストーリポイントを消化できるか確認してください）
 
-■ProjectsのURL
+### ■ProjectsのURL
 作成したProjects（看板・issue・ストーリーポイントが確認できるもの且つ他者でも閲覧可能状態）のURLを貼り付けてください。
 
 ## ■MVPリリースまで
