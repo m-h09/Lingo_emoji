@@ -14,8 +14,12 @@
 - [📌サービスの差別化のポイント・押しポイント](#%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%B7%AE%E5%88%A5%E5%8C%96%E3%81%AE%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E3%83%BB%E6%8A%BC%E3%81%97%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88)
 - [ChatGPTとの差別化](#chatgpt%E3%81%A8%E3%81%AE%E5%B7%AE%E5%88%A5%E5%8C%96)
 - [⚙️機能紹介](#%E6%A9%9F%E8%83%BD%E7%B4%B9%E4%BB%8B)
+- [◾️ChatGPTとの差別化](#chatgpt%E3%81%A8%E3%81%AE%E5%B7%AE%E5%88%A5%E5%8C%96)
+- [◾️既存アプリとの違い](#%E6%97%A2%E5%AD%98%E3%82%A2%E3%83%97%E3%83%AA%E3%81%A8%E3%81%AE%E9%81%95%E3%81%84)
 - [■ 使用技術](#%E2%96%A0-%E4%BD%BF%E7%94%A8%E6%8A%80%E8%A1%93)
   - [ER図](#er%E5%9B%B3)
+- [◾️アプリ概要](#%E3%82%A2%E3%83%97%E3%83%AA%E6%A6%82%E8%A6%81)
+  - [利用シーン](#%E5%88%A9%E7%94%A8%E3%82%B7%E3%83%BC%E3%83%B3)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -83,9 +87,10 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 
 | テンプレート |
 | :---: |
-| [![Image from Gyazo](https://i.gyazo.com/c384e9202107317e6a578ad9582e223e.png)](https://gyazo.com/c384e9202107317e6a578ad9582e223e) |
-| <p align ="left">データベースに「Emoji」「関西弁」のテンプレートを用意しました。
-<br>Myテンプレートはログインした状態でAI生成を利用すると履歴が自動的に保存され、その履歴を使うことができます。</p> |
+|[![Image from Gyazo](https://i.gyazo.com/c384e9202107317e6a578ad9582e223e.png)](https://gyazo.com/c384e9202107317e6a578ad9582e223e)|
+|<p align ="left">データベースに「Emoji」「関西弁」のテンプレートを用意しました。
+|[![Image from Gyazo](https://i.gyazo.com/8e492f0e16f4c866ef3482a082922d0b.gif)](https://gyazo.com/8e492f0e16f4c866ef3482a082922d0b)|
+<br>セレクトボックスが全て選択されてから出力するようにしています</p>|
 <br>
 
 |Myテンプレート|
@@ -122,6 +127,20 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 |<p align="left">この場所では履歴自体を完全に削除できる場所になります。</p>|
 
 
+
+
+## ◾️ChatGPTとの差別化
+- ChatGPTだと毎回プロンプトが必要、本アプリは入力したい文章を打ってボタンを押して即変換
+- LINE返事などの日常会話に特化
+- AIが落ちてもテンプレ機能があるため安定性がある
+- UIで直感的に使えるため、ユーザーに優しい
+
+## ◾️既存アプリとの違い
+ [![Image from Gyazo](https://i.gyazo.com/00afc089bec71657e16e600b91bfdd7b.png)](https://gyazo.com/00afc089bec71657e16e600b91bfdd7b)
+
+
+
+
 ## ■ 使用技術
 
 | カテゴリ | 技術内容 |
@@ -141,13 +160,19 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 | 静的解析 | Rubocop・Rubocop Rails・Brakeman |
 | 環境変数管理 | dotenv-rails |
 | 開発ツール | web-console・letter_opener_web |
-
+|バージョンアップ管理ツール|github|
 
 
 
 
 ### ER図
 [![Image from Gyazo](https://i.gyazo.com/7f84aba471f7fe38556736ca8db1e30f.png)](https://gyazo.com/7f84aba471f7fe38556736ca8db1e30f)
+
+
+
+
+
+
 
 
 
