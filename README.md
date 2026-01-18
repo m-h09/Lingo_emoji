@@ -88,10 +88,10 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 
 |Myテンプレート|
 | :---: |
+|[![Image from Gyazo](https://i.gyazo.com/c384e9202107317e6a578ad9582e223e.png)](https://gyazo.com/c384e9202107317e6a578ad9582e223e)|
+|<p align ="left">メニューから「Myテンプレート」をクリックする。</p>
 |[![Image from Gyazo](https://i.gyazo.com/97521a067cb849690078fd95205205f6.png)](https://gyazo.com/97521a067cb849690078fd95205205f6)|
-|<p align="left">「Myエンプレート」ではAI生成の履歴が残っていきます。
-<br>まず、「Myテンプレート」をクリックするとMyテンプレートが出てきます。
-<br>「編集はこちら」をクリックすると下画面にスクロールし、メニュが現れます</p>|
+|<p align="left">上記はまだ履歴からの登録がないため「現在登録がありません」の状況です。履歴から登録するには「編集はこちら」をクリックし、メニューから「Myテンプレートに登録」に進みます。</p>|
 |[![Image from Gyazo](https://i.gyazo.com/5e0307838e76ef29fbec49f7c91aeba2.png)](https://gyazo.com/5e0307838e76ef29fbec49f7c91aeba2)|
 <br>
 
@@ -100,6 +100,7 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 
 |「Myテンプレートに登録」|
 | :---: |
+|[![Image from Gyazo](https://i.gyazo.com/c384e9202107317e6a578ad9582e223e.png)](https://gyazo.com/c384e9202107317e6a578ad9582e223e)|
 |[![Image from Gyazo](https://i.gyazo.com/71a8eae993ec80d449c79875136753d4.png)](https://gyazo.com/71a8eae993ec80d449c79875136753d4)|
 |<p align="left">AI生成をするとデータ量が多くなるのでpagenateを設置。複数選択が可能です。
 <br>データ量が増えてくるので検索機能も設置<p>|
