@@ -161,3 +161,6 @@ PCで入力する際は特に絵文字を選択するのが難しいため、絵
 
 ### ER図
 [![Image from Gyazo](https://i.gyazo.com/7f84aba471f7fe38556736ca8db1e30f.png)](https://gyazo.com/7f84aba471f7fe38556736ca8db1e30f)
+
+### 画面遷移図
+https://www.figma.com/board/iKr3VRY93jfNa7tiZYnG9h/Emoji%E5%A4%89%E6%8F%9B%E3%82%A2%E3%83%97%E3%83%AA?node-id=24-2496&t=PnfLTlmkV1qquskx-1
