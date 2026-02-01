@@ -7,13 +7,14 @@
         <div class="card mt-4" style="width: 500px;">
           <div class="card-body mb-2">
             <table class="table">
-              <tr>
-                <th scope="row"><%= User.human_attribute_name(:email) %></th>
-                <td><%= current_user.email %></td>
-              </tr>
+
               <tr>
                 <th scope="row"><%= User.human_attribute_name(:name) %></th>
                 <td><%= current_user.name %></td>
+              </tr>
+              <tr>
+                <th scope="row"><%= User.human_attribute_name(:email) %></th>
+                <td><%= current_user.email %></td>
               </tr>
               <tr>
                 <th scope="row"><%= User.human_attribute_name(:avatar) %></th>
@@ -26,5 +27,5 @@
       </div>
     </div>
   </div>
-  
+
 </div>
